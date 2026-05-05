@@ -28,3 +28,6 @@ Use the app folder as the standalone Git repository and deploy through Vercel at
 
 ### D-009: CSS-First Motion System
 Use CSS and a small IntersectionObserver reveal component for premium motion. Avoid heavy animation libraries unless a future interaction requires timeline orchestration.
+
+### D-010: Search Console Indexing Path
+Use manual Google Search Console sitemap submission and URL Inspection for indexing setup. Do not use the Google Indexing API for normal site pages.

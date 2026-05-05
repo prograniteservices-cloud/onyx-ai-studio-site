@@ -2,6 +2,12 @@
 
 ## Open Issues
 
+### ISSUE-013: Search Console Submission Is Manual
+- Symptoms: Search Console ownership is verified, but sitemap submission and URL inspection cannot be completed from the current local wrapper.
+- Root cause: The local Google wrapper supports Gmail, Drive, NotebookLM, Gemini image generation, and TTS, but does not expose Google Search Console commands.
+- Current handling: Use the manual browser checklist in `GSC_INDEXING.md`.
+- Verification needed: Confirm in Search Console that `https://onyxaistudio.digital/sitemap.xml` is submitted and priority URLs have been inspected/requested for indexing.
+
 ### ISSUE-005: Moderate PostCSS Advisory Through Next Dependency
 - Symptoms: `npm.cmd audit --audit-level=high` exits successfully, but npm reports 2 moderate vulnerabilities for `postcss <8.5.10` through `next`.
 - Root cause: The advisory is inside Next's dependency tree. The suggested `npm audit fix --force` path would install `next@9.3.3`, which is a breaking downgrade and not acceptable.

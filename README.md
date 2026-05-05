@@ -20,6 +20,7 @@ npm.cmd audit --audit-level=high
 - `public/`: production SVG assets and `llms.txt`.
 - `DESIGN.md`, `PDD.md`, `PFD.md`, `SOP.md`: design and operating docs.
 - `PROJECT_STATE.md`, `TASKS.md`, `ISSUES.md`, `DECISIONS.md`: restartable project state.
+- `GSC_INDEXING.md`: Google Search Console sitemap and indexing checklist.
 
 ## Notes
 - Keep public copy free of personal details from private parent-context files.

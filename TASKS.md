@@ -74,3 +74,14 @@
 - [x] Preserve reduced-motion behavior.
 - [x] Validate desktop and mobile screenshots.
 - [x] Push and deploy the motion enhancement pass.
+
+## Phase 9 - Google Search Console Indexing
+- [x] Confirm DNS/domain ownership is verified in Search Console.
+- [x] Verify Vercel domain wiring for `onyxaistudio.digital`.
+- [x] Verify `robots.txt`, `sitemap.xml`, and `llms.txt` return HTTP 200.
+- [x] Verify sitemap URLs return HTTP 200.
+- [x] Verify homepage canonical, Open Graph URL, JSON-LD, and no `noindex`.
+- [x] Create `GSC_INDEXING.md` with exact browser submission steps.
+- [ ] Submit `https://onyxaistudio.digital/sitemap.xml` in Search Console.
+- [ ] Request indexing for priority URLs in Search Console.
+- [ ] Re-check sitemap processing and Page Indexing after Google crawls.

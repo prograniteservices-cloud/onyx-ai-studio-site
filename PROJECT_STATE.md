@@ -18,6 +18,8 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 - Production URL: `https://onyxaistudio.digital`.
 - Vercel production env includes `NEXT_PUBLIC_SITE_URL=https://onyxaistudio.digital`.
 - Motion enhancement pass is live: animated hero systems visual, scroll reveals, glass panels/cards, and refined sticky glass header.
+- Google Search Console ownership is verified by DNS record.
+- Search Console indexing-readiness checks pass from this machine; manual sitemap submission and URL inspection are pending in the browser.
 
 ## Commands
 - Dev: `npm.cmd run dev`
@@ -30,10 +32,11 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 - Private parent-context files must not be used in public copy.
 - Contact form uses `mailto:` until a real form backend or inbox routing is approved.
 - Production metadata and sitemap use `https://onyxaistudio.digital` through `NEXT_PUBLIC_SITE_URL`.
+- Local Google tooling does not currently expose Search Console commands, so sitemap submission and URL inspection are manual browser actions.
 - npm audit reports a moderate PostCSS advisory through Next. The high-severity audit passes, and the suggested force fix is a breaking downgrade.
 
 ## Next Action
-Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
+In Google Search Console, submit `https://onyxaistudio.digital/sitemap.xml` and request indexing for the priority URLs listed in `GSC_INDEXING.md`. Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -55,3 +58,4 @@ Replace the `mailto:` form once the final inbox or form backend is approved. Res
 - Live custom-domain route checks: all planned app routes plus `/robots.txt`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200.
 - Live sitemap and robots: verified they reference `https://onyxaistudio.digital`.
 - Production screenshots: `qa-prod-motion-desktop.png` and `qa-prod-motion-mobile.png`.
+- Search Console readiness: Vercel domain inspect confirms `onyxaistudio.digital` is attached to `onyx-ai-studio-site`, nameservers are correct, all 14 sitemap URLs return HTTP 200, robots/sitemap reference only the custom domain, homepage canonical and Open Graph URL use the custom domain, JSON-LD is present, and no `noindex` was found.
