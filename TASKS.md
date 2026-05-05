@@ -57,3 +57,11 @@
 - [x] Run visual mobile QA.
 - [x] Run accessibility and focus-state QA.
 - [x] Record failures and fixes in `ISSUES.md`.
+
+## Phase 7 - GitHub And Vercel
+- [x] Attach app folder to GitHub repository.
+- [x] Push completed website to `master`.
+- [x] Link Vercel project to the GitHub repository.
+- [x] Set production `NEXT_PUBLIC_SITE_URL`.
+- [x] Deploy to Vercel production.
+- [x] Verify live routes, sitemap, robots, and `llms.txt`.

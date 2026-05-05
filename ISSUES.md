@@ -22,6 +22,24 @@
 
 ## Resolved Issues
 
+### ISSUE-008: Production Build Timed Out While Dev Processes Were Running
+- Symptoms: `npm.cmd run build` timed out after three minutes with no useful output.
+- Root cause: A stale local dev server and a leftover Vercel help process were still running in the app folder.
+- Fix: Stopped the stale app-scoped Node and cmd processes, then reran the production build with a longer timeout.
+- Verification: `npm.cmd run build` completed successfully and generated 19 static pages.
+
+### ISSUE-009: New Local Git Repo Had No Author Identity
+- Symptoms: `git commit` failed with "Author identity unknown".
+- Root cause: The app folder had just been initialized as a Git repo and had no local `user.name` or `user.email`.
+- Fix: Set repo-local Git config using the authenticated GitHub account and noreply email.
+- Verification: Commit `ba9cce7` was created and pushed to GitHub.
+
+### ISSUE-010: Vercel Scope Flag Rejected Personal Account
+- Symptoms: `vercel link --scope prograniteservices-cloud` failed with "You cannot set your Personal Account as the scope."
+- Root cause: Vercel treats the authenticated account as the default personal account, not a team scope.
+- Fix: Linked with `vercel link --yes --project onyx-ai-studio-site` and let Vercel use the authenticated default account.
+- Verification: Vercel linked `onyx-ai-studio-site`, connected the GitHub repository, and production deploys succeeded.
+
 ### ISSUE-003: shadcn Init Timeout
 - Symptoms: `npx.cmd shadcn@latest init -d --base radix` timed out after 120 seconds and wrote only `components.json`.
 - Root cause: CLI process hung before dependency/component installation completed.

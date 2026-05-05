@@ -2,6 +2,8 @@
 
 Design-first Next.js website for Onyx AI Studio.
 
+Live production URL: https://onyx-ai-studio-site.vercel.app
+
 ## Commands
 
 ```powershell

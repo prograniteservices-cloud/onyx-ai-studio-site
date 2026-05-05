@@ -22,3 +22,6 @@ The first version includes metadata, sitemap, robots, `llms.txt`, extractable an
 
 ### D-007: Static Contact Form For MVP
 Use a static `mailto:` contact path until the user confirms a domain inbox or form backend.
+
+### D-008: GitHub And Vercel Hosting
+Use the app folder as the standalone Git repository and deploy through Vercel at `https://onyx-ai-studio-site.vercel.app` until a custom domain is connected.
