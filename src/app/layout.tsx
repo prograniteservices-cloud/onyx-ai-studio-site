@@ -136,6 +136,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${plusJakarta.variable} ${libreBaskerville.variable} ${geistMono.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">

@@ -25,3 +25,6 @@ Use a static `mailto:` contact path until the user confirms a domain inbox or fo
 
 ### D-008: GitHub And Vercel Hosting
 Use the app folder as the standalone Git repository and deploy through Vercel at `https://onyx-ai-studio-site.vercel.app` until a custom domain is connected.
+
+### D-009: CSS-First Motion System
+Use CSS and a small IntersectionObserver reveal component for premium motion. Avoid heavy animation libraries unless a future interaction requires timeline orchestration.

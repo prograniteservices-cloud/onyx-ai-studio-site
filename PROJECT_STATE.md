@@ -17,6 +17,7 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 - Vercel project: `onyx-ai-studio-site`.
 - Production URL: `https://onyx-ai-studio-site.vercel.app`.
 - Vercel production env includes `NEXT_PUBLIC_SITE_URL=https://onyx-ai-studio-site.vercel.app`.
+- Motion enhancement pass is implemented locally: animated hero systems visual, scroll reveals, glass panels/cards, and refined sticky glass header.
 
 ## Commands
 - Dev: `npm.cmd run dev`
@@ -32,7 +33,7 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 - npm audit reports a moderate PostCSS advisory through Next. The high-severity audit passes, and the suggested force fix is a breaking downgrade.
 
 ## Next Action
-Connect a custom domain when ready. Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
+Deploy the motion enhancement pass to production. Connect a custom domain when ready. Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -47,3 +48,4 @@ Connect a custom domain when ready. Replace the `mailto:` form once the final in
 - Vercel production deploy: passed and aliased to `https://onyx-ai-studio-site.vercel.app`.
 - Live route checks: all planned app routes plus `/robots.txt`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200 on the production URL.
 - Live sitemap and robots: verified they reference `https://onyx-ai-studio-site.vercel.app`.
+- Motion pass local validation: `npm.cmd run lint`, `npm.cmd run build`, `npm.cmd audit --audit-level=high`, public identifier scan, desktop screenshot `qa-motion-desktop.png`, and mobile screenshot `qa-motion-mobile.png`.

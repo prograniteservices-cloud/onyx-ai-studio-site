@@ -7,7 +7,7 @@ import { navItems } from "@/lib/site-data";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/92 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/45 bg-background/78 shadow-[0_12px_38px_rgba(24,58,90,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/68">
       <div className="mx-auto flex min-h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <LogoMark />
         <nav

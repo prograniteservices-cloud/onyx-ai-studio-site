@@ -58,6 +58,31 @@ Use a neutral/stone base with multiple restrained accents so the site does not r
 - Respect `prefers-reduced-motion`.
 - No ornamental motion that competes with copy.
 
+## Motion Enhancement Pass
+Purpose: make the live site feel more premium without turning it into a decorative animation demo.
+
+DFII:
+- Aesthetic Impact: 5
+- Context Fit: 5
+- Implementation Feasibility: 5
+- Performance Safety: 4
+- Consistency Risk: 2
+- DFII: 17 by raw inputs, treated as excellent with restraint.
+
+Direction: "liquid editorial systems" inside the existing light editorial studio system. Use one memorable hero animation plus restrained scroll reveals and glass surfaces.
+
+Approved effects:
+- Hero system visual: subtle floating map, scanning sheen, small data-flow lines, and a horizontal workflow ticker.
+- Section motion: IntersectionObserver reveal with opacity, blur, and short translate only.
+- Surface depth: translucent `glass-panel` and `glass-card` treatments with thin borders and restrained shadows.
+- Interaction: cards lift slightly on hover for pointer devices only.
+
+Rules:
+- All motion must honor `prefers-reduced-motion`.
+- Continuous motion is allowed only in the hero visual and must stay slow, low-amplitude, and non-blocking.
+- No scroll-jacking, parallax capture, bouncing icons, or heavy animation dependency.
+- Keep glassmorphism subtle enough that text contrast remains strong.
+
 ## Image Direction
 Primary visual assets are editorial SVGs that communicate the actual service model:
 - `public/onyx-logo.svg`: simple wordmark and faceted onyx mark.

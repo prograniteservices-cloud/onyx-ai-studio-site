@@ -22,6 +22,18 @@
 
 ## Resolved Issues
 
+### ISSUE-011: React Lint Rejected Synchronous State Update In Reveal Effect
+- Symptoms: `npm.cmd run lint` failed with `react-hooks/set-state-in-effect` in `src/components/scroll-reveal.tsx`.
+- Root cause: The reduced-motion branch called `setIsVisible(true)` directly inside `useEffect`.
+- Fix: Removed the synchronous state update. Reduced-motion users keep visible content because the document never enables motion-ready hiding, and CSS also forces reveal content visible under `prefers-reduced-motion`.
+- Verification: `npm.cmd run lint` passed.
+
+### ISSUE-012: Animated Hero Visual Forced Desktop Grid Too Wide
+- Symptoms: Desktop screenshot showed the hero visual overflowing left, squeezing the copy column, and pushing the hero content down.
+- Root cause: The animated image's intrinsic width affected CSS grid min-content sizing.
+- Fix: Added `min-w-0` to the hero grid items and visual wrapper, then constrained the image inside a fixed-aspect stage with object-fit.
+- Verification: Re-captured `qa-motion-desktop.png`; the hero is framed correctly and the proof band remains visible in the first desktop viewport.
+
 ### ISSUE-008: Production Build Timed Out While Dev Processes Were Running
 - Symptoms: `npm.cmd run build` timed out after three minutes with no useful output.
 - Root cause: A stale local dev server and a leftover Vercel help process were still running in the app folder.

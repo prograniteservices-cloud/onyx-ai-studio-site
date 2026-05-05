@@ -65,3 +65,12 @@
 - [x] Set production `NEXT_PUBLIC_SITE_URL`.
 - [x] Deploy to Vercel production.
 - [x] Verify live routes, sitemap, robots, and `llms.txt`.
+
+## Phase 8 - Motion And Visual Polish
+- [x] Add CSS-first scroll reveal system.
+- [x] Add premium animated hero systems visual.
+- [x] Add restrained glassmorphism surfaces.
+- [x] Improve sticky header translucency.
+- [x] Preserve reduced-motion behavior.
+- [x] Validate desktop and mobile screenshots.
+- [ ] Push and deploy the motion enhancement pass.

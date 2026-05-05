@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
+import { HeroSystemVisual } from "@/components/hero-system-visual";
 import { JsonLd } from "@/components/json-ld";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -54,9 +56,12 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <section className="paper-grain overflow-hidden border-b border-border bg-card">
+      <section className="hero-shell paper-grain overflow-hidden border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-14">
-          <div className="editorial-rule flex flex-col justify-center pt-8">
+          <ScrollReveal
+            direction="left"
+            className="editorial-rule flex min-w-0 flex-col justify-center pt-8"
+          >
             <Badge variant="accent" className="w-fit">
               AI systems for real business workflows
             </Badge>
@@ -79,25 +84,21 @@ export default function Home() {
                 <Link href="/case-studies">View case studies</Link>
               </Button>
             </div>
-          </div>
-          <div className="hidden items-center lg:flex">
-            <div className="w-full rounded-lg border border-border bg-background p-3 shadow-sm">
-              <Image
-                src="/onyx-systems-map.svg"
-                alt="Diagram showing messy inputs becoming an organized AI operating system"
-                width={960}
-                height={760}
-                priority
-                className="h-auto w-full rounded-md"
-              />
-            </div>
-          </div>
+          </ScrollReveal>
+          <ScrollReveal
+            delay={120}
+            direction="right"
+            className="hidden min-w-0 items-center lg:flex"
+          >
+            <HeroSystemVisual />
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
-          <dl className="grid gap-4 border-b border-border pb-8 sm:grid-cols-3">
+          <ScrollReveal>
+            <dl className="grid gap-4 border-b border-border pb-8 sm:grid-cols-3">
             {proofPoints.map((proof) => (
               <div key={proof.label} className="border-l-2 border-amber pl-4">
                 <dt className="font-mono text-2xl font-bold text-primary">
@@ -108,9 +109,10 @@ export default function Home() {
                 </dd>
               </div>
             ))}
-          </dl>
+            </dl>
+          </ScrollReveal>
         </div>
-        <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <ScrollReveal className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
           {services.map((service) => {
             const Icon = service.icon;
 
@@ -118,7 +120,7 @@ export default function Home() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group rounded-lg border border-border bg-card p-5 transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="interactive-card glass-card group rounded-lg border border-border bg-card/82 p-5 transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <Icon
                   aria-hidden="true"
@@ -133,22 +135,24 @@ export default function Home() {
               </Link>
             );
           })}
-        </div>
+        </ScrollReveal>
       </section>
 
       <section className="border-b border-border bg-muted/70">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Before and after"
-            title="The work is not to add AI. The work is to make the operation clearer."
-            description="The site architecture follows a transformation pattern: messy data, slow handoffs, or thin content become focused systems with visible guardrails."
-          />
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Before and after"
+              title="The work is not to add AI. The work is to make the operation clearer."
+              description="The site architecture follows a transformation pattern: messy data, slow handoffs, or thin content become focused systems with visible guardrails."
+            />
+          </ScrollReveal>
+          <ScrollReveal className="mt-10 grid gap-5 lg:grid-cols-3" delay={80}>
             {processSteps.map((step, index) => {
               const Icon = step.icon;
 
               return (
-                <Card key={step.title} className="bg-card">
+                <Card key={step.title} className="glass-card bg-card/84">
                   <CardHeader>
                     <div className="flex items-center justify-between gap-4">
                       <Icon aria-hidden="true" className="size-6 text-accent" />
@@ -162,21 +166,27 @@ export default function Home() {
                 </Card>
               );
             })}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
-            <SectionHeading
-              eyebrow="Services"
-              title="Four service silos, one operating-system mindset."
-              description="Each service page is structured for buyers, search engines, and AI answer systems: clear definitions, outcomes, deliverables, related proof, and FAQs."
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
+            <ScrollReveal direction="left">
+              <SectionHeading
+                eyebrow="Services"
+                title="Four service silos, one operating-system mindset."
+                description="Each service page is structured for buyers, search engines, and AI answer systems: clear definitions, outcomes, deliverables, related proof, and FAQs."
+              />
+            </ScrollReveal>
+            <ScrollReveal
+              className="grid gap-4 sm:grid-cols-2"
+              delay={120}
+              direction="right"
+            >
               {services.map((service) => (
-                <Card key={service.slug} className="bg-card">
+                <Card key={service.slug} className="interactive-card glass-card bg-card/84">
                   <CardHeader>
                     <CardTitle>{service.title}</CardTitle>
                     <CardDescription>{service.description}</CardDescription>
@@ -191,14 +201,14 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       <section className="border-b border-border bg-card">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <ScrollReveal className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="Case studies"
               title="Proof points across AI, web, product, and SEO systems."
@@ -207,13 +217,13 @@ export default function Home() {
             <Button asChild variant="outline">
               <Link href="/case-studies">All case studies</Link>
             </Button>
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          </ScrollReveal>
+          <ScrollReveal className="mt-10 grid gap-6 lg:grid-cols-2" delay={100}>
             {caseStudies.map((caseStudy) => (
               <Link
                 key={caseStudy.slug}
                 href={`/case-studies/${caseStudy.slug}`}
-                className="group overflow-hidden rounded-lg border border-border bg-background transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="interactive-card glass-card group overflow-hidden rounded-lg border border-border bg-background/84 transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <Image
                   src={caseStudy.image}
@@ -247,25 +257,31 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
-          <SectionHeading
-            eyebrow="Capabilities"
-            title="Useful systems are made of small, verifiable parts."
-            description="The common thread is not one technology. It is clear data, clear interfaces, and a workflow that survives real use."
-          />
-          <div className="grid gap-3 sm:grid-cols-2">
+          <ScrollReveal direction="left">
+            <SectionHeading
+              eyebrow="Capabilities"
+              title="Useful systems are made of small, verifiable parts."
+              description="The common thread is not one technology. It is clear data, clear interfaces, and a workflow that survives real use."
+            />
+          </ScrollReveal>
+          <ScrollReveal
+            className="grid gap-3 sm:grid-cols-2"
+            delay={120}
+            direction="right"
+          >
             {capabilities.map((capability) => {
               const Icon = capability.icon;
 
               return (
                 <div
                   key={capability.title}
-                  className="flex min-h-14 items-center gap-3 rounded-md border border-border bg-card px-4"
+                  className="glass-card flex min-h-14 items-center gap-3 rounded-md border border-border bg-card/84 px-4"
                 >
                   <Icon aria-hidden="true" className="size-5 text-accent" />
                   <span className="text-sm font-semibold">
@@ -274,13 +290,13 @@ export default function Home() {
                 </div>
               );
             })}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="border-b border-border bg-muted/70">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div className="editorial-rule pt-8">
+          <ScrollReveal direction="left" className="editorial-rule pt-8">
             <SectionHeading
               eyebrow="About the studio"
               title="Founder-led without making the founder the product."
@@ -301,8 +317,12 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
+          </ScrollReveal>
+          <ScrollReveal
+            delay={120}
+            direction="right"
+            className="glass-panel rounded-lg border border-border bg-card/84 p-6 shadow-sm"
+          >
             <h2 className="font-serif text-3xl font-bold">
               Bring one messy workflow.
             </h2>
@@ -328,21 +348,23 @@ export default function Home() {
             <Button asChild className="mt-6">
               <Link href="/contact">Request a fit review</Link>
             </Button>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="bg-background">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Questions"
-            title="Clear answers for buyers and AI search systems."
-          />
-          <div className="mt-8 grid gap-4">
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Questions"
+              title="Clear answers for buyers and AI search systems."
+            />
+          </ScrollReveal>
+          <ScrollReveal className="mt-8 grid gap-4" delay={80}>
             {homeFaqs.map((faq) => (
               <div
                 key={faq.question}
-                className="rounded-lg border border-border bg-card p-5"
+                className="glass-card rounded-lg border border-border bg-card/84 p-5"
               >
                 <h2 className="font-serif text-2xl font-bold">{faq.question}</h2>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -350,7 +372,7 @@ export default function Home() {
                 </p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
