@@ -73,4 +73,4 @@
 - [x] Improve sticky header translucency.
 - [x] Preserve reduced-motion behavior.
 - [x] Validate desktop and mobile screenshots.
-- [ ] Push and deploy the motion enhancement pass.
+- [x] Push and deploy the motion enhancement pass.

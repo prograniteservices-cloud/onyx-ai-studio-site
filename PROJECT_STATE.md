@@ -15,9 +15,9 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 - App folder is a Git repository connected to `https://github.com/prograniteservices-cloud/onyx-ai-studio-site`.
 - Latest pushed branch: `master`.
 - Vercel project: `onyx-ai-studio-site`.
-- Production URL: `https://onyx-ai-studio-site.vercel.app`.
-- Vercel production env includes `NEXT_PUBLIC_SITE_URL=https://onyx-ai-studio-site.vercel.app`.
-- Motion enhancement pass is implemented locally: animated hero systems visual, scroll reveals, glass panels/cards, and refined sticky glass header.
+- Production URL: `https://onyxaistudio.digital`.
+- Vercel production env includes `NEXT_PUBLIC_SITE_URL=https://onyxaistudio.digital`.
+- Motion enhancement pass is live: animated hero systems visual, scroll reveals, glass panels/cards, and refined sticky glass header.
 
 ## Commands
 - Dev: `npm.cmd run dev`
@@ -29,11 +29,11 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 - Root `seo-presence-hub` remains a planning workspace; this app folder is the deployable Git repository.
 - Private parent-context files must not be used in public copy.
 - Contact form uses `mailto:` until a real form backend or inbox routing is approved.
-- Production metadata and sitemap currently use the Vercel alias through `NEXT_PUBLIC_SITE_URL`; update that env var when a custom domain is connected.
+- Production metadata and sitemap use `https://onyxaistudio.digital` through `NEXT_PUBLIC_SITE_URL`.
 - npm audit reports a moderate PostCSS advisory through Next. The high-severity audit passes, and the suggested force fix is a breaking downgrade.
 
 ## Next Action
-Deploy the motion enhancement pass to production. Connect a custom domain when ready. Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
+Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -49,3 +49,9 @@ Deploy the motion enhancement pass to production. Connect a custom domain when r
 - Live route checks: all planned app routes plus `/robots.txt`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200 on the production URL.
 - Live sitemap and robots: verified they reference `https://onyx-ai-studio-site.vercel.app`.
 - Motion pass local validation: `npm.cmd run lint`, `npm.cmd run build`, `npm.cmd audit --audit-level=high`, public identifier scan, desktop screenshot `qa-motion-desktop.png`, and mobile screenshot `qa-motion-mobile.png`.
+- Motion pass GitHub push: commit `1db5e11` pushed to `master`.
+- Motion pass Vercel production deploy: passed and aliased to `https://onyxaistudio.digital`.
+- Vercel production env updated to `NEXT_PUBLIC_SITE_URL=https://onyxaistudio.digital`.
+- Live custom-domain route checks: all planned app routes plus `/robots.txt`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200.
+- Live sitemap and robots: verified they reference `https://onyxaistudio.digital`.
+- Production screenshots: `qa-prod-motion-desktop.png` and `qa-prod-motion-mobile.png`.
