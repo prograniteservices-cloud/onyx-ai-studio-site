@@ -1,0 +1,31 @@
+<svg width="920" height="520" viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Regional service SEO architecture case study visual</title>
+  <desc id="desc">A content silo architecture abstraction with service pages, internal links, and local intent paths.</desc>
+  <rect width="920" height="520" rx="16" fill="#FFFDF8"/>
+  <rect x="40" y="42" width="840" height="436" rx="14" fill="#F7F4EE" stroke="#D8CDBD"/>
+  <rect x="360" y="76" width="200" height="68" rx="10" fill="#183A5A"/>
+  <text x="415" y="116" fill="#FFFDF8" font-family="Arial, sans-serif" font-size="16" font-weight="700">home</text>
+  <g stroke="#B96924" stroke-width="4" stroke-linecap="round">
+    <path d="M460 144V206"/>
+    <path d="M460 206H210V258"/>
+    <path d="M460 206H460V258"/>
+    <path d="M460 206H710V258"/>
+    <path d="M210 326V382"/>
+    <path d="M460 326V382"/>
+    <path d="M710 326V382"/>
+  </g>
+  <g>
+    <rect x="110" y="258" width="200" height="68" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <rect x="360" y="258" width="200" height="68" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <rect x="610" y="258" width="200" height="68" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <text x="160" y="299" fill="#17130F" font-family="Arial, sans-serif" font-size="15" font-weight="700">service pages</text>
+    <text x="411" y="299" fill="#17130F" font-family="Arial, sans-serif" font-size="15" font-weight="700">case proof</text>
+    <text x="662" y="299" fill="#17130F" font-family="Arial, sans-serif" font-size="15" font-weight="700">insights</text>
+    <rect x="100" y="382" width="220" height="58" rx="10" fill="#D6E4DF"/>
+    <rect x="350" y="382" width="220" height="58" rx="10" fill="#D6E4DF"/>
+    <rect x="600" y="382" width="220" height="58" rx="10" fill="#D6E4DF"/>
+    <text x="155" y="417" fill="#173731" font-family="Arial, sans-serif" font-size="14" font-weight="700">local intent</text>
+    <text x="403" y="417" fill="#173731" font-family="Arial, sans-serif" font-size="14" font-weight="700">schema</text>
+    <text x="655" y="417" fill="#173731" font-family="Arial, sans-serif" font-size="14" font-weight="700">internal links</text>
+  </g>
+</svg>

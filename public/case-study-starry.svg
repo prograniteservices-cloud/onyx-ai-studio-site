@@ -1,0 +1,17 @@
+<svg width="920" height="520" viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Starry ambient companion case study visual</title>
+  <desc id="desc">A calm voice-led interface abstraction with low-stimulation arcs and audio controls.</desc>
+  <rect width="920" height="520" rx="16" fill="#FFFDF8"/>
+  <rect x="40" y="42" width="840" height="436" rx="14" fill="#F7F4EE" stroke="#D8CDBD"/>
+  <circle cx="460" cy="250" r="132" fill="#183A5A"/>
+  <circle cx="460" cy="250" r="92" fill="#FFFDF8"/>
+  <path d="M398 250C428 210 492 210 522 250C492 292 428 292 398 250Z" fill="#0F7B75"/>
+  <path d="M430 250C444 232 476 232 490 250C476 268 444 268 430 250Z" fill="#B96924"/>
+  <path d="M260 178C326 116 594 116 660 178" stroke="#D8CDBD" stroke-width="12" stroke-linecap="round"/>
+  <path d="M220 256C310 394 610 394 700 256" stroke="#D8CDBD" stroke-width="12" stroke-linecap="round"/>
+  <path d="M310 160C360 132 560 132 610 160" stroke="#0F7B75" stroke-width="8" stroke-linecap="round"/>
+  <rect x="110" y="382" width="244" height="54" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <rect x="566" y="382" width="244" height="54" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <text x="140" y="416" fill="#17130F" font-family="Arial, sans-serif" font-size="16" font-weight="700">voice prompt</text>
+  <text x="596" y="416" fill="#17130F" font-family="Arial, sans-serif" font-size="16" font-weight="700">calm response</text>
+</svg>

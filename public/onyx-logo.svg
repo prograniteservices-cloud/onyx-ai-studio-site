@@ -1,0 +1,10 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Onyx AI Studio logo mark</title>
+  <desc id="desc">A faceted onyx stone mark in navy, teal, and cream.</desc>
+  <rect width="512" height="512" rx="64" fill="#183A5A"/>
+  <path d="M256 54L442 166L370 438H142L70 166L256 54Z" fill="#17130F"/>
+  <path d="M256 54L326 168L256 438L186 168L256 54Z" fill="#FFFDF8"/>
+  <path d="M70 166H442L256 438L70 166Z" fill="#0F7B75" fill-opacity="0.72"/>
+  <path d="M142 438L186 168H70L142 438Z" fill="#B96924" fill-opacity="0.72"/>
+  <path d="M370 438L326 168H442L370 438Z" fill="#D6E4DF" fill-opacity="0.76"/>
+</svg>

@@ -1,0 +1,36 @@
+<svg width="920" height="520" viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VapeOS semantic search case study visual</title>
+  <desc id="desc">A retail inventory dashboard abstraction with product rows and semantic search signals.</desc>
+  <rect width="920" height="520" rx="16" fill="#FFFDF8"/>
+  <rect x="40" y="42" width="840" height="436" rx="14" fill="#F7F4EE" stroke="#D8CDBD"/>
+  <rect x="78" y="84" width="764" height="58" rx="10" fill="#183A5A"/>
+  <text x="108" y="119" fill="#FFFDF8" font-family="Arial, sans-serif" font-size="18" font-weight="700">semantic inventory search</text>
+  <circle cx="794" cy="113" r="14" fill="#0F7B75"/>
+  <g>
+    <rect x="78" y="174" width="242" height="236" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <rect x="106" y="204" width="162" height="12" rx="4" fill="#0F7B75"/>
+    <rect x="106" y="236" width="178" height="10" rx="4" fill="#D8CDBD"/>
+    <rect x="106" y="264" width="138" height="10" rx="4" fill="#D8CDBD"/>
+    <rect x="106" y="292" width="184" height="10" rx="4" fill="#D8CDBD"/>
+    <rect x="106" y="338" width="86" height="42" rx="8" fill="#B96924"/>
+    <rect x="206" y="338" width="86" height="42" rx="8" fill="#183A5A"/>
+  </g>
+  <g>
+    <rect x="360" y="174" width="482" height="236" rx="10" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <path d="M396 226H792" stroke="#D8CDBD" stroke-width="2"/>
+    <path d="M396 282H792" stroke="#D8CDBD" stroke-width="2"/>
+    <path d="M396 338H792" stroke="#D8CDBD" stroke-width="2"/>
+    <circle cx="422" cy="204" r="10" fill="#0F7B75"/>
+    <circle cx="422" cy="260" r="10" fill="#0F7B75"/>
+    <circle cx="422" cy="316" r="10" fill="#B96924"/>
+    <circle cx="422" cy="372" r="10" fill="#183A5A"/>
+    <rect x="456" y="196" width="192" height="14" rx="4" fill="#17130F"/>
+    <rect x="456" y="252" width="256" height="14" rx="4" fill="#17130F"/>
+    <rect x="456" y="308" width="218" height="14" rx="4" fill="#17130F"/>
+    <rect x="456" y="364" width="180" height="14" rx="4" fill="#17130F"/>
+    <rect x="720" y="192" width="80" height="22" rx="11" fill="#D6E4DF"/>
+    <rect x="720" y="248" width="80" height="22" rx="11" fill="#D6E4DF"/>
+    <rect x="720" y="304" width="80" height="22" rx="11" fill="#ECE5D8"/>
+    <rect x="720" y="360" width="80" height="22" rx="11" fill="#ECE5D8"/>
+  </g>
+</svg>

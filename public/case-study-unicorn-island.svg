@@ -1,0 +1,22 @@
+<svg width="920" height="520" viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Unicorn Island interactive systems case study visual</title>
+  <desc id="desc">A playful browser interface abstraction with map tiles, controls, and feedback paths.</desc>
+  <rect width="920" height="520" rx="16" fill="#FFFDF8"/>
+  <rect x="40" y="42" width="840" height="436" rx="14" fill="#F7F4EE" stroke="#D8CDBD"/>
+  <g>
+    <rect x="104" y="104" width="148" height="148" rx="14" fill="#D6E4DF"/>
+    <rect x="270" y="104" width="148" height="148" rx="14" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <rect x="436" y="104" width="148" height="148" rx="14" fill="#D6E4DF"/>
+    <rect x="602" y="104" width="148" height="148" rx="14" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <rect x="187" y="270" width="148" height="148" rx="14" fill="#FFFDF8" stroke="#D8CDBD"/>
+    <rect x="353" y="270" width="148" height="148" rx="14" fill="#D6E4DF"/>
+    <rect x="519" y="270" width="148" height="148" rx="14" fill="#FFFDF8" stroke="#D8CDBD"/>
+  </g>
+  <path d="M174 182C268 236 376 246 460 181C558 104 646 168 704 236" stroke="#B96924" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="460" cy="181" r="26" fill="#183A5A"/>
+  <circle cx="704" cy="236" r="22" fill="#0F7B75"/>
+  <circle cx="260" cy="344" r="24" fill="#B96924"/>
+  <rect x="94" y="384" width="64" height="28" rx="14" fill="#183A5A"/>
+  <rect x="762" y="104" width="64" height="28" rx="14" fill="#0F7B75"/>
+  <text x="380" y="462" fill="#665F55" font-family="Arial, sans-serif" font-size="15" font-weight="700">browser controls + feedback loops</text>
+</svg>

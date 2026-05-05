@@ -1,0 +1,64 @@
+<svg width="960" height="760" viewBox="0 0 960 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Messy inputs becoming an organized AI system</title>
+  <desc id="desc">An editorial diagram showing scattered inputs on the left, a routing layer in the center, and structured business systems on the right.</desc>
+  <rect width="960" height="760" rx="18" fill="#FFFDF8"/>
+  <path d="M0 108H960" stroke="#D8CDBD"/>
+  <path d="M0 652H960" stroke="#D8CDBD"/>
+  <path d="M112 0V760" stroke="#D8CDBD"/>
+  <path d="M848 0V760" stroke="#D8CDBD"/>
+  <rect x="56" y="52" width="214" height="34" rx="6" fill="#183A5A"/>
+  <text x="76" y="74" fill="#FFFDF8" font-family="Arial, sans-serif" font-size="14" font-weight="700">MESSY OPERATION</text>
+  <rect x="690" y="52" width="214" height="34" rx="6" fill="#0F7B75"/>
+  <text x="710" y="74" fill="#FFFDF8" font-family="Arial, sans-serif" font-size="14" font-weight="700">WORKING SYSTEM</text>
+
+  <g opacity="0.95">
+    <rect x="74" y="158" width="238" height="70" rx="8" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <text x="94" y="187" fill="#17130F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Product data</text>
+    <text x="94" y="211" fill="#665F55" font-family="Arial, sans-serif" font-size="13">names, variants, tags</text>
+    <rect x="54" y="262" width="246" height="70" rx="8" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <text x="74" y="291" fill="#17130F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Manual handoffs</text>
+    <text x="74" y="315" fill="#665F55" font-family="Arial, sans-serif" font-size="13">email, sheets, follow-up</text>
+    <rect x="96" y="366" width="238" height="70" rx="8" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <text x="116" y="395" fill="#17130F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Search questions</text>
+    <text x="116" y="419" fill="#665F55" font-family="Arial, sans-serif" font-size="13">natural language intent</text>
+    <rect x="64" y="470" width="256" height="70" rx="8" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <text x="84" y="499" fill="#17130F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Thin content</text>
+    <text x="84" y="523" fill="#665F55" font-family="Arial, sans-serif" font-size="13">pages without structure</text>
+  </g>
+
+  <path d="M337 193C396 196 406 246 459 268" stroke="#B96924" stroke-width="3" stroke-linecap="round"/>
+  <path d="M318 297C383 296 407 309 457 330" stroke="#B96924" stroke-width="3" stroke-linecap="round"/>
+  <path d="M351 401C403 395 422 381 458 360" stroke="#B96924" stroke-width="3" stroke-linecap="round"/>
+  <path d="M337 505C394 494 413 431 460 388" stroke="#B96924" stroke-width="3" stroke-linecap="round"/>
+
+  <g>
+    <circle cx="500" cy="344" r="122" fill="#183A5A"/>
+    <circle cx="500" cy="344" r="92" fill="#FFFDF8"/>
+    <path d="M500 238L582 294V394L500 450L418 394V294L500 238Z" fill="#0F7B75"/>
+    <path d="M500 238L532 300L500 450L468 300L500 238Z" fill="#FFFDF8" fill-opacity="0.86"/>
+    <text x="449" y="349" fill="#FFFDF8" font-family="Arial, sans-serif" font-size="16" font-weight="700">AI ROUTING</text>
+  </g>
+
+  <g>
+    <rect x="642" y="150" width="246" height="90" rx="10" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <rect x="662" y="172" width="68" height="12" rx="3" fill="#0F7B75"/>
+    <rect x="662" y="198" width="176" height="10" rx="3" fill="#D8CDBD"/>
+    <rect x="662" y="216" width="132" height="10" rx="3" fill="#D8CDBD"/>
+    <text x="750" y="184" fill="#17130F" font-family="Arial, sans-serif" font-size="16" font-weight="700">Semantic search</text>
+
+    <rect x="624" y="284" width="268" height="90" rx="10" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <path d="M652 330H842" stroke="#0F7B75" stroke-width="8" stroke-linecap="round"/>
+    <path d="M652 348H782" stroke="#D8CDBD" stroke-width="8" stroke-linecap="round"/>
+    <text x="652" y="312" fill="#17130F" font-family="Arial, sans-serif" font-size="16" font-weight="700">Workflow automation</text>
+
+    <rect x="642" y="418" width="246" height="90" rx="10" fill="#F7F4EE" stroke="#D8CDBD"/>
+    <rect x="666" y="442" width="62" height="42" rx="6" fill="#183A5A"/>
+    <rect x="746" y="442" width="42" height="42" rx="6" fill="#0F7B75"/>
+    <rect x="806" y="442" width="42" height="42" rx="6" fill="#B96924"/>
+    <text x="666" y="494" fill="#17130F" font-family="Arial, sans-serif" font-size="16" font-weight="700">SEO content system</text>
+  </g>
+
+  <rect x="130" y="600" width="700" height="24" rx="12" fill="#ECE5D8"/>
+  <rect x="130" y="600" width="512" height="24" rx="12" fill="#B96924"/>
+  <text x="130" y="585" fill="#665F55" font-family="Arial, sans-serif" font-size="13">workflow clarity</text>
+</svg>

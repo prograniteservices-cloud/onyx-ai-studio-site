@@ -1,46 +1,60 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
+import type { Metadata } from "next";
+import { CheckCircle2 } from "lucide-react";
 
-export default function Contact() {
+import { ContactForm } from "@/components/contact-form";
+import { JsonLd } from "@/components/json-ld";
+import { SectionHeading } from "@/components/section-heading";
+import { absoluteUrl } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Request a project fit review for AI integration, automation workflows, web development, or SEO content systems.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Onyx AI Studio",
+  url: absoluteUrl("/contact"),
+  description:
+    "Request a fit review for AI integration, automation, web development, and SEO content system projects.",
+};
+
+export default function ContactPage() {
   return (
-    <main className="py-24 px-4 sm:px-6 lg:px-8 max-w-2xl mx-auto">
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900">Get in Touch</h1>
-        <p className="text-lg text-slate-600 mt-4">Tell us about your project or request a demo.</p>
-      </div>
-
-      <Card className="rounded-2xl shadow-sm border-slate-100 bg-white p-2">
-        <CardHeader>
-          <CardTitle className="text-xl text-slate-900">Send a Message</CardTitle>
-          <CardDescription className="text-base text-slate-600">
-            We usually respond within 24 hours.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium text-slate-900">Name</label>
-              <Input id="name" placeholder="John Doe" required className="rounded-lg" />
-            </div>
-            
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-slate-900">Email</label>
-              <Input id="email" type="email" placeholder="john@example.com" required className="rounded-lg" />
-            </div>
-            
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-slate-900">Message</label>
-              <Textarea id="message" placeholder="How can we help you?" rows={5} required className="rounded-lg" />
-            </div>
-
-            <Button type="submit" size="lg" className="w-full rounded-lg shadow-sm">
-              Send Message
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-    </main>
+    <>
+      <JsonLd data={contactSchema} />
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
+          <div className="editorial-rule pt-8">
+            <SectionHeading
+              eyebrow="Contact"
+              title="Request a practical project fit review."
+              description="The best first conversation is specific: what workflow is slow, what data is messy, what users need to do, and what outcome would make the work worth it."
+            />
+            <ul className="mt-8 space-y-4 text-sm leading-6 text-muted-foreground">
+              {[
+                "Good fits: search, dashboards, lead workflows, content architecture, and AI features with a clear workflow.",
+                "Weak fits: vague AI experiments, unsupported scraped data, or projects that need public personal branding.",
+                "Expected next step: a concise recommendation, not a pressure-heavy sales call.",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <CheckCircle2
+                    aria-hidden="true"
+                    className="mt-0.5 size-5 shrink-0 text-accent"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <ContactForm />
+        </div>
+      </section>
+    </>
   );
 }

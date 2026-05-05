@@ -1,73 +1,358 @@
-import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+import { JsonLd } from "@/components/json-ld";
+import { SectionHeading } from "@/components/section-heading";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  capabilities,
+  caseStudies,
+  homeFaqs,
+  processSteps,
+  proofPoints,
+  services,
+  siteUrl,
+} from "@/lib/site-data";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
+  ],
+};
 
 export default function Home() {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900">
-          AI-Powered Solutions for Modern Businesses
-        </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto mt-6">
-          Integration. Automation. Full-Stack Development. We build systems that work.
-        </p>
-        <div className="mt-10 flex justify-center gap-4">
-          <Link href="/projects" className={cn(buttonVariants({ size: "lg" }), "rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5")}>
-            View Our Work
-          </Link>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-lg")}>
-            Get in Touch
-          </Link>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="bg-slate-50 py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">What We Do</h2>
-            <p className="text-lg text-slate-600 mt-4">Production-ready systems for businesses that need AI to work.</p>
+    <>
+      <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <section className="paper-grain overflow-hidden border-b border-border bg-card">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-14">
+          <div className="editorial-rule flex flex-col justify-center pt-8">
+            <Badge variant="accent" className="w-fit">
+              AI systems for real business workflows
+            </Badge>
+            <h1 className="mt-7 max-w-4xl font-serif text-4xl font-bold leading-[1.04] text-foreground sm:text-6xl lg:text-7xl">
+              Turn messy operations into useful AI-powered systems.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Onyx AI Studio builds AI integrations, automation workflows,
+              modern web applications, and SEO content systems that make
+              practical business work easier to search, route, and run.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg">
+                <Link href="/contact">
+                  Request a fit review
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/case-studies">View case studies</Link>
+              </Button>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="rounded-2xl shadow-sm border-slate-100 bg-white">
-              <CardHeader>
-                <CardTitle className="text-xl text-slate-900">AI Integration</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-slate-600">
-                  Custom AI chatbots, semantic search engines, and intelligent automation for your business. We connect LLMs to your existing systems.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-2xl shadow-sm border-slate-100 bg-white">
-              <CardHeader>
-                <CardTitle className="text-xl text-slate-900">Web Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-slate-600">
-                  Modern, fast, SEO-optimized websites and web applications. Built with Next.js, React, and deployed for scale.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-2xl shadow-sm border-slate-100 bg-white">
-              <CardHeader>
-                <CardTitle className="text-xl text-slate-900">Workflow Automation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-slate-600">
-                  Multi-agent AI systems that automate repetitive business processes. Design, build, and deploy.
-                </CardDescription>
-              </CardContent>
-            </Card>
+          <div className="hidden items-center lg:flex">
+            <div className="w-full rounded-lg border border-border bg-background p-3 shadow-sm">
+              <Image
+                src="/onyx-systems-map.svg"
+                alt="Diagram showing messy inputs becoming an organized AI operating system"
+                width={960}
+                height={760}
+                priority
+                className="h-auto w-full rounded-md"
+              />
+            </div>
           </div>
         </div>
       </section>
-    </main>
+
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+          <dl className="grid gap-4 border-b border-border pb-8 sm:grid-cols-3">
+            {proofPoints.map((proof) => (
+              <div key={proof.label} className="border-l-2 border-amber pl-4">
+                <dt className="font-mono text-2xl font-bold text-primary">
+                  {proof.value}
+                </dt>
+                <dd className="mt-1 text-sm leading-5 text-muted-foreground">
+                  {proof.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+          {services.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group rounded-lg border border-border bg-card p-5 transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <Icon
+                  aria-hidden="true"
+                  className="size-6 text-accent transition-colors group-hover:text-primary"
+                />
+                <h2 className="mt-5 font-serif text-2xl font-bold">
+                  {service.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {service.summary}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-muted/70">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Before and after"
+            title="The work is not to add AI. The work is to make the operation clearer."
+            description="The site architecture follows a transformation pattern: messy data, slow handoffs, or thin content become focused systems with visible guardrails."
+          />
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {processSteps.map((step, index) => {
+              const Icon = step.icon;
+
+              return (
+                <Card key={step.title} className="bg-card">
+                  <CardHeader>
+                    <div className="flex items-center justify-between gap-4">
+                      <Icon aria-hidden="true" className="size-6 text-accent" />
+                      <span className="font-mono text-sm font-bold text-amber">
+                        0{index + 1}
+                      </span>
+                    </div>
+                    <CardTitle>{step.title}</CardTitle>
+                    <CardDescription>{step.body}</CardDescription>
+                  </CardHeader>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
+            <SectionHeading
+              eyebrow="Services"
+              title="Four service silos, one operating-system mindset."
+              description="Each service page is structured for buyers, search engines, and AI answer systems: clear definitions, outcomes, deliverables, related proof, and FAQs."
+            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              {services.map((service) => (
+                <Card key={service.slug} className="bg-card">
+                  <CardHeader>
+                    <CardTitle>{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button asChild variant="link">
+                      <Link href={`/services/${service.slug}`}>
+                        Explore {service.title}
+                        <ArrowRight aria-hidden="true" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              eyebrow="Case studies"
+              title="Proof points across AI, web, product, and SEO systems."
+              description="Portfolio content stays brand-forward and avoids private personal details."
+            />
+            <Button asChild variant="outline">
+              <Link href="/case-studies">All case studies</Link>
+            </Button>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {caseStudies.map((caseStudy) => (
+              <Link
+                key={caseStudy.slug}
+                href={`/case-studies/${caseStudy.slug}`}
+                className="group overflow-hidden rounded-lg border border-border bg-background transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <Image
+                  src={caseStudy.image}
+                  alt={`${caseStudy.title} visual system diagram`}
+                  width={920}
+                  height={520}
+                  className="h-auto w-full border-b border-border bg-muted"
+                />
+                <div className="p-6">
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-accent">
+                    {caseStudy.label}
+                  </p>
+                  <h3 className="mt-3 font-serif text-3xl font-bold">
+                    {caseStudy.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {caseStudy.summary}
+                  </p>
+                  <div className="mt-5 grid grid-cols-3 gap-3">
+                    {caseStudy.metrics.map((metric) => (
+                      <div key={metric.label} className="border-l border-border pl-3">
+                        <p className="font-mono text-sm font-bold text-primary">
+                          {metric.value}
+                        </p>
+                        <p className="mt-1 text-xs text-muted-foreground">
+                          {metric.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="Useful systems are made of small, verifiable parts."
+            description="The common thread is not one technology. It is clear data, clear interfaces, and a workflow that survives real use."
+          />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {capabilities.map((capability) => {
+              const Icon = capability.icon;
+
+              return (
+                <div
+                  key={capability.title}
+                  className="flex min-h-14 items-center gap-3 rounded-md border border-border bg-card px-4"
+                >
+                  <Icon aria-hidden="true" className="size-5 text-accent" />
+                  <span className="text-sm font-semibold">
+                    {capability.title}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-muted/70">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div className="editorial-rule pt-8">
+            <SectionHeading
+              eyebrow="About the studio"
+              title="Founder-led without making the founder the product."
+              description="The public brand keeps attention on systems, proof, and delivery quality. Private background notes stay private."
+            />
+            <ul className="mt-8 space-y-4 text-sm leading-6 text-muted-foreground">
+              {[
+                "Small enough to map the workflow carefully.",
+                "Technical enough to ship real Next.js, AI, and SEO foundations.",
+                "Conservative enough to say when AI is not the right answer.",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <CheckCircle2
+                    aria-hidden="true"
+                    className="mt-0.5 size-5 shrink-0 text-accent"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
+            <h2 className="font-serif text-3xl font-bold">
+              Bring one messy workflow.
+            </h2>
+            <p className="mt-4 text-sm leading-6 text-muted-foreground">
+              The fit review is built for specificity: what is slow, what data
+              is messy, what users need to do, and what result would justify a
+              build.
+            </p>
+            <div className="mt-6 grid gap-3">
+              {[
+                "Workflow and data map",
+                "AI vs automation recommendation",
+                "Practical build path",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-md border border-border bg-background px-4 py-3 text-sm font-semibold"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+            <Button asChild className="mt-6">
+              <Link href="/contact">Request a fit review</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Questions"
+            title="Clear answers for buyers and AI search systems."
+          />
+          <div className="mt-8 grid gap-4">
+            {homeFaqs.map((faq) => (
+              <div
+                key={faq.question}
+                className="rounded-lg border border-border bg-card p-5"
+              >
+                <h2 className="font-serif text-2xl font-bold">{faq.question}</h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
