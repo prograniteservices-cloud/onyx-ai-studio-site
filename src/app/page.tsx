@@ -72,26 +72,40 @@ export default function Home() {
           <div className="paper-grain absolute inset-0 pointer-events-none opacity-30" />
         </div>
 
-        {/* Top Branding: Onyx (Forced 20% offset) */}
+        {/* Desktop Branding: Absolute Positioned */}
         <div 
-          style={{ position: 'absolute', top: '5rem', left: '20%', zIndex: 50 }}
-          className="pointer-events-none"
+          style={{ left: '20%', top: '5rem', zIndex: 50 }}
+          className="hidden md:block absolute pointer-events-none"
         >
-          <span className="font-serif text-4xl md:text-5xl font-bold tracking-tighter text-black uppercase leading-none">
+          <span className="font-serif text-5xl font-bold tracking-tighter text-black uppercase leading-none">
             Onyx
           </span>
         </div>
         
-        {/* Top-Right Hook (Forced) */}
         <div 
-          style={{ position: 'absolute', top: '5rem', right: '2rem', zIndex: 50 }}
-          className="pointer-events-none"
+          style={{ right: '2rem', top: '5rem', zIndex: 50 }}
+          className="hidden md:block absolute pointer-events-none"
         >
           <div className="flex flex-col items-center text-center">
             <span className="font-mono text-sm font-bold tracking-[0.4em] text-black/40 uppercase mb-2">
               System Synthesis
             </span>
-            <span className="max-w-[280px] text-lg md:text-xl font-medium leading-tight text-black">
+            <span className="max-w-[280px] text-xl font-medium leading-tight text-black">
+              Turning raw operations into crystalline intelligence.
+            </span>
+          </div>
+        </div>
+
+        {/* Mobile Branding: Stacked & Centered */}
+        <div className="md:hidden relative z-10 w-full px-6 pt-16 pb-8 flex flex-col items-center gap-8 pointer-events-none">
+          <span className="font-serif text-5xl font-bold tracking-tighter text-black uppercase leading-none">
+            Onyx
+          </span>
+          <div className="flex flex-col items-center text-center">
+            <span className="font-mono text-xs font-bold tracking-[0.3em] text-black/40 uppercase mb-2">
+              System Synthesis
+            </span>
+            <span className="max-w-[280px] text-lg font-medium leading-tight text-black">
               Turning raw operations into crystalline intelligence.
             </span>
           </div>
