@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-import { HeroSystemVisual } from "@/components/hero-system-visual";
 import { JsonLd } from "@/components/json-ld";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -56,42 +55,46 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <section className="hero-shell paper-grain overflow-hidden border-b border-border bg-card">
-        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-14">
-          <ScrollReveal
-            direction="left"
-            className="editorial-rule flex min-w-0 flex-col justify-center pt-8"
-          >
-            <Badge variant="accent" className="w-fit">
-              AI systems for real business workflows
-            </Badge>
-            <h1 className="mt-7 max-w-4xl font-serif text-4xl font-bold leading-[1.04] text-foreground sm:text-6xl lg:text-7xl">
-              Turn messy operations into useful AI-powered systems.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Onyx AI Studio builds AI integrations, automation workflows,
-              modern web applications, and SEO content systems that make
-              practical business work easier to search, route, and run.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Request a fit review
-                  <ArrowRight aria-hidden="true" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/case-studies">View case studies</Link>
-              </Button>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal
-            delay={120}
-            direction="right"
-            className="hidden min-w-0 items-center lg:flex"
-          >
-            <HeroSystemVisual />
-          </ScrollReveal>
+      <section className="hero-shell relative overflow-hidden border-b border-border bg-card min-h-screen">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0 opacity-80">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            crossOrigin="anonymous"
+            src="/refractive-core.mp4"
+            poster="/refined.png"
+            className="h-full w-full object-cover grayscale brightness-105 contrast-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/40" />
+          <div className="paper-grain absolute inset-0 pointer-events-none opacity-30" />
+        </div>
+
+        {/* Top Branding: Onyx (Forced 20% offset) */}
+        <div 
+          style={{ position: 'absolute', top: '5rem', left: '20%', zIndex: 50 }}
+          className="pointer-events-none"
+        >
+          <span className="font-serif text-4xl md:text-5xl font-bold tracking-tighter text-black uppercase leading-none">
+            Onyx
+          </span>
+        </div>
+        
+        {/* Top-Right Hook (Forced) */}
+        <div 
+          style={{ position: 'absolute', top: '5rem', right: '2rem', zIndex: 50 }}
+          className="pointer-events-none"
+        >
+          <div className="flex flex-col items-center text-center">
+            <span className="font-mono text-sm font-bold tracking-[0.4em] text-black/40 uppercase mb-2">
+              System Synthesis
+            </span>
+            <span className="max-w-[280px] text-lg md:text-xl font-medium leading-tight text-black">
+              Turning raw operations into crystalline intelligence.
+            </span>
+          </div>
         </div>
       </section>
 

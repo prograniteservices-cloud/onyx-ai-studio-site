@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aetheris OS - The Art of Refinement</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#505f76",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#f8f9ff",
+                        "on-primary-container": "#707375",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-container": "#eaedff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary-container": "#54647a",
+                        "surface-tint": "#5c5f61",
+                        "on-tertiary-container": "#657487",
+                        "on-primary-fixed": "#191c1e",
+                        "outline-variant": "#c4c7c9",
+                        "inverse-primary": "#c4c7c9",
+                        "inverse-surface": "#283044",
+                        "surface-dim": "#d2d9f4",
+                        "primary": "#5c5f61",
+                        "tertiary-fixed": "#d4e4fa",
+                        "outline": "#747779",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-surface": "#131b2e",
+                        "primary-fixed": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#444749",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#0d1c2d",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "inverse-on-surface": "#eef0ff",
+                        "surface": "#faf8ff",
+                        "on-surface-variant": "#444749",
+                        "background": "#f7f4ee",
+                        "on-secondary-fixed": "#0b1c30",
+                        "tertiary-fixed-dim": "#b9c8de",
+                        "primary-fixed-dim": "#c4c7c9",
+                        "secondary-container": "#d0e1fb",
+                        "primary-container": "#f8fafc",
+                        "on-background": "#131b2e",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "tertiary": "#516072",
+                        "surface-bright": "#faf8ff",
+                        "on-tertiary-fixed-variant": "#39485a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "container-max": "1440px",
+                        "margin": "48px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Playfair Display", "serif"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-highlight {
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .refractive-particle {
+            position: absolute;
+            background: rgba(80, 95, 118, 0.1);
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+        }
+
+        .emerging-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100px) scale(0.5); opacity: 0; }
+            50% { transform: translateX(0) scale(1); opacity: 0.5; }
+            100% { transform: translateX(100px) scale(0.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen font-body-md text-on-surface overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 z-50 flex justify-between items-center w-full px-gutter h-16 bg-surface/40 backdrop-blur-xl border-b border-white/20 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">blur_on</span>
+<h1 class="font-headline-md text-headline-md font-light tracking-widest text-on-surface">Aether OS</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-sm text-label-sm text-primary font-medium hover:bg-white/10 transition-colors duration-300 px-3 py-2 rounded-lg" href="#">Data Visuals</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant font-light hover:bg-white/10 transition-colors duration-300 px-3 py-2 rounded-lg" href="#">Logic Flow</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant font-light hover:bg-white/10 transition-colors duration-300 px-3 py-2 rounded-lg" href="#">Activity Feed</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-white/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A high-end professional headshot of a user with a soft-focus architectural background. The lighting is ethereal and bright, matching the light-mode digital ether aesthetic. The subject is calm and intelligent, reflecting the brand's serene and precise personality. Subtle glass reflections frame the portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcKu5absDcSrPAobt2YRoE4bVoED5GVz9_BMfIelZAUOHOjLMgi2GuSWAI-IaPZ_AdjkdaWVGkbPQuFd3sVb_esEgbzzQ-jztHMg-wkejbV_yqhEk-HTcKxewvyT_7fybaDrQl4G-lnutY7NsKxrkegvKgxUdwgvlEY2nG5raf5nT7ufTPJTA-9kpR53EDRoDcNHiKYQMfUeJY-zT8afrRkc_7QgSMzrXAfRdsdTyCizo_13CQwcDYBgsu7SQLK4xX64bnirUiSKk"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation Drawer (Hidden on Mobile) -->
+<aside class="fixed left-0 top-0 h-full z-40 hidden lg:flex flex-col pt-20 px-stack-md w-72 bg-surface-container-lowest/40 backdrop-blur-xl border-r border-white/20">
+<div class="mb-stack-lg px-4">
+<h2 class="font-headline-md text-headline-md text-on-surface font-light">System Modules</h2>
+</div>
+<div class="flex flex-col gap-2">
+<button class="flex items-center gap-4 px-4 py-3 rounded-r-full bg-white/50 text-on-surface border-l-2 border-primary transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-label-sm text-label-sm">Data Visuals</span>
+</button>
+<button class="flex items-center gap-4 px-4 py-3 rounded-r-full text-on-surface-variant/70 hover:text-on-surface hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm">Logic Flow</span>
+</button>
+<button class="flex items-center gap-4 px-4 py-3 rounded-r-full text-on-surface-variant/70 hover:text-on-surface hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Activity Feed</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 px-gutter lg:pl-80 flex flex-col items-center justify-center min-h-screen text-center">
+<!-- Hero Section -->
+<section class="max-w-4xl w-full flex flex-col items-center gap-stack-lg relative">
+<!-- Headline Cluster -->
+<div class="space-y-4 z-10">
+<h1 class="font-headline-xl text-headline-xl text-on-surface italic leading-tight">
+                    The Art of <span class="font-bold not-italic">Refinement</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto font-light tracking-wide">
+                    Transforming raw chaos into crystalline intelligence.
+                </p>
+</div>
+<!-- Refractive Core Centerpiece Container -->
+<div class="relative w-full aspect-square md:aspect-video flex items-center justify-center my-stack-lg overflow-visible">
+<!-- Left: Incoming Chaotic Fragments -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-full hidden md:block overflow-hidden pointer-events-none">
+<div class="w-full h-full relative opacity-40">
+<div class="absolute top-1/4 left-10 w-2 h-2 bg-primary rounded-sm opacity-20 blur-[1px]"></div>
+<div class="absolute top-1/2 left-0 w-3 h-1 bg-secondary rounded-full opacity-30"></div>
+<div class="absolute top-3/4 left-20 w-1 h-4 bg-outline rounded-full opacity-20"></div>
+<div class="absolute top-1/3 left-5 w-4 h-4 border border-outline/30 rotate-45"></div>
+</div>
+</div>
+<!-- Center: Onyx Prism -->
+<div class="relative group">
+<!-- Subtle Glow -->
+<div class="absolute inset-0 bg-primary/5 blur-[80px] rounded-full scale-150"></div>
+<div class="relative w-64 h-64 md:w-80 md:h-80 z-10 glass-card glass-highlight rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-105">
+<img alt="Refractive Onyx Core" class="w-full h-full object-cover scale-110 grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000" data-alt="A dark, multi-faceted onyx prism with razor-sharp edges and polished surfaces that catch a minimalist studio light. The prism sits in the center of a bright, ethereal ivory space, creating a high-contrast focal point. Subtle light refraction and prismatic rainbows dance across the surrounding light-mode surfaces. The style is hyper-realistic and sophisticated, embodying a digital ether aesthetic for high-end researchers." src="https://lh3.googleusercontent.com/aida/ADBb0ugmtObvEhrVhhTPkN2d095fCnsfsxu-CPKiQPZPQcJ0V1RSmXffiX55iqAWK5gCWGCJLeQUyIaixA10Y2Jy-CFOZvcONHZOkrtP-92mDyKjwzhYZFhPiu5nwYvAgavP17QPFaU2sPpaLwGYhz2aEp9j3LVf06mER63iC4iBUcKDcvjci-DHnnqo3TDn0nx63fLdHjbGmoYkBxuHnsJaKQ5D9fQSNsALlANOHpLIF8P7UpzwE7aNZuGs6g"/>
+<!-- Internal Refraction Overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none"></div>
+</div>
+<!-- Refracted UI Elements Emerging Right -->
+<div class="absolute top-0 -right-16 md:-right-32 w-48 h-full flex flex-col gap-4 justify-center pointer-events-none">
+<div class="emerging-panel p-4 rounded-xl w-40 translate-x-4 rotate-3 opacity-90">
+<div class="h-1 w-8 bg-primary/40 rounded-full mb-2"></div>
+<div class="h-1 w-12 bg-primary/20 rounded-full"></div>
+</div>
+<div class="emerging-panel p-3 rounded-xl w-32 -translate-x-2 -rotate-2 opacity-60 scale-90">
+<div class="flex gap-1 mb-2">
+<div class="h-1 w-1 bg-primary/40 rounded-full"></div>
+<div class="h-1 w-1 bg-primary/40 rounded-full"></div>
+<div class="h-1 w-1 bg-primary/40 rounded-full"></div>
+</div>
+<div class="h-1 w-16 bg-primary/10 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Floating Semantic Chips -->
+<div class="absolute top-10 left-10 md:left-20 px-3 py-1 glass-card rounded-full font-label-sm text-label-sm text-on-surface-variant/80 border border-white/40">
+                    Neural Context
+                </div>
+<div class="absolute bottom-20 right-5 md:right-15 px-3 py-1 glass-card rounded-full font-label-sm text-label-sm text-on-surface-variant/80 border border-white/40">
+                    Pattern Synthesis
+                </div>
+</div>
+<!-- CTA Section -->
+<div class="z-20 mt-stack-md">
+<button class="group relative px-10 py-4 bg-white/40 backdrop-blur-xl border border-outline/20 rounded-full overflow-hidden transition-all duration-300 hover:bg-white/60 hover:shadow-lg active:scale-[0.99]">
+<div class="relative z-10 flex items-center gap-3">
+<span class="font-label-sm text-label-sm tracking-[0.2em] text-on-surface font-semibold">BEGIN SYNTHESIS</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<!-- Inner Shine -->
+<div class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:left-[150%] transition-all duration-1000"></div>
+</button>
+</div>
+</section>
+<!-- Feature Grid (Bento Style) -->
+<section class="mt-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter w-full max-w-container-max px-gutter">
+<!-- Card 1 -->
+<div class="md:col-span-2 glass-card p-stack-lg rounded-xl flex flex-col justify-between text-left group">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Refractive Logic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">Advanced AI models that don't just process data—they clarify it, removing noise and emphasizing the core insights relevant to your current focus.</p>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">filter_center_focus</span>
+</div>
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">auto_awesome_motion</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-stack-lg rounded-xl flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">shutter_speed</span>
+</div>
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest mb-2">Processing Speed</h3>
+<div class="text-4xl font-light text-on-surface mb-2">0.04<span class="text-xl">ms</span></div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary/30 w-3/4 rounded-full"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-stack-lg rounded-xl text-left">
+<span class="material-symbols-outlined text-primary mb-4">lens_blur</span>
+<h3 class="font-headline-md text-headline-md mb-2">Ethereal Depth</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">Layered translucency ensures that every interaction feels integrated into your workflow, never obscuring the primary task at hand.</p>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-2 glass-card p-stack-lg rounded-xl flex flex-col md:flex-row gap-stack-lg items-center text-left">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-2">Intelligence Flow</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">Watch your raw data stream through the refractive core and emerge as actionable dashboard components instantly.</p>
+</div>
+<div class="w-full md:w-48 h-32 bg-white/20 rounded-lg border border-white/40 flex items-center justify-center overflow-hidden">
+<div class="flex gap-2 items-center animate-pulse">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-8 h-1 bg-primary/20 rounded-full"></div>
+<div class="w-12 h-1 bg-primary/40 rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (Active only on Home/Synthesis focus) -->
+<button class="fixed bottom-gutter right-gutter w-14 h-14 bg-on-surface text-surface rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">add</span>
+</button>
+<!-- Simple Footer -->
+<footer class="w-full py-stack-lg px-gutter border-t border-white/20 text-center flex flex-col items-center gap-4 opacity-60">
+<p class="font-label-sm text-label-sm tracking-widest uppercase">Aetheris OS © 2024</p>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Architecture</a>
+</div>
+</footer>
+</body></html>

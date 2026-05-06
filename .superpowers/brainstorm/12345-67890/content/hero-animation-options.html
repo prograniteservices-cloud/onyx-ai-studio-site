@@ -1,0 +1,53 @@
+<h2>Merge: Glass OS + Living Blueprint</h2>
+<p class="subtitle">Pick a "badass" premium direction for the Onyx AI Studio hero</p>
+
+<div class="options" data-choice-type="design">
+  <div class="option" data-choice="refractive-core" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>The Refractive Core</h3>
+      <p>A central, dark faceted Onyx prism. Messy sketch lines flow in from the left; high-end glass UI panels emerge on the right.</p>
+      <div class="mockup" style="margin-top:1rem; background:#f7f4ee; border:1px solid #d8cdbd; height:120px; position:relative; overflow:hidden;">
+        <!-- Prism -->
+        <div style="position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:40px; height:40px; background:#17130f; clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); box-shadow:0 0 20px rgba(15,123,117,0.3);"></div>
+        <!-- Messy lines -->
+        <div style="position:absolute; left:10px; top:40%; width:40px; height:2px; background:#665f55; transform:rotate(5deg); opacity:0.5;"></div>
+        <div style="position:absolute; left:15px; top:60%; width:35px; height:1.5px; background:#665f55; transform:rotate(-8deg); opacity:0.5;"></div>
+        <!-- Clean panels -->
+        <div style="position:absolute; right:15px; top:30%; width:30px; height:40px; background:rgba(255,255,255,0.7); border:1px solid #183a5a; backdrop-filter:blur(4px);"></div>
+        <div style="position:absolute; right:25px; top:55%; width:35px; height:25px; background:rgba(255,255,255,0.7); border:1px solid #183a5a; backdrop-filter:blur(4px);"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="blueprint-layer" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>The Blueprint Layer</h3>
+      <p>A technical blueprint grid backdrop with "Onyx-tinted" glass panels floating above. Data pulses illuminate the grid.</p>
+      <div class="mockup" style="margin-top:1rem; background:#f7f4ee; border:1px solid #d8cdbd; height:120px; position:relative; overflow:hidden; background-image:radial-gradient(#d8cdbd 1px, transparent 1px); background-size:15px 15px;">
+         <!-- Glass panels -->
+        <div style="position:absolute; left:20%; top:20%; width:50px; height:35px; background:rgba(24,58,90,0.1); border:1px solid rgba(24,58,90,0.4); backdrop-filter:blur(8px); transform:rotate(-5deg);"></div>
+        <div style="position:absolute; right:20%; top:40%; width:45px; height:50px; background:rgba(24,58,90,0.1); border:1px solid rgba(24,58,90,0.4); backdrop-filter:blur(8px); transform:rotate(3deg);"></div>
+        <!-- Data pulse -->
+        <div style="position:absolute; left:0; top:50%; width:100%; height:1px; background:linear-gradient(90deg, transparent, #b96924, transparent);"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="prism-filter" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>The Prism Filter</h3>
+      <p>A large "Onyx Shard" moves across the screen. Underneath are messy lines; through the glass, they become perfect UI.</p>
+      <div class="mockup" style="margin-top:1rem; background:#f7f4ee; border:1px solid #d8cdbd; height:120px; position:relative; overflow:hidden;">
+        <!-- Messy lines -->
+        <div style="position:absolute; left:20px; width:200px; height:100px; opacity:0.3; font-family:monospace; font-size:8px;">{messy_data: [1,2,x,?]...}</div>
+        <!-- Glass Shard -->
+        <div style="position:absolute; left:40%; top:10%; width:60px; height:80px; background:rgba(255,255,255,0.2); border:1px solid #0f7b75; backdrop-filter:blur(10px); transform:skewX(-10deg); display:flex; align-items:center; justify-content:center;">
+          <div style="width:40px; height:2px; background:#0f7b75;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

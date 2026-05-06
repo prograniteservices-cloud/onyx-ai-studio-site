@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { HeroSystemVisual } from "@/components/hero-system-visual";
 import { absoluteUrl, services } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -50,7 +51,7 @@ export default function ServicesPage() {
             const Icon = service.icon;
 
             return (
-              <Card key={service.slug} className="bg-card">
+              <Card key={service.slug} className="bg-card shadow-sm">
                 <CardHeader>
                   <div className="flex items-center justify-between gap-4">
                     <Icon aria-hidden="true" className="size-7 text-accent" />
@@ -79,6 +80,11 @@ export default function ServicesPage() {
               </Card>
             );
           })}
+        </div>
+
+        {/* The Entire Visual System Section */}
+        <div className="mx-auto w-full max-w-7xl px-4 pb-32 pt-20 sm:px-6 lg:px-8">
+          <HeroSystemVisual />
         </div>
       </section>
     </>

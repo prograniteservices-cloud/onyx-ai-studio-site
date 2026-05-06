@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Outer Glow/Shadow for Depth -->
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#1A1A1A" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="100" cy="105" r="80" fill="url(#glow)"/>
+
+  <!-- Facet Gradients -->
+  <linearGradient id="top-facet" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#2C2C2C"/>
+    <stop offset="100%" stop-color="#121212"/>
+  </linearGradient>
+  <linearGradient id="right-facet" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1E1E1E"/>
+    <stop offset="100%" stop-color="#0A0A0A"/>
+  </linearGradient>
+  <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#444444"/>
+    <stop offset="100%" stop-color="#222222"/>
+  </linearGradient>
+
+  <!-- Gem Geometry (Emerald/Octagonal Cut) -->
+  <g transform="translate(40, 40)">
+    <!-- Bottom Layer -->
+    <path d="M30 0 L90 0 L120 30 L120 90 L90 120 L30 120 L0 90 L0 30 Z" fill="#050505"/>
+    
+    <!-- Faceted Edges -->
+    <path d="M30 0 L90 0 L105 15 L15 15 Z" fill="url(#top-facet)"/> <!-- Top -->
+    <path d="M90 0 L120 30 L105 45 L105 15 Z" fill="#0F0F0F"/> <!-- Top-Right -->
+    <path d="M120 30 L120 90 L105 75 L105 45 Z" fill="url(#right-facet)"/> <!-- Right -->
+    <path d="M120 90 L90 120 L75 105 L105 75 Z" fill="#080808"/> <!-- Bottom-Right -->
+    <path d="M90 120 L30 120 L15 105 L75 105 Z" fill="#030303"/> <!-- Bottom -->
+    <path d="M30 120 L0 90 L15 75 L15 105 Z" fill="#080808"/> <!-- Bottom-Left -->
+    <path d="M0 90 L0 30 L15 45 L15 75 Z" fill="#121212"/> <!-- Left -->
+    <path d="M0 30 L30 0 L15 15 L15 45 Z" fill="#1A1A1A"/> <!-- Top-Left -->
+
+    <!-- Table (Top Flat Surface) -->
+    <path d="M15 15 L105 15 L105 105 L15 105 Z" fill="url(#highlight)" opacity="0.8"/>
+    
+    <!-- Sharp Editorial Highlights -->
+    <line x1="15" y1="15" x2="105" y2="15" stroke="#555" stroke-width="0.5"/>
+    <line x1="15" y1="15" x2="15" y2="105" stroke="#555" stroke-width="0.5"/>
+    <path d="M15 15 L30 30" stroke="#777" stroke-width="0.5" opacity="0.5"/>
+  </g>
+</svg>

@@ -1,174 +1,117 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-interface InputLine {
-  id: number;
-  y: number;
-  duration: number;
-  rotate: number;
-}
 
 export function RefractiveCore() {
-  const [inputLines, setInputLines] = useState<InputLine[]>([]);
-
-  useEffect(() => {
-    // Wrap in requestAnimationFrame to avoid synchronous setState in effect
-    const frame = requestAnimationFrame(() => {
-      setInputLines(
-        [...Array(6)].map((_, i) => ({
-          id: i,
-          y: 100 + i * 40,
-          duration: 3 + Math.random() * 2,
-          rotate: (Math.random() - 0.5) * 20,
-        }))
-      );
-    });
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-2xl overflow-hidden rounded-2xl border border-border/50 bg-background/50 shadow-2xl backdrop-blur-sm">
-      {/* Central Prism (Onyx Core) */}
-      <motion.div
-        animate={{
-          scale: [1, 1.05, 1],
-          rotate: [0, 5, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2"
-      >
-        <div className="relative h-48 w-48">
-          {/* Inner Glow */}
-          <div className="absolute inset-0 rounded-full bg-accent/20 blur-3xl" />
-          {/* SVG Core */}
-          <svg viewBox="0 0 200 200" className="h-full w-full drop-shadow-2xl">
-            <defs>
-              <linearGradient id="top-facet" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#2C2C2C" />
-                <stop offset="100%" stopColor="#121212" />
-              </linearGradient>
-              <linearGradient id="right-facet" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#1E1E1E" />
-                <stop offset="100%" stopColor="#0A0A0A" />
-              </linearGradient>
-              <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#444444" />
-                <stop offset="100%" stopColor="#222222" />
-              </linearGradient>
-            </defs>
-            <g transform="translate(40, 40)">
-              <path
-                d="M30 0 L90 0 L120 30 L120 90 L90 120 L30 120 L0 90 L0 30 Z"
-                fill="#050505"
-              />
-              <path d="M30 0 L90 0 L105 15 L15 15 Z" fill="url(#top-facet)" />
-              <path d="M90 0 L120 30 L105 45 L105 15 Z" fill="#0F0F0F" />
-              <path d="M120 30 L120 90 L105 75 L105 45 Z" fill="url(#right-facet)" />
-              <path d="M120 90 L90 120 L75 105 L105 75 Z" fill="#080808" />
-              <path d="M90 120 L30 120 L15 105 L75 105 Z" fill="#030303" />
-              <path d="M30 120 L0 90 L15 75 L15 105 Z" fill="#080808" />
-              <path d="M0 90 L0 30 L15 45 L15 75 Z" fill="#121212" />
-              <path d="M0 30 L30 0 L15 15 L15 45 Z" fill="#1A1A1A" />
-              <path
-                d="M15 15 L105 15 L105 105 L15 105 Z"
-                fill="url(#highlight)"
-                opacity="0.8"
-              />
-              <line x1="15" y1="15" x2="105" y2="15" stroke="#555" strokeWidth="0.5" />
-              <line x1="15" y1="15" x2="15" y2="105" stroke="#555" strokeWidth="0.5" />
-            </g>
-          </svg>
-        </div>
-      </motion.div>
-
-      {/* Messy inputs (Left) */}
-      <div className="absolute inset-y-0 left-0 z-10 w-1/2 overflow-hidden">
-        {inputLines.map((line) => (
-          <motion.div
-            key={line.id}
-            initial={{ x: -100, opacity: 0, y: line.y }}
-            animate={{
-              x: 300,
-              opacity: [0, 0.4, 0],
-            }}
-            transition={{
-              duration: line.duration,
-              repeat: Infinity,
-              delay: line.id * 0.8,
-              ease: "linear",
-            }}
-            className="absolute h-px w-32 bg-gradient-to-r from-transparent via-muted-foreground/30 to-transparent"
-            style={{ rotate: line.rotate }}
-          />
-        ))}
-      </div>
-
-      {/* Clean outputs (Right) */}
-      <div className="absolute inset-y-0 right-0 z-20 w-1/2 overflow-hidden">
-        {/* Glass Panel 1: Efficiency */}
+    <div className="relative mx-auto w-full max-w-4xl overflow-visible py-10 text-center">
+      {/* Main Content */}
+      <div className="relative z-10 space-y-8">
         <motion.div
-          initial={{ x: 200, opacity: 0, scale: 0.8 }}
-          animate={{ x: 20, opacity: 1, scale: 1 }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute right-10 top-20 flex w-40 flex-col gap-2 rounded-lg border border-white/20 bg-white/10 p-3 shadow-xl backdrop-blur-md"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-4"
         >
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-[10px] font-bold text-accent">
-              EFFICIENCY
-            </span>
-            <div className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-          </div>
-          <div className="text-xl font-bold text-primary">98.4%</div>
-          <div className="h-1 w-full rounded-full bg-black/5">
-            <div className="h-full w-[98%] bg-accent" />
-          </div>
+          <h2 className="font-serif text-5xl italic leading-tight text-foreground md:text-7xl">
+            The Art of <span className="font-bold not-italic text-primary">Refinement</span>
+          </h2>
+          <p className="mx-auto max-w-xl font-light tracking-wide text-muted-foreground md:text-xl">
+            Transforming raw chaos into crystalline intelligence.
+          </p>
         </motion.div>
 
-        {/* Glass Panel 2: Latency */}
-        <motion.div
-          initial={{ x: 250, opacity: 0, scale: 0.8 }}
-          animate={{ x: 60, opacity: 1, scale: 1 }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute right-4 top-1/2 flex w-36 -translate-y-1/2 flex-col gap-2 rounded-lg border border-white/20 bg-white/10 p-3 shadow-xl backdrop-blur-md"
-        >
-          <span className="font-mono text-[10px] font-bold text-accent">
-            LATENCY
-          </span>
-          <div className="text-lg font-bold text-primary">12ms</div>
-          <div className="flex items-end gap-0.5 h-6">
-            {[20, 40, 60, 30, 80, 50].map((h, i) => (
-              <div key={i} className="bg-accent/40 w-full" style={{ height: `${h}%` }} />
+        {/* Refractive Interface (Overlays the Background Video) */}
+        <div className="relative mx-auto mt-12 flex aspect-square w-full max-w-2xl items-center justify-center md:aspect-video">
+          {/* Glass Panel HUD */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 1.2 }}
+            className="group relative z-20 h-full w-full max-w-lg cursor-pointer overflow-hidden rounded-3xl border border-white/40 bg-white/10 shadow-[0_0_50px_rgba(0,0,0,0.2)] backdrop-blur-[4px] transition-all duration-700"
+          >
+            {/* HUD Elements */}
+            <div className="absolute inset-x-0 top-0 h-10 border-b border-white/30 bg-white/10 flex items-center px-6 justify-between">
+              <div className="flex gap-1.5">
+                <div className="size-2 rounded-full bg-primary/60" />
+                <div className="size-2 rounded-full bg-primary/30" />
+              </div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Synthesis Protocol v3.1</div>
+            </div>
+
+            {/* Inner Reflections */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 pointer-events-none" />
+            
+            {/* Centered Focus Ring */}
+            <div className="absolute left-1/2 top-1/2 size-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20" />
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-primary/10" 
+            />
+          </motion.div>
+
+          {/* Floating Data Nodes (HUD) */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[1, 2, 3].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -100 }}
+                animate={{ opacity: 0.9, x: 0 }}
+                transition={{
+                  duration: 1.5,
+                  delay: 1 + i * 0.3,
+                  ease: "easeOut",
+                }}
+                className={`absolute rounded-lg border border-white/50 bg-white/60 p-3 shadow-lg backdrop-blur-md ${
+                  i === 1 ? "left-0 top-1/4 w-32 -rotate-3" : 
+                  i === 2 ? "right-0 top-1/3 w-40 rotate-2" : 
+                  "bottom-1/4 left-10 w-36 rotate-1"
+                }`}
+              >
+                <div className="mb-2 h-1 w-8 rounded-full bg-primary/40" />
+                <div className="h-1 w-16 rounded-full bg-primary/20" />
+              </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1.5 }}
+          className="pt-4"
+        >
+          <button className="group relative overflow-hidden rounded-full border border-primary/30 bg-white/60 px-12 py-5 text-sm font-bold tracking-[0.2em] text-foreground backdrop-blur-xl transition-all hover:bg-white/80 hover:shadow-2xl">
+            <span className="relative z-10">BEGIN SYNTHESIS</span>
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-20deg] transition-transform duration-1000 group-hover:translate-x-[200%]" />
+          </button>
         </motion.div>
       </div>
 
-      {/* Background Grid */}
-      <div
-        className="absolute inset-0 -z-10 opacity-20"
-        style={{
-          backgroundImage: `radial-gradient(var(--border) 1px, transparent 1px)`,
-          backgroundSize: "24px 24px",
-        }}
-      />
+      {/* Feature Grid Sub-Preview */}
+      <div className="mt-32 grid grid-cols-1 gap-6 text-left md:grid-cols-3">
+         {[
+           { title: "Refractive Logic", body: "Advanced models that clarify data, removing noise to emphasize core insights." },
+           { title: "Ethereal Depth", body: "Layered translucency ensuring every interaction feels integrated." },
+           { title: "Intelligence Flow", body: "Watch raw data stream through the core and emerge as actionable insights." }
+         ].map((feature, idx) => (
+           <motion.div 
+             key={idx}
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ delay: idx * 0.2 }}
+             className="rounded-2xl border border-white/20 bg-white/30 p-8 backdrop-blur-xl hover:bg-white/40 transition-colors shadow-sm"
+           >
+              <h3 className="mb-2 font-bold text-lg">{feature.title}</h3>
+              <p className="text-sm font-light text-muted-foreground">{feature.body}</p>
+           </motion.div>
+         ))}
+      </div>
     </div>
   );
 }
