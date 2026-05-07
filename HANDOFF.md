@@ -1,21 +1,23 @@
-# Session Handoff: Refractive Core Hero Animation (COMPLETED)
+# Session Handoff: Cinematic Hero & Contact Form Integration (COMPLETED)
 
 **Date:** 2026-05-06
-**Goal:** Implement a premium, high-realism, cinematic hero animation for Onyx AI Studio.
+**Goal:** Implement premium cinematic hero visuals and connect the contact form to Infomaniak email.
 
 ## Accomplishments
-1. **Cinematic Background Integration:** 
-   - Successfully integrated a high-realism background video (`public/refractive-core.mp4`) into the hero section of the home page.
-   - The video uses `object-fit: cover` to fill the entire hero area and is blended with a subtle overlay and paper-grain texture for a premium look.
-2. **Component Refactoring:**
-   - `src/components/refractive-core.tsx` was refactored into a high-fidelity glass interface (HUD) that overlays the background video. It features floating data nodes and a central focus ring to maintain the "synthesis" theme.
-   - `src/components/hero-system-visual.tsx` was updated to be transparent, allowing the cinematic background to shine through the entire visual system.
-3. **Asset Placement:** The video was manually generated and moved from the Downloads folder to the project's public directory.
-4. **Validation:** Both `npm run lint` and `npm run build` pass successfully.
+1. **Cinematic Hero Experience:**
+   - Integrated high-realism background video (`refractive-core.mp4`) with minimalist peripheral branding.
+   - Positioned "ONYX" (top-left, 20% offset) and "System Synthesis" hook (top-right) to keep the central cinematic visual unobstructed.
+   - Fixed mobile overlapping by stacking branding vertically on small screens.
+2. **Contact Form & Email Integration:**
+   - Successfully retrieved Infomaniak API credentials from the local `auth` vault.
+   - Built a secure backend API route (`/api/contact`) using `nodemailer` for SMTP delivery.
+   - Refactored the `ContactForm` component into a modern, state-driven React form with loading/success UI.
+   - Configured Vercel production environment variables and deployed live.
 
 ## Final State
-The hero section now features a "flowing" data cycle where raw fragments flow into a central pulsing prism and emerge as refined glass UI panels. The entire experience is cinematic, full-frame, and highly professional.
+The site is now live at [https://onyxaistudio.digital](https://onyxaistudio.digital) with a fully functional lead capture system and a premium cinematic landing.
 
 ## Next Steps
-- **Production Deployment:** Trigger a Vercel deployment to push the new cinematic experience to production.
-- **User Review:** Confirm the "realism and reflections" in the background video meet the final brand vision.
+- **GSC Submission:** Submit the sitemap in Google Search Console.
+- **Lead Monitoring:** Check `projects@onyxaistudio.digital` for incoming requests.
+

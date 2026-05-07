@@ -30,13 +30,13 @@ Maintain and deploy the design-first, SEO-ready Onyx AI Studio website inside `o
 ## Known Constraints
 - Root `seo-presence-hub` remains a planning workspace; this app folder is the deployable Git repository.
 - Private parent-context files must not be used in public copy.
-- Contact form uses `mailto:` until a real form backend or inbox routing is approved.
-- Production metadata and sitemap use `https://onyxaistudio.digital` through `NEXT_PUBLIC_SITE_URL`.
-- Local Google tooling does not currently expose Search Console commands, so sitemap submission and URL inspection are manual browser actions.
-- npm audit reports a moderate PostCSS advisory through Next. The high-severity audit passes, and the suggested force fix is a breaking downgrade.
+- Contact form is fully integrated with Infomaniak SMTP (`projects@onyxaistudio.digital`) via a secure API route (`/api/contact`).
+- Vercel production env includes `INFOMANIAK_EMAIL`, `INFOMANIAK_TOKEN`, `INFOMANIAK_SMTP_HOST`, and `INFOMANIAK_SMTP_PORT`.
+- Cinematic hero animation and peripheral branding are live and mobile-responsive.
+- Google Search Console ownership is verified by DNS record.
 
 ## Next Action
-In Google Search Console, submit `https://onyxaistudio.digital/sitemap.xml` and request indexing for the priority URLs listed in `GSC_INDEXING.md`. Replace the `mailto:` form once the final inbox or form backend is approved. Restart Codex when convenient so newly installed skills auto-load in future sessions.
+In Google Search Console, submit `https://onyxaistudio.digital/sitemap.xml` and request indexing for the priority URLs listed in `GSC_INDEXING.md`. Monitor the contact form for incoming leads.
 
 ## Verification
 - `npm.cmd run lint`: passed.
