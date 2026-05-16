@@ -113,3 +113,16 @@
 - [x] Update `/api/contact` backend schema and required-field validation to match the new review form.
 - [x] Update metadata, sitemap, `llms.txt`, PDD, PFD, README, DESIGN, and project state.
 - [x] Run lint, typecheck, build, tests, audit, route checks, API validation, public identifier scan, and visual QA.
+
+## Phase 12 - Portfolio Hub
+- [x] Add a regression test for the missing client-facing portfolio hub.
+- [x] Add `/portfolio` as a main-site App Router page.
+- [x] Copy lightweight public metadata for all 20 live SaaS demos into `src/lib/site-data.ts`.
+- [x] Link all demo cards to `https://onyx-portfolio-demos.vercel.app/apps/{slug}`.
+- [x] Change the main `Portfolio` nav item to `/portfolio`.
+- [x] Keep `/case-studies` live for the four deeper case studies and link it from the hub.
+- [x] Replace the two note-like homepage headers with client-facing copy.
+- [x] Add homepage CTAs for `Explore the 20 SaaS demos` and `View case studies`.
+- [x] Update sitemap, `llms.txt`, DESIGN, PDD, PFD, README, DECISIONS, and project state.
+- [x] Run lint, typecheck, build, tests, audit, route checks, public identifier scan, and visual QA.
+- [ ] Commit, push, deploy, verify production routes, and update Agent Memory.

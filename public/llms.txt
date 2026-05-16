@@ -4,7 +4,9 @@
 ## Main Pages
 - `Home -> https://onyxaistudio.digital/`: Flagship AI operations integration overview, problem framing, system overview, portfolio proof, pricing, and review CTA.
 - `AI Business System -> https://onyxaistudio.digital/services`: Overview of the system components.
-- `Portfolio -> https://onyxaistudio.digital/case-studies`: Proof across AI operations modules, assistant interfaces, data handling, workflow automation, lead capture, and custom implementation.
+- `Portfolio -> https://onyxaistudio.digital/portfolio`: Hub for 20 live SaaS demos plus links to deeper case studies.
+- `Demo Launcher -> https://onyx-portfolio-demos.vercel.app/apps`: Live external portfolio deployment with all 20 demo apps.
+- `Case Studies -> https://onyxaistudio.digital/case-studies`: Four deeper proof narratives across AI operations modules, assistant interfaces, data handling, workflow automation, lead capture, and custom implementation.
 - `Insights -> https://onyxaistudio.digital/insights`: Practical articles about AI operations, internal assistants, guardrails, semantic search, and business data handling.
 - `Pricing -> https://onyxaistudio.digital/pricing`: Implementation and monthly management ranges.
 - `Contact -> https://onyxaistudio.digital/contact`: AI Operations Review request page.
@@ -19,6 +21,7 @@
 - `Demand Generation Content System -> https://onyxaistudio.digital/services/seo-content-systems`: SEO and answer-ready content that feeds AI lead capture and assistant source material.
 
 ## Priority Proof And Insight Pages
+- `Portfolio Hub -> https://onyxaistudio.digital/portfolio`: Client-facing index of all live SaaS demos and case-study proof.
 - `VapeOS Case Study -> https://onyxaistudio.digital/case-studies/vapeos`: AI operations module showing how messy business data can become a usable search interface.
 - `Regional Service Site -> https://onyxaistudio.digital/case-studies/regional-service-site`: Lead capture and demand-generation structure for service businesses.
 - `AI Inventory Search For Vape Shops -> https://onyxaistudio.digital/insights/ai-inventory-search-vape-shops-messy-catalogs`: Practical article on semantic search for messy retail product catalogs and business data.

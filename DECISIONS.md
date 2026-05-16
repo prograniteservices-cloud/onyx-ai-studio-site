@@ -31,3 +31,6 @@ Use CSS and a small IntersectionObserver reveal component for premium motion. Av
 
 ### D-010: Search Console Indexing Path
 Use manual Google Search Console sitemap submission and URL Inspection for indexing setup. Do not use the Google Indexing API for normal site pages.
+
+### D-011: Portfolio Hub Split
+Use `/portfolio` as the main navigation destination for broad client-facing proof and the 20 live SaaS demos. Keep `/case-studies` live for the four deeper proof narratives and link to it from `/portfolio` and the homepage.

@@ -3,10 +3,11 @@ import type { MetadataRoute } from "next";
 import { caseStudies, insights, services, siteUrl } from "@/lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date("2026-05-15T00:00:00.000Z");
+  const now = new Date("2026-05-16T00:00:00.000Z");
   const staticRoutes = [
     "/",
     "/services",
+    "/portfolio",
     "/case-studies",
     "/insights",
     "/pricing",

@@ -3,7 +3,7 @@
 Updated: 2026-05-16
 
 ## Current Goal
-Reposition the Onyx AI Studio website around AI Business Operations Integration while preserving existing portfolio, insights, service proof, and app demos.
+Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can reach the 20 live SaaS demos and the four deeper case studies from the main `onyxaistudio.digital` navigation.
 
 ## Current Status
 - Next.js scaffold exists and is the active app.
@@ -20,6 +20,10 @@ Reposition the Onyx AI Studio website around AI Business Operations Integration 
 - Repositioning source files are in the app root: `Site_Repositioning_Prompt.txt` and `AI_Business_Integration_System.txt`.
 - Homepage now leads with AI reception, lead capture, scheduling, website assistance, data handling, and internal business assistance.
 - Navigation now supports the new hierarchy: AI Business System, Reception + Web Assistant, Internal Assistant, Portfolio, Insights, Pricing, and Contact.
+- `Portfolio` in the main navigation now points to `/portfolio`, a hub for the 20 live SaaS demos hosted at `https://onyx-portfolio-demos.vercel.app/apps`.
+- `/case-studies` remains live for the four deeper proof narratives and is linked from `/portfolio` and the homepage proof area.
+- Homepage proof copy now uses client-facing benefit-led headers and links to both `Explore the 20 SaaS demos` and `View case studies`.
+- `src/lib/site-data.ts` contains lightweight public metadata for the 20 demo apps only; the main site does not import from the portfolio demo repo at runtime.
 - Existing portfolio projects remain and are reframed as proof of AI operations modules, assistant interfaces, lead capture, workflow automation, data handling, and custom implementation ability.
 - `/pricing` now presents premium implementation and monthly management ranges with client-paid Retell and third-party usage called out.
 - Contact form and `/api/contact` now use the AI Operations Review schema: name, business name, email, phone, website, industry, locations, call volume, main problem, assistant scope, and notes.
@@ -51,7 +55,7 @@ Reposition the Onyx AI Studio website around AI Business Operations Integration 
 - Live sending requires `RESEND_API_KEY` and `ONYX_PHYSICAL_MAILING_ADDRESS`. The sender refuses `--send` without both.
 
 ## Next Action
-Review the repositioning locally, then deploy/push when approved. After that, resume the paused VapeOS outreach tasks.
+Commit, push, deploy the portfolio hub update, verify production `/portfolio`, `/case-studies`, `/sitemap.xml`, and `/llms.txt`, then update Agent Memory with the final deployment URL.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -89,3 +93,14 @@ Review the repositioning locally, then deploy/push when approved. After that, re
 - AI operations repositioning route checks: `/`, `/services`, all seven service detail routes, `/pricing`, `/case-studies`, `/insights`, `/contact`, `/robots.txt`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200 locally.
 - AI operations form validation: incomplete `POST /api/contact` returned HTTP 400, confirming required-field validation before SMTP send.
 - AI operations visual QA: `qa-repositioning-desktop.png`, `qa-repositioning-mobile.png`, `qa-repositioning-contact-desktop.png`, and `qa-repositioning-contact-mobile.png`.
+- Portfolio hub regression test: `npm.cmd run test -- tests/portfolio_hub_content.test.mjs` passed.
+- Portfolio hub validation: `npm.cmd run lint` passed.
+- Portfolio hub validation: `npx.cmd tsc --noEmit` passed.
+- Portfolio hub validation: `npm.cmd run test` passed 17/17 tests.
+- Portfolio hub validation: `npm.cmd run build` passed with 26 generated pages, including `/portfolio`.
+- Portfolio hub validation: `npm.cmd audit --audit-level=high` exited 0; moderate PostCSS advisory remains tracked in ISSUE-005.
+- Portfolio hub local route checks: `/`, `/portfolio`, `/case-studies`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200.
+- Portfolio hub link check: local `/portfolio` exposed all 20 expected `https://onyx-portfolio-demos.vercel.app/apps/{slug}` links.
+- Portfolio hub external checks: demo launcher plus all 20 external demo routes returned HTTP 200.
+- Portfolio hub public identifier scan over `src` and `public`: no matches.
+- Portfolio hub visual QA: `qa-portfolio-desktop.png` and `qa-portfolio-mobile.png` captured after adding `allowedDevOrigins` for clean local dev screenshots.

@@ -22,6 +22,12 @@
 
 ## Resolved Issues
 
+### ISSUE-018: Portfolio Screenshot QA Logged Dev-Origin Warning
+- Symptoms: Playwright screenshot checks against `127.0.0.1` logged a Next.js development warning that HMR requests were blocked because the dev server was initialized as `localhost`.
+- Root cause: Next.js blocks cross-origin requests to dev-only assets unless additional development origins are explicitly allowed.
+- Fix: Added `allowedDevOrigins: ["127.0.0.1"]` to `next.config.ts`.
+- Verification: Restarted the dev server, reran local route checks and desktop/mobile `/portfolio` screenshots through `127.0.0.1`, and `dev-portfolio.err.log` stayed empty.
+
 ### ISSUE-017: Contact Form Open Issue Was Stale After SMTP Integration
 - Symptoms: `ISSUES.md` still claimed the contact form used `mailto:` and had no backend endpoint.
 - Root cause: The issue record was not moved after `/api/contact` and Infomaniak SMTP were integrated.

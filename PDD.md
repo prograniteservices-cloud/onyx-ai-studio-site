@@ -17,7 +17,7 @@ Retell is framed as the voice and conversation layer. Supabase is framed as the 
 - Request an AI Operations Review.
 - Understand the flagship AI Business Operations Integration offer.
 - Explore reception, website assistant, internal assistant, guardrail, automation, web, and demand-generation service pages.
-- Read portfolio proof and insights as evidence that Onyx can build the modules inside the system.
+- Explore the 20 live SaaS demos and read deeper case studies as evidence that Onyx can build the modules inside the system.
 - Understand premium pricing and separate client-paid platform usage.
 
 ## Core Pages
@@ -31,7 +31,8 @@ Retell is framed as the voice and conversation layer. Supabase is framed as the 
 - `/services/web-development`: business website and lead capture layer.
 - `/services/seo-content-systems`: demand generation content system.
 - `/pricing`: implementation and monthly management ranges.
-- `/case-studies`: portfolio proof index.
+- `/portfolio`: client-facing hub for 20 live SaaS demos and four deeper case studies.
+- `/case-studies`: deeper case-study proof index.
 - `/case-studies/vapeos`: AI operations module for messy business data.
 - `/case-studies/starry`: voice-led assistant interface proof.
 - `/case-studies/unicorn-island`: interactive workflow/product proof.
@@ -42,11 +43,13 @@ Retell is framed as the voice and conversation layer. Supabase is framed as the 
 ## CTA Strategy
 - Primary CTA: "Request an AI Operations Review".
 - Secondary CTA: "View the System".
+- Proof CTA: "Explore the 20 SaaS demos" with "View case studies" as the secondary proof path.
 - Pricing CTA: consultation-based review, not checkout.
 - Keep CTAs business-focused, practical, and restrained.
 
 ## Content Rules
 - Do not delete or hide existing portfolio, insights, services, or project proof.
+- Keep `/portfolio` as the broad demo hub and `/case-studies` as the deeper narrative index.
 - Reframe existing work around the AI operations offer.
 - Avoid hype-heavy claims and promises of perfect accuracy or staff replacement.
 - Make public and internal assistant permissions visibly distinct.

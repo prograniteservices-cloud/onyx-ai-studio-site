@@ -13,7 +13,8 @@
 | `/services` | `src/app/services/page.tsx` | AI business system overview |
 | `/services/[slug]` | `src/app/services/[slug]/page.tsx` | Static service detail pages generated from `src/lib/site-data.ts` |
 | `/pricing` | `src/app/pricing/page.tsx` | Premium implementation and monthly management ranges |
-| `/case-studies` | `src/app/case-studies/page.tsx` | Portfolio proof index |
+| `/portfolio` | `src/app/portfolio/page.tsx` | Client-facing hub for 20 live SaaS demos plus deeper case-study links |
+| `/case-studies` | `src/app/case-studies/page.tsx` | Deeper case-study proof index |
 | `/case-studies/[slug]` | `src/app/case-studies/[slug]/page.tsx` | Static portfolio proof detail pages |
 | `/insights` | `src/app/insights/page.tsx` | AI operations insight index |
 | `/insights/[slug]` | `src/app/insights/[slug]/page.tsx` | Static insight article |
@@ -34,15 +35,16 @@
 
 ## Data
 - `src/lib/site-data.ts` owns navigation, service, case study, insight, FAQ, pricing, problem, flow, and capability data.
+- `src/lib/site-data.ts` also stores lightweight public metadata for the 20 SaaS demos and their external links to `https://onyx-portfolio-demos.vercel.app/apps`.
 - Dynamic service, case study, and insight routes read from that file and use `generateStaticParams`.
-- Portfolio records are preserved and reframed as proof modules for the larger AI business operations offer.
+- `/portfolio` links to all 20 live demo routes on the separate portfolio deployment and to the four deeper case studies. `/case-studies` remains the narrative proof index.
 
 ## SEO Behavior
 - Root layout defines metadata base, title template, description, Open Graph, Twitter, robots, Organization, and WebSite schema.
 - Route pages export metadata.
 - Pages render JSON-LD in body with absolute URLs.
 - Sitemap is generated from static routes plus service, case study, and insight data.
-- `llms.txt` describes the new flagship positioning and priority pages.
+- `llms.txt` describes the flagship positioning, `/portfolio`, the external demo launcher, and priority proof pages.
 
 ## Asset Handling
 - Production visuals live in `public/`.

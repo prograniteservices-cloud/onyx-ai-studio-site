@@ -286,7 +286,7 @@ export default function Home() {
           <ScrollReveal>
             <SectionHeading
               eyebrow="Core system pages"
-              title="The existing services now support the flagship operations system."
+              title="Everything a service business needs to capture, answer, schedule, and follow up."
               description="Web development becomes the front-end layer. SEO becomes demand generation. Automation moves leads, calls, summaries, appointments, and follow-up tasks."
             />
           </ScrollReveal>
@@ -325,12 +325,20 @@ export default function Home() {
           <ScrollReveal className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="Portfolio proof"
-              title="Existing projects become proof of the modules inside the larger system."
+              title="Real demos that show the pieces behind the operations system."
               description="The portfolio stays intact and is reframed around AI operations modules, guardrails, lead capture, interface design, automation, and custom implementation ability."
             />
-            <Button asChild variant="outline">
-              <Link href="/case-studies">All portfolio proof</Link>
-            </Button>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button asChild>
+                <Link href="/portfolio">
+                  Explore the 20 SaaS demos
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/case-studies">View case studies</Link>
+              </Button>
+            </div>
           </ScrollReveal>
           <ScrollReveal className="mt-10 grid gap-6 lg:grid-cols-2" delay={100}>
             {caseStudies.map((caseStudy) => (

@@ -26,11 +26,18 @@ export const navItems = [
   { href: "/services/ai-integration", label: "AI Business System" },
   { href: "/services/reception-web-assistant", label: "Reception + Web Assistant" },
   { href: "/services/internal-business-assistant", label: "Internal Assistant" },
-  { href: "/case-studies", label: "Portfolio" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/insights", label: "Insights" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+export const portfolioDemoLauncherUrl =
+  "https://onyx-portfolio-demos.vercel.app/apps";
+
+export function portfolioDemoUrl(slug: string) {
+  return `${portfolioDemoLauncherUrl}/${slug}`;
+}
 
 export type Service = {
   slug: string;
@@ -403,6 +410,198 @@ export const caseStudies: CaseStudy[] = [
     result:
       "A practical demand-generation foundation that can scale into service pages, proof content, lead capture, and assistant-ready source material.",
     stack: ["SEO architecture", "Next.js", "Content strategy", "Schema"],
+  },
+];
+
+export type PortfolioDemoApp = {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  eyebrow: string;
+  description: string;
+  demoUrl: string;
+};
+
+export const portfolioDemoApps: PortfolioDemoApp[] = [
+  {
+    slug: "knowledge-base",
+    title: "Knowledge Base SaaS Demo",
+    shortTitle: "Knowledge Base",
+    eyebrow: "RAG Product",
+    description:
+      "Upload-style knowledge retrieval with cited answers and source coverage.",
+    demoUrl: portfolioDemoUrl("knowledge-base"),
+  },
+  {
+    slug: "verified-qa",
+    title: "Hallucination-Resistant QA Demo",
+    shortTitle: "Verified QA",
+    eyebrow: "Grounded Answers",
+    description:
+      "Refuse unsupported claims and label answers by evidence strength.",
+    demoUrl: portfolioDemoUrl("verified-qa"),
+  },
+  {
+    slug: "support-chatbot",
+    title: "Customer Support Chatbot Demo",
+    shortTitle: "Support Bot",
+    eyebrow: "Support Automation",
+    description:
+      "RAG support answers with escalation logic and confidence notes.",
+    demoUrl: portfolioDemoUrl("support-chatbot"),
+  },
+  {
+    slug: "task-manager",
+    title: "Agentic Task Manager Demo",
+    shortTitle: "Task Manager",
+    eyebrow: "Workflow Agents",
+    description:
+      "Tool-planning agent that separates intent, memory, scheduling, and reminders.",
+    demoUrl: portfolioDemoUrl("task-manager"),
+  },
+  {
+    slug: "secure-document-analyzer",
+    title: "Secure Document Analyzer Demo",
+    shortTitle: "Document Analyzer",
+    eyebrow: "Private Document AI",
+    description:
+      "PII-aware document analysis with redaction and audit-friendly output.",
+    demoUrl: portfolioDemoUrl("secure-document-analyzer"),
+  },
+  {
+    slug: "research-assistant",
+    title: "Personalized Research Assistant Demo",
+    shortTitle: "Research Assistant",
+    eyebrow: "Research Copilot",
+    description:
+      "Multi-source research synthesis with provenance, confidence notes, and next-step recommendations.",
+    demoUrl: portfolioDemoUrl("research-assistant"),
+  },
+  {
+    slug: "content-creation",
+    title: "Automated Content Creation Workflow Demo",
+    shortTitle: "Content Creation",
+    eyebrow: "Content Ops",
+    description:
+      "RAG-assisted content planning with source notes, editorial checks, and bias review.",
+    demoUrl: portfolioDemoUrl("content-creation"),
+  },
+  {
+    slug: "data-fusion",
+    title: "Multi-Source Data Fusion Analyzer Demo",
+    shortTitle: "Data Fusion",
+    eyebrow: "Hybrid Retrieval",
+    description:
+      "Hybrid search and rank fusion that turns uneven source sets into an explainable brief.",
+    demoUrl: portfolioDemoUrl("data-fusion"),
+  },
+  {
+    slug: "agent-simulator",
+    title: "Collaborative Agent Simulator Demo",
+    shortTitle: "Agent Simulator",
+    eyebrow: "Multi-Agent Review",
+    description:
+      "Role-based agent collaboration with transcript, handoffs, review notes, and failure recovery.",
+    demoUrl: portfolioDemoUrl("agent-simulator"),
+  },
+  {
+    slug: "learning-tutor",
+    title: "Personalized Learning Tutor Demo",
+    shortTitle: "Learning Tutor",
+    eyebrow: "Adaptive Learning",
+    description:
+      "Adaptive tutoring with learner memory, lesson steps, retrieval proof, and comprehension checks.",
+    demoUrl: portfolioDemoUrl("learning-tutor"),
+  },
+  {
+    slug: "news-fact-checker",
+    title: "News Summarization and Fact-Checker Demo",
+    shortTitle: "News Checker",
+    eyebrow: "News QA",
+    description:
+      "Concise news summaries with claim extraction, verification status, and quality signals.",
+    demoUrl: portfolioDemoUrl("news-fact-checker"),
+  },
+  {
+    slug: "recommendation-engine",
+    title: "E-commerce Recommendation Engine Demo",
+    shortTitle: "Recommendations",
+    eyebrow: "Commerce AI",
+    description:
+      "Conversational recommendations with catalog grounding, tradeoffs, and observability notes.",
+    demoUrl: portfolioDemoUrl("recommendation-engine"),
+  },
+  {
+    slug: "code-generation",
+    title: "Autonomous Code Generation Workflow Demo",
+    shortTitle: "Code Generation",
+    eyebrow: "Developer Workflow",
+    description:
+      "Spec-to-code workflow simulation with tests, refinement notes, and execution results.",
+    demoUrl: portfolioDemoUrl("code-generation"),
+  },
+  {
+    slug: "health-guardrails",
+    title: "Health Advice Generator with Guardrails Demo",
+    shortTitle: "Health Guardrails",
+    eyebrow: "Safety-Critical AI",
+    description:
+      "Health guidance constrained by safety rules, source grounding, and escalation triggers.",
+    demoUrl: portfolioDemoUrl("health-guardrails"),
+  },
+  {
+    slug: "translation-agent",
+    title: "Multi-Language Translation Agent Demo",
+    shortTitle: "Translation Agent",
+    eyebrow: "Localization AI",
+    description:
+      "Translation and cultural adaptation with glossary adherence and quality notes.",
+    demoUrl: portfolioDemoUrl("translation-agent"),
+  },
+  {
+    slug: "portfolio-optimizer",
+    title: "Portfolio Optimization Simulator Demo",
+    shortTitle: "Portfolio Optimizer",
+    eyebrow: "Financial Simulation",
+    description:
+      "Scenario-based allocation commentary with risk bands, constraints, and clear disclaimers.",
+    demoUrl: portfolioDemoUrl("portfolio-optimizer"),
+  },
+  {
+    slug: "story-generator",
+    title: "Interactive Story Generator Demo",
+    shortTitle: "Story Generator",
+    eyebrow: "Creative AI",
+    description:
+      "Branching story generation with character memory, state tracking, and next-choice options.",
+    demoUrl: portfolioDemoUrl("story-generator"),
+  },
+  {
+    slug: "environmental-tracker",
+    title: "Environmental Data Tracker Demo",
+    shortTitle: "Environmental Tracker",
+    eyebrow: "Climate Signals",
+    description:
+      "Environmental metric summaries with trend notes, source labels, and alert states.",
+    demoUrl: portfolioDemoUrl("environmental-tracker"),
+  },
+  {
+    slug: "bias-mitigation",
+    title: "Bias Mitigation Tool for LLMs Demo",
+    shortTitle: "Bias Mitigation",
+    eyebrow: "Model Evaluation",
+    description:
+      "Bias-risk scoring with rubric evidence, mitigation rewrite, and score deltas.",
+    demoUrl: portfolioDemoUrl("bias-mitigation"),
+  },
+  {
+    slug: "meeting-assistant",
+    title: "Virtual Meeting Assistant Demo",
+    shortTitle: "Meeting Assistant",
+    eyebrow: "Meeting Intelligence",
+    description:
+      "Transcript summarization with action items, owners, follow-up context, and redaction support.",
+    demoUrl: portfolioDemoUrl("meeting-assistant"),
   },
 ];
 

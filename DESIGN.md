@@ -23,6 +23,24 @@ The site is now centered on one premium flagship offer: **AI Business Operations
 
 Design stance: editorial operations console. Keep the light, professional, high-trust system, but let operational structure lead: strong system language, restrained premium pricing, dense but readable proof, and no hype-heavy AI language.
 
+## 2026-05-16 Portfolio Hub Pass
+Purpose: make the main site portfolio navigation client-facing by separating a broad demo hub from deeper case studies.
+
+- `/portfolio` is the public hub for 20 live SaaS demos hosted by the separate portfolio deployment.
+- `/case-studies` stays live for four deeper proof narratives and is linked from the hub and homepage.
+- The homepage proof section now sends visitors to both demo breadth and case-study depth.
+- Demo metadata is copied into `src/lib/site-data.ts` as lightweight public copy only; the website does not import or execute code from the portfolio demo repo at runtime.
+
+Design stance: proof directory inside the existing editorial operations console. The page should feel like a dense, scannable capability catalog rather than a marketing splash page. Use restrained repeated cards, clear external-link affordances, and a top demo-launcher panel that makes the live deployment easy to find.
+
+DFII:
+- Aesthetic Impact: 4
+- Context Fit: 5
+- Implementation Feasibility: 5
+- Performance Safety: 5
+- Consistency Risk: 1
+- DFII: 18 by raw inputs, treated as excellent with restraint.
+
 ## Skill Inputs
 - `ui-ux-pro-max` query: `B2B agency automation web development professional real world businesses light editorial`
 - Result adapted: Before-After Transformation landing structure, professional blue/neutral palette, strong contrast, proof before CTA.
