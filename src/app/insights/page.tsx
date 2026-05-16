@@ -11,7 +11,7 @@ import { absoluteUrl, insights } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Technical insights from Onyx AI Studio on AI search, automation, web systems, and SEO content architecture.",
+    "Practical insights from Onyx AI Studio on AI business operations, reception, lead capture, internal assistants, guardrails, and data handling.",
   alternates: {
     canonical: "/insights",
   },
@@ -39,8 +39,8 @@ export default function InsightsPage() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Insights"
-            title="Answer-ready thinking for practical AI and business systems."
-            description="Insight content is structured for humans first, then search and AI citation systems."
+            title="Practical thinking for AI reception, lead capture, internal assistants, and guardrails."
+            description="Insights now support the flagship AI operations offer: company knowledge, data handling, safe document use, workflow automation, and service-business implementation."
           />
         </div>
       </section>

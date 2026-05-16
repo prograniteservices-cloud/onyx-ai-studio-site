@@ -11,14 +11,15 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_2fr] lg:px-8">
         <div className="space-y-6">
           <LogoMark
-            className="text-primary-foreground [&_span:first-child]:border-primary-foreground/25 [&_span:first-child]:bg-primary-foreground [&_span:first-child]:text-primary"
+            className="text-primary-foreground [&>span:first-child]:border-primary-foreground/25 [&>span:first-child]:bg-primary-foreground [&>span:first-child]:text-primary"
           />
           <p className="max-w-md text-sm leading-6 text-primary-foreground/76">
-            Practical AI integration, automation workflows, web development,
-            and SEO content systems for real business operations.
+            AI business operations integration for reception, website assistance,
+            lead capture, scheduling, company knowledge, data handling, and
+            internal employee support.
           </p>
           <Button asChild variant="secondary">
-            <Link href="/contact">Request a fit review</Link>
+            <Link href="/contact">Request an AI Operations Review</Link>
           </Button>
         </div>
         <div className="grid gap-8 sm:grid-cols-3">
@@ -38,7 +39,7 @@ export function SiteFooter() {
           </div>
           <div>
             <h2 className="text-sm font-bold uppercase tracking-[0.18em]">
-              Services
+              System
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-primary-foreground/76">
               {services.map((service) => (
@@ -75,7 +76,7 @@ export function SiteFooter() {
       <Separator className="bg-primary-foreground/16" />
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-primary-foreground/65 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <p>2026 Onyx AI Studio. All rights reserved.</p>
-        <p>Built as a design-first Next.js site with SEO and GEO foundations.</p>
+        <p>Built as a design-first Next.js site with AI operations positioning.</p>
       </div>
     </footer>
   );

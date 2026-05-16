@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import { absoluteUrl, caseStudies } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Portfolio Proof",
   description:
-    "Onyx AI Studio case studies across AI inventory search, ambient apps, interactive systems, and SEO architecture.",
+    "Onyx AI Studio portfolio proof across AI operations modules, assistant interfaces, lead capture systems, automation, and business data tools.",
   alternates: {
     canonical: "/case-studies",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Onyx AI Studio Case Studies",
+  name: "Onyx AI Studio Portfolio Proof",
   url: absoluteUrl("/case-studies"),
   hasPart: caseStudies.map((caseStudy) => ({
     "@type": "Article",
@@ -39,8 +39,8 @@ export default function CaseStudiesPage() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Case studies"
-            title="Proof that the studio can move between AI, web, product, and SEO systems."
-            description="Each case study explains the business problem, the system approach, and the result without using private personal details."
+            title="Proof that the studio can build the modules inside an AI business operations system."
+            description="Existing projects stay intact and are reframed as proof of data handling, assistant interfaces, workflow automation, lead capture, guardrails, and custom implementation ability."
           />
         </div>
       </section>

@@ -85,3 +85,31 @@
 - [ ] Submit `https://onyxaistudio.digital/sitemap.xml` in Search Console.
 - [ ] Request indexing for priority URLs in Search Console.
 - [ ] Re-check sitemap processing and Page Indexing after Google crawls.
+
+## Phase 10 - VapeOS Outreach And Content
+- [x] Create vape outreach research, batch, review, tracker, and Resend log artifacts.
+- [x] Add outreach workflow and dry-run sender scripts with duplicate protection.
+- [x] Add automated tests for outreach validation, review generation, dry-run email construction, and duplicate handling.
+- [x] Add VapeOS-focused insight article for messy vape-shop catalogs.
+- [x] Update VapeOS case study positioning as a retail inventory demo.
+- [x] Run dry-run sender inspection for batch 01.
+- [x] Patch Next from `16.2.4` to `16.2.6` to clear high-severity audit findings.
+- [ ] Research remaining South Carolina shops to reach 25 approved email-ready prospects.
+- [ ] Confirm compliant physical mailing address before any live send.
+- [ ] Send the first vape batch with a small limit, such as 5, then inspect log/tracker.
+- [ ] Send Day 2 estimate-tool demo follow-up when due.
+- [ ] Mark Vape2.0 owner-son thread dormant after two weeks of no response and send one final close-the-loop message if useful.
+
+## Phase 11 - AI Business Operations Repositioning
+- [x] Read `Site_Repositioning_Prompt.txt` and `AI_Business_Integration_System.txt`.
+- [x] Reposition homepage around AI Business Operations Integration.
+- [x] Update navigation to AI Business System, Reception + Web Assistant, Internal Assistant, Portfolio, Insights, Pricing, and Contact.
+- [x] Preserve and reframe existing services as supporting parts of the flagship system.
+- [x] Preserve and reframe existing portfolio projects as AI operations proof modules.
+- [x] Preserve and reframe insights around AI operations, data handling, guardrails, and lead capture.
+- [x] Add premium `/pricing` page with implementation, management, and separate usage-cost positioning.
+- [x] Update contact page CTA to "Request an AI Operations Review".
+- [x] Update contact form fields for business name, website, industry, locations, call volume, main problem, assistant scope, and notes.
+- [x] Update `/api/contact` backend schema and required-field validation to match the new review form.
+- [x] Update metadata, sitemap, `llms.txt`, PDD, PFD, README, DESIGN, and project state.
+- [x] Run lint, typecheck, build, tests, audit, route checks, API validation, public identifier scan, and visual QA.

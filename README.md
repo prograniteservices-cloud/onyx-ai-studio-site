@@ -1,6 +1,6 @@
 # Onyx AI Studio Site
 
-Design-first Next.js website for Onyx AI Studio.
+Design-first Next.js website for Onyx AI Studio, repositioned around AI Business Operations Integration.
 
 Live production URL: https://onyxaistudio.digital
 
@@ -24,5 +24,5 @@ npm.cmd audit --audit-level=high
 
 ## Notes
 - Keep public copy free of personal details from private parent-context files.
-- The contact form uses `mailto:` until a real form endpoint is approved.
+- The contact form posts AI Operations Review requests to `/api/contact`, which sends through Infomaniak SMTP.
 - Update `NEXT_PUBLIC_SITE_URL` when the final domain is confirmed.

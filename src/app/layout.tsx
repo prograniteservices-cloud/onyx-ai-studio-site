@@ -27,29 +27,31 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Onyx AI Studio builds AI integrations, automation workflows, modern web applications, and SEO content systems for practical business operations.";
+  "Onyx AI Studio installs AI into business operations by connecting reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Onyx AI Studio - AI Development Studio",
+    default: "Onyx AI Studio - AI Business Operations Integration",
     template: "%s | Onyx AI Studio",
   },
   description,
   applicationName: "Onyx AI Studio",
   keywords: [
     "AI integration",
-    "automation workflows",
-    "Next.js development",
-    "SEO content systems",
-    "semantic search",
-    "AI development studio",
+    "AI receptionist",
+    "website voice assistant",
+    "lead capture",
+    "scheduling support",
+    "Supabase business data layer",
+    "internal business assistant",
+    "AI guardrails",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Onyx AI Studio - AI Development Studio",
+    title: "Onyx AI Studio - AI Business Operations Integration",
     description,
     url: siteUrl,
     siteName: "Onyx AI Studio",
@@ -66,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Onyx AI Studio - AI Development Studio",
+    title: "Onyx AI Studio - AI Business Operations Integration",
     description,
     images: ["/onyx-systems-map.svg"],
   },
@@ -93,19 +95,23 @@ const organizationSchema = {
   areaServed: "United States",
   knowsAbout: [
     "AI integration",
-    "Automation workflows",
-    "Semantic search",
-    "Next.js web development",
-    "SEO content systems",
+    "AI phone reception",
+    "Website voice assistance",
+    "Lead capture",
+    "Scheduling support",
+    "Supabase business data",
+    "Internal business assistants",
+    "AI guardrails",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Onyx AI Studio Services",
     itemListElement: [
-      "AI Integration",
-      "Automation Workflows",
-      "Web Development",
-      "SEO Content Systems",
+      "AI Business Operations Integration",
+      "AI Phone Receptionist",
+      "Website Voice Assistant",
+      "Internal Business Assistant",
+      "Guardrails and Knowledge Systems",
     ].map((name) => ({
       "@type": "Offer",
       itemOffered: {

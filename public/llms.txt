@@ -1,21 +1,31 @@
 # Onyx AI Studio
-> Practical AI integration, automation workflows, web development, and SEO content systems for business operations.
+> AI business operations integration for reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support.
 
 ## Main Pages
-- `Home -> https://onyxaistudio.com/`: Overview of Onyx AI Studio, core services, proof points, and contact CTA.
-- `Services -> https://onyxaistudio.com/services`: AI integration, automation workflows, web development, and SEO content systems.
-- `Case Studies -> https://onyxaistudio.com/case-studies`: Portfolio proof across AI retail inventory search, ambient applications, interactive systems, and SEO architecture.
-- `Insights -> https://onyxaistudio.com/insights`: Technical articles about semantic search, automation, and search-ready web systems.
-- `Contact -> https://onyxaistudio.com/contact`: Project fit review request page.
+- `Home -> https://onyxaistudio.digital/`: Flagship AI operations integration overview, problem framing, system overview, portfolio proof, pricing, and review CTA.
+- `AI Business System -> https://onyxaistudio.digital/services`: Overview of the system components.
+- `Portfolio -> https://onyxaistudio.digital/case-studies`: Proof across AI operations modules, assistant interfaces, data handling, workflow automation, lead capture, and custom implementation.
+- `Insights -> https://onyxaistudio.digital/insights`: Practical articles about AI operations, internal assistants, guardrails, semantic search, and business data handling.
+- `Pricing -> https://onyxaistudio.digital/pricing`: Implementation and monthly management ranges.
+- `Contact -> https://onyxaistudio.digital/contact`: AI Operations Review request page.
 
 ## Key Service Pages
-- `AI Integration -> https://onyxaistudio.com/services/ai-integration`: Semantic search, assistants, and workflow-aware AI interfaces.
-- `Automation Workflows -> https://onyxaistudio.com/services/automation-workflows`: Trigger, routing, notification, and handoff systems.
-- `Web Development -> https://onyxaistudio.com/services/web-development`: Next.js sites, dashboards, and product interfaces.
-- `SEO Content Systems -> https://onyxaistudio.com/services/seo-content-systems`: Site architecture, metadata, schema, internal linking, and GEO readiness.
+- `AI Business Operations Integration -> https://onyxaistudio.digital/services/ai-integration`: Flagship managed system for reception, website assistance, lead capture, scheduling, Supabase business data, guardrails, and monthly management.
+- `Reception + Website Assistant -> https://onyxaistudio.digital/services/reception-web-assistant`: Phone AI receptionist and website assistant built around approved business knowledge.
+- `Internal Business Assistant -> https://onyxaistudio.digital/services/internal-business-assistant`: Employee-facing assistant for company files, SOPs, policies, call summaries, lead records, and business data.
+- `Guardrails + Knowledge Systems -> https://onyxaistudio.digital/services/guardrails-knowledge-systems`: Pricing boundaries, escalation rules, sensitive information handling, public/internal data separation, and document-grounded answers.
+- `Lead Follow-Up + Workflow Automation -> https://onyxaistudio.digital/services/automation-workflows`: Workflows that move leads, calls, summaries, appointments, and follow-up tasks through the business.
+- `Business Website + Lead Capture Layer -> https://onyxaistudio.digital/services/web-development`: The front-end layer of the AI business system.
+- `Demand Generation Content System -> https://onyxaistudio.digital/services/seo-content-systems`: SEO and answer-ready content that feeds AI lead capture and assistant source material.
+
+## Priority Proof And Insight Pages
+- `VapeOS Case Study -> https://onyxaistudio.digital/case-studies/vapeos`: AI operations module showing how messy business data can become a usable search interface.
+- `Regional Service Site -> https://onyxaistudio.digital/case-studies/regional-service-site`: Lead capture and demand-generation structure for service businesses.
+- `AI Inventory Search For Vape Shops -> https://onyxaistudio.digital/insights/ai-inventory-search-vape-shops-messy-catalogs`: Practical article on semantic search for messy retail product catalogs and business data.
 
 ## Key Facts
-- Onyx AI Studio keeps public copy focused on systems, services, and proof rather than personal background.
-- The site is server-rendered with Next.js App Router.
-- The site includes JSON-LD, sitemap, robots, and AI crawler guidance.
-- Primary topics: AI integration, semantic search, automation workflows, Next.js development, SEO architecture, and GEO.
+- Onyx AI Studio does not sell Retell or Supabase as standalone products. Retell is the voice and conversation layer; Supabase is the business data and knowledge layer.
+- Clients pay Retell and third-party platform usage directly.
+- Onyx AI Studio charges for strategy, implementation, integration, guardrails, knowledge structuring, data handling, ongoing optimization, and management.
+- Pricing ranges: $4,000-$10,000 implementation and $750-$1,500/month management.
+- Primary CTA: Request an AI Operations Review.

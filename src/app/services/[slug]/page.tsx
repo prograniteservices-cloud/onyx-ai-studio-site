@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild>
-                <Link href="/contact">Request a fit review</Link>
+                <Link href="/contact">Request an AI Operations Review</Link>
               </Button>
               <Button asChild variant="outline">
                 <Link href="/case-studies">View related work</Link>

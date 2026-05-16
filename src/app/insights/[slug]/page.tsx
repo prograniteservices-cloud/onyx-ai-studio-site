@@ -106,16 +106,34 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
               </section>
             ))}
           </div>
+          {insight.relatedLinks ? (
+            <nav
+              aria-label="Related resources"
+              className="mt-12 rounded-lg border border-border bg-muted/70 p-6"
+            >
+              <h2 className="font-serif text-2xl font-bold">
+                Related Onyx resources
+              </h2>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {insight.relatedLinks.map((relatedLink) => (
+                  <Button key={relatedLink.href} asChild variant="outline">
+                    <Link href={relatedLink.href}>{relatedLink.label}</Link>
+                  </Button>
+                ))}
+              </div>
+            </nav>
+          ) : null}
           <div className="mt-12 rounded-lg border border-border bg-card p-6">
             <h2 className="font-serif text-2xl font-bold">
               Need this thinking applied to a real workflow?
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              Bring the workflow, data, or site architecture problem and Onyx AI
-              Studio will map the practical next step.
+              Bring the calls, website leads, scheduling, documents, follow-up,
+              or data handling problem and Onyx AI Studio will map the practical
+              next step.
             </p>
             <Button asChild className="mt-5">
-              <Link href="/contact">Request a fit review</Link>
+              <Link href="/contact">Request an AI Operations Review</Link>
             </Button>
           </div>
         </div>

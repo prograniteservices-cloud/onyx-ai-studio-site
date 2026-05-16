@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --test",
+    "outreach:vape:review": "node scripts/outreach_workflow.mjs --research outreach/vape/VAPE_OUTREACH_RESEARCH_TEMPLATE.json --batch outreach/vape/VAPE_OUTREACH_BATCH_01_2026-05-15.json --review outreach/vape/VAPE_OUTREACH_REVIEW_BATCH_01_2026-05-15.md --tracker outreach/vape/VAPE_OUTREACH_TRACKER_2026-05-15.csv",
+    "outreach:vape:dry-run": "node scripts/outreach_sender.mjs --batch outreach/vape/VAPE_OUTREACH_BATCH_01_2026-05-15.json --tracker outreach/vape/VAPE_OUTREACH_TRACKER_2026-05-15.csv --log outreach/vape/VAPE_OUTREACH_RESEND_LOG.csv --dry-run"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
@@ -14,7 +17,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.14.0",
-    "next": "16.2.4",
+    "next": "^16.2.6",
     "nodemailer": "^8.0.7",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -27,7 +30,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.4",
+    "eslint-config-next": "^16.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

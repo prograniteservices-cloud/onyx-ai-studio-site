@@ -12,7 +12,7 @@ export function LogoMark({ className, showText = true }: LogoMarkProps) {
     <Link
       href="/"
       className={cn(
-        "inline-flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        "inline-flex items-center gap-3 rounded-md text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className,
       )}
       aria-label="Onyx AI Studio home"
@@ -35,10 +35,10 @@ export function LogoMark({ className, showText = true }: LogoMarkProps) {
       </span>
       {showText ? (
         <span className="flex flex-col leading-none">
-          <span className="font-serif text-xl font-bold tracking-normal text-foreground">
+          <span className="font-serif text-xl font-bold tracking-normal text-current">
             Onyx
           </span>
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+          <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-current opacity-65">
             AI Studio
           </span>
         </span>

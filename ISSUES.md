@@ -10,8 +10,8 @@
 
 ### ISSUE-005: Moderate PostCSS Advisory Through Next Dependency
 - Symptoms: `npm.cmd audit --audit-level=high` exits successfully, but npm reports 2 moderate vulnerabilities for `postcss <8.5.10` through `next`.
-- Root cause: The advisory is inside Next's dependency tree. The suggested `npm audit fix --force` path would install `next@9.3.3`, which is a breaking downgrade and not acceptable.
-- Current handling: Do not force-fix. Keep Next on `16.2.4` and re-check when a compatible Next patch is available.
+- Root cause: The advisory is inside Next's dependency tree. After updating Next to `16.2.6`, the suggested `npm audit fix --force` path would still install `next@9.3.3`, which is a breaking downgrade and not acceptable.
+- Current handling: Do not force-fix. Keep Next on `16.2.6` and re-check when a compatible Next/PostCSS patch is available.
 - Verification: High-severity audit passes; moderate advisory remains visible in audit output.
 
 ### ISSUE-001: Codex Restart Needed For New Skill Auto-Discovery
@@ -20,13 +20,31 @@
 - Current handling: Used installed `SKILL.md` files directly during this session.
 - Verification needed: Restart Codex and confirm the new skill names appear in the available skills list.
 
-### ISSUE-002: Contact Form Has No Backend Endpoint
-- Symptoms: Static form can open an email draft, but it does not submit to a server.
-- Root cause: No approved email/domain/form backend exists in the app yet.
-- Current handling: Use `mailto:hello@onyxaistudio.com` and document replacement path.
-- Verification needed: Replace with a server action or form provider after the inbox is confirmed.
-
 ## Resolved Issues
+
+### ISSUE-017: Contact Form Open Issue Was Stale After SMTP Integration
+- Symptoms: `ISSUES.md` still claimed the contact form used `mailto:` and had no backend endpoint.
+- Root cause: The issue record was not moved after `/api/contact` and Infomaniak SMTP were integrated.
+- Fix: Removed the stale open issue and documented the current AI Operations Review backend in `PFD.md`.
+- Verification: Incomplete `POST /api/contact` returned HTTP 400 and the production build lists `/api/contact` as a dynamic route.
+
+### ISSUE-016: Footer Logo Text Inherited Broad Span Styling
+- Symptoms: Contact-page desktop screenshot showed the footer `Onyx` wordmark on an unintended light rectangle against the dark footer.
+- Root cause: Footer LogoMark override used `[&_span:first-child]`, which matched nested text spans as well as the direct icon span.
+- Fix: Changed the selector to `[&>span:first-child]` and made LogoMark text inherit current color.
+- Verification: Re-captured `qa-repositioning-contact-desktop.png`; footer wordmark now renders cleanly on the dark footer.
+
+### ISSUE-015: Sandbox Build Could Not Fetch Google Fonts
+- Symptoms: Initial `npm.cmd run build` failed because `next/font` could not fetch Plus Jakarta Sans, Libre Baskerville, and Geist Mono from Google Fonts.
+- Root cause: The sandbox blocked network access during the production build.
+- Fix: Reran `npm.cmd run build` with approved network access for the build command.
+- Verification: Production build passed and generated 25 pages.
+
+### ISSUE-014: High-Severity Next Audit Findings On 16.2.4
+- Symptoms: `npm.cmd audit --audit-level=high` failed with multiple high-severity advisories against `next@16.2.4`.
+- Root cause: The project was pinned to a vulnerable Next patch version.
+- Fix: Updated Next to `16.2.6` with `npm.cmd install next@16.2.6`.
+- Verification: `npm.cmd audit --audit-level=high` exited 0. Moderate PostCSS advisory remains tracked in ISSUE-005.
 
 ### ISSUE-011: React Lint Rejected Synchronous State Update In Reveal Effect
 - Symptoms: `npm.cmd run lint` failed with `react-hooks/set-state-in-effect` in `src/components/scroll-reveal.tsx`.

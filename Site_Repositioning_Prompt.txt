@@ -1,0 +1,1279 @@
+﻿# Site Repositioning Prompt for Onyx AI Studio
+
+
+You are modifying my existing website: `onyxaistudio.digital`.
+
+
+## Main Goal
+
+
+Reposition the website around one primary high-ticket business offer:
+
+
+# AI Business Operations Integration
+
+
+This is not a basic chatbot service, not a generic AI agency site, and not a normal web design agency.
+
+
+The new positioning should present Onyx AI Studio as a premium implementation studio that integrates AI directly into a company’s operations.
+
+
+The core offer is:
+
+
+> AI reception, website assistance, lead capture, scheduling support, data handling, internal business assistance, and company knowledge systems — built around the company’s real workflows and documents.
+
+
+## Very Important Preservation Rule
+
+
+Do **not** delete my existing work.
+
+
+I already have:
+
+
+- Around 20 SaaS-style AI integration projects
+- AI business integration project ideas
+- Anti-hallucination tools
+- Sensitive document filters
+- Similar AI safety/operations tools
+- Insights/content sections
+- 4 websites/apps I am showcasing
+- Existing portfolio content
+- Existing service/content sections
+
+
+These should not be removed.
+
+
+Instead, rearrange, rename, reframe, and organize them so they support the new flagship business idea.
+
+
+The goal is to make the whole site feel more focused while preserving my existing portfolio, insights, demos, and project work.
+
+
+## New Strategic Direction
+
+
+The website should no longer feel like:
+
+
+- “We do websites”
+- “We do SEO”
+- “We build SaaS”
+- “We make chatbots”
+- “We are a general AI agency”
+
+
+It should feel like:
+
+
+> We install AI into business operations so companies can answer calls, capture leads, schedule work, organize customer data, assist employees, and safely use their company knowledge.
+
+
+Everything else on the site should support this flagship idea.
+
+
+## Core Offer
+
+
+The main service should be presented as a complete system:
+
+
+# AI Business Integration System
+
+
+This system includes:
+
+
+- AI phone receptionist
+- Website voice assistant
+- Lead capture system
+- Scheduling support
+- Customer data handling
+- Internal employee assistant
+- Company knowledge base
+- Supabase-powered business data layer
+- Business-specific guardrails
+- Call summaries
+- Website conversation summaries
+- Follow-up workflows
+- Monthly optimization and management
+
+
+## Primary Tech Positioning
+
+
+Use Retell as the primary voice-agent platform.
+
+
+Retell should be framed as powering:
+
+
+- Phone AI receptionist
+- Inbound call handling
+- Website voice/web-call assistant
+- Call summaries
+- Conversation handling
+- Call events and handoffs
+
+
+Use Supabase as the business data and knowledge layer.
+
+
+Supabase should be framed as powering:
+
+
+- Lead database
+- Customer records
+- Company knowledge base
+- Uploaded/internal document storage
+- Call summaries
+- Website assistant summaries
+- Internal assistant knowledge access
+- Structured business data
+
+
+Do not make the site sound like I am selling Retell or Supabase directly.
+
+
+The product is the business integration.
+
+
+The platforms are infrastructure.
+
+
+## Business Model
+
+
+The site should clearly explain the business model:
+
+
+- Client pays Retell usage directly
+- Client pays third-party software/tool usage directly when needed
+- Onyx AI Studio charges for strategy, implementation, integration, guardrails, knowledge structuring, data handling, ongoing optimization, and management
+
+
+## Pricing Positioning
+
+
+Use premium pricing ranges.
+
+
+Do not make it look like a cheap chatbot setup.
+
+
+Suggested pricing structure:
+
+
+```txt
+Implementation: $4,000–$10,000
+Monthly Management: $750–$1,500/month
+Usage: Client pays Retell and third-party platform usage directly
+
+
+Pricing depends on:
+
+
+Size of operation
+
+
+Number of locations
+
+
+Number of services
+
+
+Call volume
+
+
+Scheduling complexity
+
+
+Number of assistants
+
+
+Amount of internal documentation
+
+
+Amount of company data cleanup
+
+
+Guardrail complexity
+
+
+CRM/calendar/email/SMS integrations
+
+
+Reporting needs
+
+
+Internal employee assistant requirements
+
+
+Compliance/sensitivity level
+
+
+
+
+Website Positioning
+
+
+The homepage should immediately communicate the new offer.
+
+
+Hero Direction
+
+
+Use messaging similar to:
+
+
+> AI reception, lead capture, scheduling, and internal business assistance — integrated into your company’s real workflows.
+
+
+
+
+
+
+Supporting copy:
+
+
+> Onyx AI Studio builds AI business systems that answer calls, support website visitors, capture leads, organize customer data, assist with scheduling, and give teams access to answers from their own company files.
+
+
+
+
+
+
+Primary CTA:
+
+
+> Request an AI Operations Review
+
+
+
+
+
+
+Secondary CTA:
+
+
+> View the System
+
+
+
+
+
+
+Avoid leading with technical language like:
+
+
+LLM
+
+
+chatbot
+
+
+TTS
+
+
+API
+
+
+vector database
+
+
+AI agent framework
+
+
+
+
+Technical details can appear later, but the top of the site should focus on business outcomes.
+
+
+Ideal Main Navigation
+
+
+Update navigation so it supports the new structure.
+
+
+Suggested nav:
+
+
+AI Business System
+
+
+Reception + Web Assistant
+
+
+Internal Assistant
+
+
+Portfolio
+
+
+Insights
+
+
+Pricing
+
+
+Contact
+
+
+
+
+If the current site has existing sections, preserve them but reorganize them under this clearer structure.
+
+
+Recommended Page/Section Structure
+
+
+Create or reorganize the site around these sections.
+
+
+
+
+---
+
+
+1. Homepage
+
+
+Purpose:
+
+
+Sell the flagship idea clearly.
+
+
+Sections should include:
+
+
+1. Hero
+
+
+
+
+2. Problem section
+
+
+
+
+3. System overview
+
+
+
+
+4. What the AI handles
+
+
+
+
+5. How the system works
+
+
+
+
+6. Business outcomes
+
+
+
+
+7. Portfolio/project proof
+
+
+
+
+8. Pricing/investment range
+
+
+
+
+9. CTA for AI Operations Review
+
+
+
+
+
+
+Problem Section
+
+
+Explain business problems like:
+
+
+Missed calls
+
+
+Slow follow-up
+
+
+Repetitive customer questions
+
+
+Website visitors leaving without converting
+
+
+Scattered company documents
+
+
+Employees wasting time searching for answers
+
+
+Poor lead organization
+
+
+Inconsistent customer handling
+
+
+
+
+System Overview
+
+
+Show the system as:
+
+
+Phone Calls
+→ AI Receptionist
+→ Lead Capture
+→ Scheduling
+→ Supabase Business Data Layer
+→ Owner/Staff Notifications
+→ Internal Business Assistant
+
+
+Also:
+
+
+Website Visitors
+→ Website Voice Assistant
+→ Questions Answered
+→ Lead Captured
+→ Follow-Up Triggered
+→ Data Stored
+
+
+Business Outcomes
+
+
+Highlight outcomes:
+
+
+24/7 call answering
+
+
+More captured leads
+
+
+Better follow-up
+
+
+Faster customer response
+
+
+Organized business data
+
+
+Less repetitive work
+
+
+Easier access to company knowledge
+
+
+More consistent customer experience
+
+
+
+
+
+
+---
+
+
+2. AI Business System Page or Section
+
+
+Explain the complete integrated system.
+
+
+This should describe the whole offer:
+
+
+AI phone receptionist
+
+
+Website voice assistant
+
+
+Lead capture
+
+
+Scheduling
+
+
+Supabase data layer
+
+
+Knowledge base
+
+
+Internal employee assistant
+
+
+Guardrails
+
+
+Monthly management
+
+
+
+
+Make it feel like an operational upgrade, not a widget.
+
+
+
+
+---
+
+
+3. Reception + Website Assistant Page/Section
+
+
+Explain the public-facing assistants.
+
+
+AI Phone Receptionist
+
+
+It should be described as handling:
+
+
+Incoming calls
+
+
+Basic questions
+
+
+Lead qualification
+
+
+Customer info capture
+
+
+Appointment requests
+
+
+Call summaries
+
+
+After-hours coverage
+
+
+Follow-up routing
+
+
+
+
+Website Assistant
+
+
+It should be described as handling:
+
+
+Website visitor questions
+
+
+Service explanations
+
+
+Lead capture
+
+
+Callback requests
+
+
+Scheduling support
+
+
+Conversation summaries
+
+
+Customer guidance
+
+
+
+
+Make it clear that these can share the same business knowledge base but serve different customer entry points.
+
+
+
+
+---
+
+
+4. Internal Business Assistant Page/Section
+
+
+This is a major differentiator.
+
+
+Explain that the internal assistant helps employees and owners ask questions against company files, SOPs, call summaries, policies, and business data.
+
+
+Example employee questions:
+
+
+What is our warranty policy?
+
+
+What do we tell customers about this service?
+
+
+Which leads came in today?
+
+
+Which calls need follow-up?
+
+
+What did this customer say on their last call?
+
+
+What is our process for this type of job?
+
+
+What documents mention this policy?
+
+
+What is our pricing guidance for this situation?
+
+
+
+
+Make it clear that the internal assistant has stricter access rules than public customer-facing agents.
+
+
+
+
+---
+
+
+5. Guardrails Section
+
+
+Create a dedicated section about guardrails.
+
+
+Guardrails are part of the premium value.
+
+
+Mention things like:
+
+
+Pricing boundaries
+
+
+Escalation rules
+
+
+Sensitive information handling
+
+
+Internal vs public data separation
+
+
+Human handoff triggers
+
+
+Scheduling restrictions
+
+
+Emergency handling
+
+
+Warranty/refund boundaries
+
+
+Compliance-sensitive topics
+
+
+Hallucination reduction
+
+
+Document-based answers
+
+
+Confidence limits
+
+
+
+
+This section should connect naturally to my existing AI safety/SaaS projects, such as anti-hallucination tools and sensitive document filters.
+
+
+Those projects should be reframed as proof that Onyx AI Studio thinks seriously about responsible AI implementation.
+
+
+
+
+---
+
+
+6. Portfolio / Proof Section
+
+
+Do not remove my portfolio.
+
+
+Reframe the portfolio around the new offer.
+
+
+Instead of presenting the projects as random apps or experiments, group them as:
+
+
+AI Operations Modules
+
+
+Examples:
+
+
+Anti-hallucination systems
+
+
+Sensitive document filtering
+
+
+AI business workflow tools
+
+
+Lead capture tools
+
+
+AI website systems
+
+
+Internal knowledge tools
+
+
+Automation demos
+
+
+Client-facing assistant concepts
+
+
+Safety and guardrail tools
+
+
+
+
+For the 4 showcased websites/apps, preserve them.
+
+
+Reframe them as examples of:
+
+
+Interface design
+
+
+Business automation
+
+
+AI-assisted workflows
+
+
+Lead capture systems
+
+
+Client-facing digital products
+
+
+Custom implementation ability
+
+
+
+
+The portfolio should prove that Onyx can build the pieces needed for this larger business integration offer.
+
+
+
+
+---
+
+
+7. Insights Section
+
+
+Do not remove insights/content.
+
+
+Reframe insights as thought leadership around:
+
+
+AI integration into business operations
+
+
+AI receptionists
+
+
+Lead capture
+
+
+Internal business assistants
+
+
+Guardrails
+
+
+Safe AI document handling
+
+
+AI for service businesses
+
+
+Automation strategy
+
+
+Practical AI implementation
+
+
+AI operations systems
+
+
+
+
+If the existing insights are broad, group or rename them so they support this positioning.
+
+
+
+
+---
+
+
+8. Pricing / Investment Section
+
+
+Create a premium pricing section.
+
+
+Use language like:
+
+
+Investment
+
+
+This is a custom business integration, not a plug-and-play chatbot.
+
+
+Suggested structure:
+
+
+Core Integration
+
+
+$4,000–$6,000 implementation
+$750/month management
+
+
+For smaller operations needing AI reception, website assistant, lead capture, and scheduling support.
+
+
+Operations Integration
+
+
+$6,000–$8,500 implementation
+$1,000–$1,250/month management
+
+
+For companies needing stronger data handling, Supabase knowledge systems, multiple workflows, more detailed guardrails, and business-specific reporting.
+
+
+Advanced Business Assistant System
+
+
+$8,500–$10,000+ implementation
+$1,250–$1,500+/month management
+
+
+For larger operations, companies with significant internal documentation, internal employee assistant needs, stricter guardrails, multi-location complexity, or deeper integrations.
+
+
+Include:
+
+
+Client pays Retell and third-party platform usage directly.
+
+
+Do not make this look like a checkout product.
+
+
+The CTA should be consultation-based:
+
+
+> Request an AI Operations Review
+
+
+
+
+
+
+
+
+---
+
+
+9. Contact / Review CTA
+
+
+Replace generic contact wording with a stronger consultative CTA.
+
+
+Use:
+
+
+Request an AI Operations Review
+
+
+The form should collect:
+
+
+Name
+
+
+Business name
+
+
+Website
+
+
+Industry
+
+
+Number of locations
+
+
+Approximate call volume
+
+
+Main problem: missed calls, lead capture, scheduling, internal docs, follow-up, etc.
+
+
+Whether they want phone assistant, website assistant, internal assistant, or all three
+
+
+Notes
+
+
+
+
+The CTA should make it feel like the first step is reviewing their business operation, not selling them a bot.
+
+
+Tone and Style
+
+
+The site should sound:
+
+
+Premium
+
+
+Clear
+
+
+Business-focused
+
+
+Practical
+
+
+Confident
+
+
+Not hype-heavy
+
+
+Not overly technical
+
+
+Not cheap
+
+
+Not gimmicky
+
+
+
+
+Avoid phrases like:
+
+
+“Revolutionary AI”
+
+
+“Unlock the future”
+
+
+“10x your business”
+
+
+“AI magic”
+
+
+“Chatbot solution”
+
+
+
+
+Use grounded phrases like:
+
+
+Business operations
+
+
+Lead capture
+
+
+Call handling
+
+
+Scheduling support
+
+
+Company knowledge
+
+
+Internal assistant
+
+
+Workflow integration
+
+
+Guardrails
+
+
+Data handling
+
+
+Follow-up systems
+
+
+
+
+Important Reframing
+
+
+Existing services should not disappear.
+
+
+Reframe them like this:
+
+
+Web Development
+
+
+Not a separate cheap service.
+
+
+Frame as:
+
+
+> The front-end layer of the AI business system.
+
+
+
+
+
+
+SEO
+
+
+Not a standalone SEO offer.
+
+
+Frame as:
+
+
+> Demand generation that feeds the AI lead capture system.
+
+
+
+
+
+
+SaaS Projects
+
+
+Not random SaaS demos.
+
+
+Frame as:
+
+
+> AI operations modules and proof-of-capability.
+
+
+
+
+
+
+AI Engineering
+
+
+Frame as:
+
+
+> Custom integrations, guardrails, data workflows, and assistant behavior design.
+
+
+
+
+
+
+Automation
+
+
+Frame as:
+
+
+> The workflows that move leads, calls, summaries, appointments, and follow-up tasks through the business.
+
+
+
+
+
+
+Required Content Hierarchy
+
+
+The new site hierarchy should be:
+
+
+Primary: AI Business Operations Integration
+
+
+Secondary:
+- AI Receptionist
+- Website Assistant
+- Lead Capture
+- Scheduling
+- Supabase Business Data Layer
+- Internal Employee Assistant
+- Guardrails
+- Portfolio/Proof
+- Insights
+- Pricing
+
+
+Everything else should support this hierarchy.
+
+
+Do Not Do These Things
+
+
+Do not delete existing projects.
+
+
+Do not remove the 20 SaaS/AI integration projects.
+
+
+Do not remove the 4 showcased websites/apps.
+
+
+Do not remove insights unless duplicated or broken.
+
+
+Do not make the site only about phone answering.
+
+
+Do not make it sound like Retell is the product.
+
+
+Do not make it sound like a cheap chatbot agency.
+
+
+Do not make it sound like a generic “we do AI” agency.
+
+
+Do not hide the premium pricing.
+
+
+Do not overpromise legal, medical, financial, or compliance outcomes.
+
+
+Do not promise perfect accuracy.
+
+
+Do not promise the AI replaces all staff.
+
+
+Do not present the public customer assistant and internal employee assistant as the same permission level.
+
+
+Key Message to Preserve Across the Site
+
+
+The big message should be:
+
+
+> Onyx AI Studio installs AI into business operations by connecting reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support into one managed system.
+
+
+
+
+
+
+Final Result I Want
+
+
+When the site is finished, a visitor should understand:
+
+
+1. Onyx AI Studio specializes in AI business operations integration.
+
+
+
+
+2. The flagship offer is a premium AI receptionist + website assistant + internal business assistant system.
+
+
+
+
+3. This system is powered by the client’s business knowledge, documents, workflows, and data.
+
+
+
+
+4. Retell handles the voice/conversation layer.
+
+
+
+
+5. Supabase supports the business data and knowledge layer.
+
+
+
+
+6. Existing portfolio projects prove Onyx can build the components.
+
+
+
+
+7. Pricing is premium: $4,000–$10,000 setup and $750–$1,500/month management.
+
+
+
+
+8. Client usage costs are separate and paid directly by the client.
+
+
+
+
+9. The next step is requesting an AI Operations Review.
+
+
+
+
+
+
+Modify the site accordingly while preserving existing content and reorganizing it around this new flagship offer.

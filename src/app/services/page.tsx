@@ -11,9 +11,9 @@ import { HeroSystemVisual } from "@/components/hero-system-visual";
 import { absoluteUrl, services } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "AI Business System",
   description:
-    "AI integration, automation workflows, web development, and SEO content systems from Onyx AI Studio.",
+    "AI business operations integration services for reception, website assistance, lead capture, scheduling, internal assistants, guardrails, and data workflows.",
   alternates: {
     canonical: "/services",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Onyx AI Studio Services",
+  name: "Onyx AI Studio AI Business System",
   url: absoluteUrl("/services"),
   hasPart: services.map((service) => ({
     "@type": "Service",
@@ -40,8 +40,8 @@ export default function ServicesPage() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Services"
-            title="Build the system before adding more tools."
-            description="Each service is structured around the same outcome: clearer workflows, cleaner interfaces, and better source material for both humans and search systems."
+            title="AI business operations integration, organized into the pieces companies actually use."
+            description="The flagship system connects reception, website assistance, lead capture, scheduling support, Supabase-backed business data, internal employee assistance, and guardrails."
           />
         </div>
       </section>

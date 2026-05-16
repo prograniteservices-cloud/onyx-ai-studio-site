@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/section-heading";
 import { absoluteUrl } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Request an AI Operations Review",
   description:
-    "Request a project fit review for AI integration, automation workflows, web development, or SEO content systems.",
+    "Request an AI Operations Review for reception, website assistance, lead capture, scheduling, internal documents, and business data workflows.",
   alternates: {
     canonical: "/contact",
   },
@@ -21,7 +21,7 @@ const contactSchema = {
   name: "Contact Onyx AI Studio",
   url: absoluteUrl("/contact"),
   description:
-    "Request a fit review for AI integration, automation, web development, and SEO content system projects.",
+    "Request an AI Operations Review for a custom AI business operations integration.",
 };
 
 export default function ContactPage() {
@@ -32,15 +32,15 @@ export default function ContactPage() {
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
           <div className="editorial-rule pt-8">
             <SectionHeading
-              eyebrow="Contact"
-              title="Request a practical project fit review."
-              description="The best first conversation is specific: what workflow is slow, what data is messy, what users need to do, and what outcome would make the work worth it."
+              eyebrow="AI Operations Review"
+              title="Request a review of your call, lead, scheduling, document, and follow-up workflows."
+              description="The first step is understanding the operation before recommending an AI receptionist, website assistant, internal assistant, Supabase data layer, or workflow automation."
             />
             <ul className="mt-8 space-y-4 text-sm leading-6 text-muted-foreground">
               {[
-                "Good fits: search, dashboards, lead workflows, content architecture, and AI features with a clear workflow.",
-                "Weak fits: vague AI experiments, unsupported scraped data, or projects that need public personal branding.",
-                "Expected next step: a concise recommendation, not a pressure-heavy sales call.",
+                "Good fits: missed calls, lead capture gaps, scheduling friction, internal document search, and follow-up problems.",
+                "Weak fits: vague AI experiments, unsupported scraped data, or requests to replace all staff judgment.",
+                "Expected next step: a practical recommendation with implementation, management, and separate platform usage costs clearly stated.",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckCircle2

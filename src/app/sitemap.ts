@@ -3,8 +3,15 @@ import type { MetadataRoute } from "next";
 import { caseStudies, insights, services, siteUrl } from "@/lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date("2026-05-04T00:00:00.000Z");
-  const staticRoutes = ["/", "/services", "/case-studies", "/insights", "/contact"];
+  const now = new Date("2026-05-15T00:00:00.000Z");
+  const staticRoutes = [
+    "/",
+    "/services",
+    "/case-studies",
+    "/insights",
+    "/pricing",
+    "/contact",
+  ];
   const serviceRoutes = services.map((service) => `/services/${service.slug}`);
   const caseRoutes = caseStudies.map(
     (caseStudy) => `/case-studies/${caseStudy.slug}`,

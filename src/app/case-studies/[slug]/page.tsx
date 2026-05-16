@@ -189,11 +189,11 @@ export default async function CaseStudyDetailPage({
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 py-14 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Next step"
-            title="Have a similar workflow that needs structure?"
+            title="Have a similar operation that needs structure?"
           />
           <Button asChild className="w-fit">
             <Link href="/contact">
-              Request a fit review
+              Request an AI Operations Review
               <ArrowRight aria-hidden="true" />
             </Link>
           </Button>

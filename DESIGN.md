@@ -9,6 +9,20 @@ Tone: editorial, professional, precise, and quietly technical.
 
 Differentiation anchor: the site uses a visible "messy inputs -> operating system" diagram language, brass rule lines, and proof-led service cards instead of generic AI gradients.
 
+## 2026-05-16 Repositioning Pass
+The site is now centered on one premium flagship offer: **AI Business Operations Integration**.
+
+- First-screen message: AI reception, lead capture, scheduling, website assistance, data handling, and internal business assistance built around real workflows and documents.
+- Primary CTA: "Request an AI Operations Review".
+- Secondary CTA: "View the System".
+- Infrastructure framing: Retell powers voice and conversation handling; Supabase supports business data, lead records, summaries, documents, and knowledge access. Neither platform is positioned as the product.
+- Portfolio framing: existing projects remain visible as AI operations modules and proof of data handling, assistant interface design, workflow automation, lead capture, guardrails, and custom implementation ability.
+- Supporting service framing: web development is the front-end layer; SEO is demand generation and source material; automation moves leads, calls, summaries, appointments, and follow-up tasks through the business.
+- Pricing framing: premium consultative ranges, not a checkout product. Implementation is $4,000-$10,000 and monthly management is $750-$1,500/month, with Retell and third-party usage paid directly by the client.
+- Form framing: the contact page collects AI Operations Review fields tied to the backend schema: name, business name, website, industry, locations, call volume, main problem, assistant scope, and notes, plus contact details for reply.
+
+Design stance: editorial operations console. Keep the light, professional, high-trust system, but let operational structure lead: strong system language, restrained premium pricing, dense but readable proof, and no hype-heavy AI language.
+
 ## Skill Inputs
 - `ui-ux-pro-max` query: `B2B agency automation web development professional real world businesses light editorial`
 - Result adapted: Before-After Transformation landing structure, professional blue/neutral palette, strong contrast, proof before CTA.
@@ -82,6 +96,17 @@ Rules:
 - Continuous motion is allowed only in the hero visual and must stay slow, low-amplitude, and non-blocking.
 - No scroll-jacking, parallax capture, bouncing icons, or heavy animation dependency.
 - Keep glassmorphism subtle enough that text contrast remains strong.
+
+## VapeOS Outreach Content Pass
+Purpose: support a South Carolina-first vape-shop outreach campaign by making VapeOS read as a retail inventory search demo rather than a one-off private lead.
+
+Direction: keep the same light editorial systems voice, but sharpen the retail proof around messy catalogs, inconsistent product naming, and staff/customer lookup speed.
+
+Content rules:
+- Do not mention unresponsive private leads or private source context.
+- Describe VapeOS as a live demo and portfolio proof point.
+- Link the new insight to AI integration, automation workflows, and the VapeOS case study.
+- Keep vape-shop copy practical and inventory-focused, not lifestyle or nicotine-promotion focused.
 
 ## Image Direction
 Primary visual assets are editorial SVGs that communicate the actual service model:
