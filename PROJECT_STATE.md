@@ -55,7 +55,7 @@ Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can 
 - Live sending requires `RESEND_API_KEY` and `ONYX_PHYSICAL_MAILING_ADDRESS`. The sender refuses `--send` without both.
 
 ## Next Action
-Commit, push, deploy the portfolio hub update, verify production `/portfolio`, `/case-studies`, `/sitemap.xml`, and `/llms.txt`, then update Agent Memory with the final deployment URL.
+Update Agent Memory with the portfolio hub fix, then resume the paused Search Console and outreach tasks when needed.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -104,3 +104,7 @@ Commit, push, deploy the portfolio hub update, verify production `/portfolio`, `
 - Portfolio hub external checks: demo launcher plus all 20 external demo routes returned HTTP 200.
 - Portfolio hub public identifier scan over `src` and `public`: no matches.
 - Portfolio hub visual QA: `qa-portfolio-desktop.png` and `qa-portfolio-mobile.png` captured after adding `allowedDevOrigins` for clean local dev screenshots.
+- Portfolio hub GitHub push: commit `4719f12` pushed to `origin/codex-vape-shop-outreach-content` and `origin/master`.
+- Portfolio hub Vercel production deploy: build passed with 26 generated pages and aliased to `https://onyxaistudio.digital`.
+- Portfolio hub live route checks: `/`, `/portfolio`, `/case-studies`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200 on `https://onyxaistudio.digital`.
+- Portfolio hub live content checks: homepage exposed `Explore the 20 SaaS demos` and `View case studies`; `/portfolio` exposed all 20 external demo links; sitemap and `llms.txt` included `/portfolio` and the demo launcher.

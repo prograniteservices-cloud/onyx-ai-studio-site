@@ -125,4 +125,5 @@
 - [x] Add homepage CTAs for `Explore the 20 SaaS demos` and `View case studies`.
 - [x] Update sitemap, `llms.txt`, DESIGN, PDD, PFD, README, DECISIONS, and project state.
 - [x] Run lint, typecheck, build, tests, audit, route checks, public identifier scan, and visual QA.
-- [ ] Commit, push, deploy, verify production routes, and update Agent Memory.
+- [x] Commit, push, deploy, and verify production routes.
+- [ ] Update Agent Memory.
