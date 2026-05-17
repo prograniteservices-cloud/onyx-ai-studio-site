@@ -114,3 +114,6 @@ Resume the paused Search Console and outreach tasks when needed.
 - Client-facing copy fix validation: `npm.cmd run lint`, `npx.cmd tsc --noEmit`, `npm.cmd run test`, `npm.cmd run build`, and `npm.cmd audit --audit-level=high` passed.
 - Client-facing copy fix local route checks: `/portfolio`, `/insights`, and `/llms.txt` returned HTTP 200; old internal-note phrases were absent and the new hooks were present.
 - Client-facing copy fix visual QA: `qa-copyfix-portfolio-desktop.png`, `qa-copyfix-portfolio-mobile.png`, `qa-copyfix-insights-desktop.png`, and `qa-copyfix-insights-mobile.png`.
+- Client-facing copy fix GitHub push: commit `86aac44` pushed to `origin/codex-vape-shop-outreach-content` and `origin/master`.
+- Client-facing copy fix Vercel production deploy: `dpl_6jJaX7QzhXKLtpnoanmTXa6epC9z` was ready and aliased to `https://onyxaistudio.digital`.
+- Client-facing copy fix live verification: `/portfolio` and `/insights` returned HTTP 200; the new demo, case-study, and insights hooks were present; the old internal-note phrases were absent from the live pages; `llms.txt` used client-facing case-study wording.

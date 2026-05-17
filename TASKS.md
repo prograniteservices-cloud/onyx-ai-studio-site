@@ -135,4 +135,5 @@
 - [x] Replace `/insights` header description with a client-facing learning hook.
 - [x] Update `llms.txt` case-study wording so AI-facing public copy is client-facing too.
 - [x] Run lint, typecheck, tests, build, high-severity audit, local route checks, public identifier scan, and visual QA.
-- [ ] Commit, push, deploy, verify production copy, and update Agent Memory.
+- [x] Commit, push, deploy, and verify production copy.
+- [ ] Update Agent Memory.
