@@ -22,6 +22,12 @@
 
 ## Resolved Issues
 
+### ISSUE-019: Portfolio And Insights Copy Read Like Internal Notes
+- Symptoms: Public pages included implementation/meta copy such as "lightweight public metadata", "not coupled to the demo app at runtime", "Four deeper proof narratives remain available", and "Insights now support the flagship AI operations offer".
+- Root cause: Some deployment and architecture notes were converted directly into visible page descriptions instead of being rewritten as client-facing hooks.
+- Fix: Replaced the affected `/portfolio`, `/insights`, and `llms.txt` copy with buyer-facing language focused on trying workflows, seeing business-system examples, and understanding what must be in place before AI safely answers customers and moves follow-up forward. Added `tests/client_facing_copy.test.mjs` to block those internal-note phrases from public-facing files.
+- Verification: `npm.cmd run test -- tests/client_facing_copy.test.mjs`, `npm.cmd run lint`, `npx.cmd tsc --noEmit`, `npm.cmd run test`, `npm.cmd run build`, `npm.cmd audit --audit-level=high`, local route checks, and desktop/mobile screenshots for `/portfolio` and `/insights` passed.
+
 ### ISSUE-018: Portfolio Screenshot QA Logged Dev-Origin Warning
 - Symptoms: Playwright screenshot checks against `127.0.0.1` logged a Next.js development warning that HMR requests were blocked because the dev server was initialized as `localhost`.
 - Root cause: Next.js blocks cross-origin requests to dev-only assets unless additional development origins are explicitly allowed.

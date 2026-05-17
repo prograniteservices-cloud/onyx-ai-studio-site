@@ -127,3 +127,12 @@
 - [x] Run lint, typecheck, build, tests, audit, route checks, public identifier scan, and visual QA.
 - [x] Commit, push, deploy, and verify production routes.
 - [x] Update Agent Memory.
+
+## Phase 13 - Client-Facing Copy Fix
+- [x] Add a regression test that blocks internal implementation-note phrases from public-facing files.
+- [x] Replace `/portfolio` demo section copy with client-facing workflow hooks.
+- [x] Replace `/portfolio` case-study section copy with client-facing business-system proof copy.
+- [x] Replace `/insights` header description with a client-facing learning hook.
+- [x] Update `llms.txt` case-study wording so AI-facing public copy is client-facing too.
+- [x] Run lint, typecheck, tests, build, high-severity audit, local route checks, public identifier scan, and visual QA.
+- [ ] Commit, push, deploy, verify production copy, and update Agent Memory.

@@ -51,6 +51,7 @@ Retell is framed as the voice and conversation layer. Supabase is framed as the 
 - Do not delete or hide existing portfolio, insights, services, or project proof.
 - Keep `/portfolio` as the broad demo hub and `/case-studies` as the deeper narrative index.
 - Reframe existing work around the AI operations offer.
+- Visible page copy should speak to buyers and operators. Keep implementation notes, repo architecture, metadata storage, deployment coupling, and internal rationale out of public page descriptions.
 - Avoid hype-heavy claims and promises of perfect accuracy or staff replacement.
 - Make public and internal assistant permissions visibly distinct.
 - Keep public copy free of personal details from private parent-context files.

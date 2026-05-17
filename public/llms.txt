@@ -6,7 +6,7 @@
 - `AI Business System -> https://onyxaistudio.digital/services`: Overview of the system components.
 - `Portfolio -> https://onyxaistudio.digital/portfolio`: Hub for 20 live SaaS demos plus links to deeper case studies.
 - `Demo Launcher -> https://onyx-portfolio-demos.vercel.app/apps`: Live external portfolio deployment with all 20 demo apps.
-- `Case Studies -> https://onyxaistudio.digital/case-studies`: Four deeper proof narratives across AI operations modules, assistant interfaces, data handling, workflow automation, lead capture, and custom implementation.
+- `Case Studies -> https://onyxaistudio.digital/case-studies`: Client proof across AI operations modules, assistant interfaces, data handling, workflow automation, lead capture, and custom implementation.
 - `Insights -> https://onyxaistudio.digital/insights`: Practical articles about AI operations, internal assistants, guardrails, semantic search, and business data handling.
 - `Pricing -> https://onyxaistudio.digital/pricing`: Implementation and monthly management ranges.
 - `Contact -> https://onyxaistudio.digital/contact`: AI Operations Review request page.

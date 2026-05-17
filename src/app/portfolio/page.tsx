@@ -62,7 +62,7 @@ export default function PortfolioPage() {
           <SectionHeading
             eyebrow="Portfolio"
             title="20 live SaaS demos plus deeper case studies."
-            description="The demo hub shows the smaller product pieces behind the operations system: RAG, grounded answers, support automation, document handling, workflow agents, data fusion, guardrails, and assistant interfaces."
+            description="Use the demos to see what the system can actually do: answer from company knowledge, check claims against sources, handle documents safely, plan tasks, analyze messy data, and produce next steps staff can use."
           />
           <div className="glass-panel rounded-lg border border-border bg-background/84 p-6 shadow-sm">
             <div className="flex items-start justify-between gap-5">
@@ -73,9 +73,10 @@ export default function PortfolioPage() {
               Demo launcher
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              All 20 SaaS demos run in the separate portfolio deployment. This
-              page keeps the main site client-facing while linking directly to
-              the live demo directory and each app route.
+              Start with the full demo directory, then open any app to try the
+              workflow yourself. The set covers customer support, knowledge
+              search, document review, task planning, data analysis,
+              recommendations, translation, and guardrail-heavy use cases.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button asChild>
@@ -104,7 +105,7 @@ export default function PortfolioPage() {
           <SectionHeading
             eyebrow="Live SaaS demos"
             title="Real demos that show the pieces behind the operations system."
-            description="Each demo links to the live portfolio environment. The main site stores only lightweight public metadata, so the website is not coupled to the demo app at runtime."
+            description="Open a demo and test the workflow yourself. Each one shows a practical building block that can support reception, lead capture, internal knowledge, document review, follow-up, or safer AI answers."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {portfolioDemoApps.map((app) => (
@@ -139,8 +140,8 @@ export default function PortfolioPage() {
             <FileText aria-hidden="true" className="size-8 text-accent" />
             <SectionHeading
               eyebrow="Case studies"
-              title="Four deeper proof narratives remain available."
-              description="Use the case studies when a visitor needs more context on implementation judgment, product constraints, data handling, and business outcomes."
+              title="See how the demos turn into working business systems."
+              description="These case studies show the same building blocks applied to real project problems: messy data, assistant design, lead capture, workflow automation, interface constraints, and guardrails."
               className="mt-5"
             />
             <Button asChild className="mt-6">

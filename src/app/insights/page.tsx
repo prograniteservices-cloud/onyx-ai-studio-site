@@ -40,7 +40,7 @@ export default function InsightsPage() {
           <SectionHeading
             eyebrow="Insights"
             title="Practical thinking for AI reception, lead capture, internal assistants, and guardrails."
-            description="Insights now support the flagship AI operations offer: company knowledge, data handling, safe document use, workflow automation, and service-business implementation."
+            description="Use these articles to see what has to be in place before AI can safely answer customers, capture leads, search company knowledge, handle documents, and move follow-up work forward."
           />
         </div>
       </section>

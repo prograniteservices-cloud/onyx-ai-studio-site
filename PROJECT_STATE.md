@@ -24,6 +24,7 @@ Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can 
 - `/case-studies` remains live for the four deeper proof narratives and is linked from `/portfolio` and the homepage proof area.
 - Homepage proof copy now uses client-facing benefit-led headers and links to both `Explore the 20 SaaS demos` and `View case studies`.
 - `src/lib/site-data.ts` contains lightweight public metadata for the 20 demo apps only; the main site does not import from the portfolio demo repo at runtime.
+- Public page copy must read as client-facing hooks, not implementation notes. The `/portfolio` and `/insights` headers were patched after internal-note language appeared on the live site.
 - Existing portfolio projects remain and are reframed as proof of AI operations modules, assistant interfaces, lead capture, workflow automation, data handling, and custom implementation ability.
 - `/pricing` now presents premium implementation and monthly management ranges with client-paid Retell and third-party usage called out.
 - Contact form and `/api/contact` now use the AI Operations Review schema: name, business name, email, phone, website, industry, locations, call volume, main problem, assistant scope, and notes.
@@ -109,3 +110,7 @@ Resume the paused Search Console and outreach tasks when needed.
 - Portfolio hub live route checks: `/`, `/portfolio`, `/case-studies`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200 on `https://onyxaistudio.digital`.
 - Portfolio hub live content checks: homepage exposed `Explore the 20 SaaS demos` and `View case studies`; `/portfolio` exposed all 20 external demo links; sitemap and `llms.txt` included `/portfolio` and the demo launcher.
 - Portfolio hub memory update: Agent Memory wiki and local project-memory were updated with the copy issue, missing navigation issue, `/portfolio` hub solution, and final deployment URL.
+- Client-facing copy fix validation: added `tests/client_facing_copy.test.mjs`; removed internal-note phrases from `/portfolio`, `/insights`, and `llms.txt`.
+- Client-facing copy fix validation: `npm.cmd run lint`, `npx.cmd tsc --noEmit`, `npm.cmd run test`, `npm.cmd run build`, and `npm.cmd audit --audit-level=high` passed.
+- Client-facing copy fix local route checks: `/portfolio`, `/insights`, and `/llms.txt` returned HTTP 200; old internal-note phrases were absent and the new hooks were present.
+- Client-facing copy fix visual QA: `qa-copyfix-portfolio-desktop.png`, `qa-copyfix-portfolio-mobile.png`, `qa-copyfix-insights-desktop.png`, and `qa-copyfix-insights-mobile.png`.
