@@ -411,6 +411,31 @@ export const caseStudies: CaseStudy[] = [
       "A practical demand-generation foundation that can scale into service pages, proof content, lead capture, and assistant-ready source material.",
     stack: ["SEO architecture", "Next.js", "Content strategy", "Schema"],
   },
+  {
+    slug: "greater-aiken-irrigation",
+    title: "Greater Aiken Irrigation",
+    label: "AEO & SEO Overhaul",
+    summary:
+      "A complete Answer Engine Optimization (AEO) and SEO overhaul for a local service business, turning static pages into AI-search-ready lead capture assets.",
+    image: "/case-study-regional-service.svg",
+    services: [
+      "seo-content-systems",
+      "web-development",
+      "ai-integration"
+    ],
+    metrics: [
+      { label: "Case Studies", value: "54+" },
+      { label: "Schema", value: "FAQ & Entity" },
+      { label: "Search focus", value: "AEO/SGE" },
+    ],
+    challenge:
+      "Local service businesses risk losing traffic to AI search engines (Google SGE, ChatGPT) because their traditional SEO content lacks the semantic depth required by LLMs.",
+    solution:
+      "A comprehensive AEO overhaul that uniquely rewrote 54+ case studies with expert technical details, implemented FAQ and Service Entity Schema, and established a demand generation system.",
+    result:
+      "A future-proofed local service presence that targets both traditional local SEO and emerging AI search, converting high-intent traffic into qualified leads.",
+    stack: ["Next.js", "AEO", "Entity Schema", "Content strategy"],
+  },
 ];
 
 export type PortfolioDemoApp = {
