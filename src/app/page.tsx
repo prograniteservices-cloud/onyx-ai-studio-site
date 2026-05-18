@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { JsonLd } from "@/components/json-ld";
+import { LatentGraphHero } from "@/components/latent-graph-hero";
+import { LogoMark } from "@/components/logo-mark";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
@@ -61,18 +63,7 @@ export default function Home() {
 
       <section className="hero-shell relative overflow-hidden border-b border-border bg-card">
         <div className="absolute inset-0 z-0 opacity-80">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            crossOrigin="anonymous"
-            src="/refractive-core.mp4"
-            poster="/refined.png"
-            className="h-full w-full object-cover grayscale brightness-105 contrast-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-card/82 via-background/58 to-background/92" />
-          <div className="paper-grain absolute inset-0 pointer-events-none opacity-30" />
+          <LatentGraphHero />
         </div>
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100svh-4rem)] w-full max-w-7xl items-end gap-10 px-4 pb-12 pt-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
@@ -80,9 +71,15 @@ export default function Home() {
             <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-accent">
               AI Business Operations Integration
             </p>
-            <h1 className="mt-5 font-serif text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
-              AI reception, lead capture, scheduling, and internal business assistance.
-            </h1>
+            <div className="mt-5 flex items-center gap-4">
+              <LogoMark showText={false} className="shrink-0" />
+              <h1 className="font-serif text-4xl font-bold leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+                Onyx AI Studio
+              </h1>
+            </div>
+            <p className="mt-5 font-serif text-4xl font-bold leading-[1.08] text-primary sm:text-5xl lg:text-6xl">
+              AI business solutions.
+            </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground sm:text-xl">
               Onyx AI Studio builds AI business systems that answer calls,
               support website visitors, capture leads, organize customer data,
