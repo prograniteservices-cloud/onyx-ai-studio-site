@@ -1,6 +1,6 @@
 # Project State
 
-Updated: 2026-05-16
+Updated: 2026-05-24
 
 ## Current Goal
 Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can reach the 20 live SaaS demos and the four deeper case studies from the main `onyxaistudio.digital` navigation.
@@ -28,6 +28,7 @@ Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can 
 - Existing portfolio projects remain and are reframed as proof of AI operations modules, assistant interfaces, lead capture, workflow automation, data handling, and custom implementation ability.
 - `/pricing` now presents premium implementation and monthly management ranges with client-paid Retell and third-party usage called out.
 - Contact form and `/api/contact` now use the AI Operations Review schema: name, business name, email, phone, website, industry, locations, call volume, main problem, assistant scope, and notes.
+- Contact lead capture saves to Supabase table `public.onyx_contact_leads`, then sends a Resend notification via `RESEND_API_KEY`, with optional `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` routing values.
 - Motion enhancement pass is live: animated hero systems visual, scroll reveals, glass panels/cards, and refined sticky glass header.
 - Google Search Console ownership is verified by DNS record.
 - Search Console indexing-readiness checks pass from this machine; manual sitemap submission and URL inspection are pending in the browser.
@@ -49,14 +50,14 @@ Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can 
 ## Known Constraints
 - Root `seo-presence-hub` remains a planning workspace; this app folder is the deployable Git repository.
 - Private parent-context files must not be used in public copy.
-- Contact form is fully integrated with Infomaniak SMTP (`projects@onyxaistudio.digital`) via a secure API route (`/api/contact`).
-- Vercel production env includes `INFOMANIAK_EMAIL`, `INFOMANIAK_TOKEN`, `INFOMANIAK_SMTP_HOST`, and `INFOMANIAK_SMTP_PORT`.
+- Contact form is integrated with Supabase and Resend via a secure API route (`/api/contact`).
+- Vercel production env should include `RESEND_API_KEY`, `SUPABASE_URL` or `SUPABASE_REST_URL`, and server-only `SUPABASE_SECRET_KEY`; optional email overrides are `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`.
 - Cinematic hero animation and peripheral branding are live and mobile-responsive.
 - Google Search Console ownership is verified by DNS record.
 - Live sending requires `RESEND_API_KEY` and `ONYX_PHYSICAL_MAILING_ADDRESS`. The sender refuses `--send` without both.
 
 ## Next Action
-Resume the paused Search Console and outreach tasks when needed.
+Monitor `public.onyx_contact_leads` and the Resend notification inbox for real lead submissions.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -92,7 +93,7 @@ Resume the paused Search Console and outreach tasks when needed.
 - AI operations repositioning validation: `npm.cmd audit --audit-level=high` exited 0; moderate PostCSS advisory remains tracked in ISSUE-005.
 - AI operations repositioning validation: public identifier scan over `src` and `public` found no matches.
 - AI operations repositioning route checks: `/`, `/services`, all seven service detail routes, `/pricing`, `/case-studies`, `/insights`, `/contact`, `/robots.txt`, `/sitemap.xml`, and `/llms.txt` returned HTTP 200 locally.
-- AI operations form validation: incomplete `POST /api/contact` returned HTTP 400, confirming required-field validation before SMTP send.
+- AI operations form validation: incomplete `POST /api/contact` returned HTTP 400, confirming required-field validation before Resend delivery.
 - AI operations visual QA: `qa-repositioning-desktop.png`, `qa-repositioning-mobile.png`, `qa-repositioning-contact-desktop.png`, and `qa-repositioning-contact-mobile.png`.
 - Portfolio hub regression test: `npm.cmd run test -- tests/portfolio_hub_content.test.mjs` passed.
 - Portfolio hub validation: `npm.cmd run lint` passed.
@@ -118,3 +119,4 @@ Resume the paused Search Console and outreach tasks when needed.
 - Client-facing copy fix production deploy: Vercel build passed and the custom domain was verified after deploy.
 - Client-facing copy fix live verification: `/portfolio` and `/insights` returned HTTP 200; the new demo, case-study, and insights hooks were present; the old internal-note phrases were absent from the live pages; `llms.txt` used client-facing case-study wording.
 - Client-facing copy fix memory update: Agent Memory wiki and local project-memory were updated after deployment.
+- Supabase lead persistence validation: created `public.onyx_contact_leads`, added production `SUPABASE_URL`, `SUPABASE_REST_URL`, and server-only `SUPABASE_SECRET_KEY` in Vercel, deployed production, posted a live validation lead to `https://onyxaistudio.digital/api/contact`, confirmed one Supabase row, and deleted the validation row.

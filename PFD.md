@@ -19,7 +19,7 @@
 | `/insights` | `src/app/insights/page.tsx` | AI operations insight index |
 | `/insights/[slug]` | `src/app/insights/[slug]/page.tsx` | Static insight article |
 | `/contact` | `src/app/contact/page.tsx` | AI Operations Review request form |
-| `/api/contact` | `src/app/api/contact/route.ts` | SMTP-backed lead notification endpoint |
+| `/api/contact` | `src/app/api/contact/route.ts` | Supabase-backed lead capture and Resend notification endpoint |
 | `/robots.txt` | `src/app/robots.ts` | Crawler and AI bot access |
 | `/sitemap.xml` | `src/app/sitemap.ts` | Search sitemap |
 | `/llms.txt` | `public/llms.txt` | AI crawler content guide |
@@ -36,6 +36,7 @@
 ## Data
 - `src/lib/site-data.ts` owns navigation, service, case study, insight, FAQ, pricing, problem, flow, and capability data.
 - `src/lib/site-data.ts` also stores lightweight public metadata for the 20 SaaS demos and their external links to `https://onyx-portfolio-demos.vercel.app/apps`.
+- `src/lib/contact-leads.ts` maps normalized contact form fields to Supabase column names and writes server-side lead records through the Supabase REST API.
 - Dynamic service, case study, and insight routes read from that file and use `generateStaticParams`.
 - `/portfolio` links to all 20 live demo routes on the separate portfolio deployment and to the four deeper case studies. `/case-studies` remains the narrative proof index.
 
@@ -56,4 +57,6 @@
 - `/contact` posts JSON to `/api/contact`.
 - Required AI Operations Review fields: name, business name, email, industry, locations, approximate call volume, main problem, assistant scope, and notes.
 - Optional fields: phone and website.
-- `/api/contact` normalizes string fields, validates required review fields, escapes HTML in the email body, and sends the lead through Infomaniak SMTP.
+- `/api/contact` normalizes string fields, validates required review fields, saves the lead to `public.onyx_contact_leads`, escapes HTML in the email body, and sends the lead notification through the Resend API.
+- Contact delivery requires `RESEND_API_KEY`; optional routing variables are `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`.
+- Contact persistence requires `SUPABASE_URL` or `SUPABASE_REST_URL` plus server-only `SUPABASE_SECRET_KEY`.
