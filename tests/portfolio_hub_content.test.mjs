@@ -23,6 +23,25 @@ test("portfolio hub publishes all 20 SaaS demos and external launcher links", ()
   assert.match(portfolioPage, /20 live SaaS demos/);
 });
 
+test("portfolio keeps the broad demo library and adds buyer-intent signposts", () => {
+  const portfolioPage = read("src/app/portfolio/page.tsx");
+
+  assert.match(portfolioPage, /Find the kind of build you need/);
+
+  for (const phrase of [
+    "lead capture",
+    "internal knowledge",
+    "document review",
+    "customer support",
+    "data analysis",
+    "guardrails",
+  ]) {
+    assert.match(portfolioPage, new RegExp(phrase), `Missing portfolio signpost: ${phrase}`);
+  }
+
+  assert.equal(/broad demo library is a (weakness|distraction)/i.test(portfolioPage), false);
+});
+
 test("homepage copy links visitors to demos and case studies", () => {
   const homepage = read("src/app/page.tsx");
 

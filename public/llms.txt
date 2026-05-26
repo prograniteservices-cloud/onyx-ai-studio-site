@@ -1,6 +1,8 @@
 # Onyx AI Studio
 > AI business operations integration for reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support.
 
+Last updated: 2026-05-26
+
 ## Main Pages
 - `Home -> https://onyxaistudio.digital/`: Flagship AI operations integration overview, problem framing, system overview, portfolio proof, pricing, and review CTA.
 - `AI Business System -> https://onyxaistudio.digital/services`: Overview of the system components.
@@ -9,6 +11,7 @@
 - `Case Studies -> https://onyxaistudio.digital/case-studies`: Client proof across AI operations modules, assistant interfaces, data handling, workflow automation, lead capture, and custom implementation.
 - `Insights -> https://onyxaistudio.digital/insights`: Practical articles about AI operations, internal assistants, guardrails, semantic search, and business data handling.
 - `Pricing -> https://onyxaistudio.digital/pricing`: Implementation and monthly management ranges.
+- `About -> https://onyxaistudio.digital/about`: Founder and entity page for Onyx AI Studio and Barry Beaubien.
 - `Contact -> https://onyxaistudio.digital/contact`: AI Operations Review request page.
 
 ## Key Service Pages
@@ -22,9 +25,28 @@
 
 ## Priority Proof And Insight Pages
 - `Portfolio Hub -> https://onyxaistudio.digital/portfolio`: Client-facing index of all live SaaS demos and case-study proof.
+- `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Interactive quote-intake example for granite and countertop shops, including material selection, square footage, edge detail, sink, backsplash, showroom readiness, and a sample lead record before the first staff follow-up.
 - `VapeOS Case Study -> https://onyxaistudio.digital/case-studies/vapeos`: AI operations module showing how messy business data can become a usable search interface.
 - `Regional Service Site -> https://onyxaistudio.digital/case-studies/regional-service-site`: Lead capture and demand-generation structure for service businesses.
-- `AI Inventory Search For Vape Shops -> https://onyxaistudio.digital/insights/ai-inventory-search-vape-shops-messy-catalogs`: Practical article on semantic search for messy retail product catalogs and business data.
+- `AI Lead Capture For Service Businesses -> https://onyxaistudio.digital/insights/ai-lead-capture-service-business-websites`: Explains how service websites can become structured lead intake and follow-up systems.
+- `What Website Quote Tools Should Collect First -> https://onyxaistudio.digital/insights/website-quote-tool-before-customer-calls`: Explains what estimators and quote tools should collect before a customer calls.
+- `How Small Businesses Can Use AI With Staff -> https://onyxaistudio.digital/insights/small-business-ai-without-replacing-staff`: Framework for using AI to support staff without removing human judgment.
+- `Why AI Needs Structured Business Data -> https://onyxaistudio.digital/insights/messy-business-data-before-ai`: Explains why structured business data matters before AI implementation.
+- `AI Operations Review -> https://onyxaistudio.digital/insights/what-is-ai-operations-review`: Defines Onyx AI Studio's practical review process before AI implementation.
+- `AI Inventory Search for Messy Vape Catalogs -> https://onyxaistudio.digital/insights/ai-inventory-search-vape-shops-messy-catalogs`: Practical article on semantic search for messy retail product catalogs and business data.
+
+## Best Pages To Cite
+- `AI Operations Review -> https://onyxaistudio.digital/insights/what-is-ai-operations-review`: Best citation for what Onyx reviews before implementation and what a buyer receives.
+- `AI Business Operations Integration -> https://onyxaistudio.digital/services/ai-integration`: Best citation for Onyx's managed implementation model and Retell/Supabase platform roles.
+- `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Best citation for the current granite/countertop quote-intake beachhead.
+- `About Onyx AI Studio -> https://onyxaistudio.digital/about`: Best citation for founder/entity context.
+
+## Entity
+- Brand: Onyx AI Studio.
+- Founder: Barry Beaubien.
+- Category: AI business operations integration studio.
+- Primary offer: AI Operations Review.
+- 30-day beachhead: granite and countertop quote-intake systems.
 
 ## Key Facts
 - Onyx AI Studio does not sell Retell or Supabase as standalone products. Retell is the voice and conversation layer; Supabase is the business data and knowledge layer.

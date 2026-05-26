@@ -1,9 +1,9 @@
 # Project State
 
-Updated: 2026-05-24
+Updated: 2026-05-26
 
 ## Current Goal
-Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can reach the 20 live SaaS demos and the four deeper case studies from the main `onyxaistudio.digital` navigation.
+Complete the Website Audit fix plan: productize the AI Operations Review, strengthen the granite/countertop proof path, preserve and signpost the broad portfolio, expose a protected read-only lead pipeline, harden frontend interactions, and align docs.
 
 ## Current Status
 - Next.js scaffold exists and is the active app.
@@ -29,6 +29,9 @@ Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can 
 - `/pricing` now presents premium implementation and monthly management ranges with client-paid Retell and third-party usage called out.
 - Contact form and `/api/contact` now use the AI Operations Review schema: name, business name, email, phone, website, industry, locations, call volume, main problem, assistant scope, and notes.
 - Contact lead capture saves to Supabase table `public.onyx_contact_leads`, then sends a Resend notification via `RESEND_API_KEY`, with optional `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` routing values.
+- `/admin/leads` is a protected read-only operator view for AI Operations Review leads. It requires `ADMIN_DASHBOARD_USER` and `ADMIN_DASHBOARD_PASSWORD`; without both it returns 404.
+- The AI Operations Review public promise now states that submissions are reviewed within one business day and produce a workflow map, first-system recommendation, and source-material checklist.
+- The portfolio remains a broad 20-demo capability library and now includes buyer-intent signposts for lead capture, internal knowledge, document review, customer support, data analysis, and guardrails.
 - Motion enhancement pass is live: animated hero systems visual, scroll reveals, glass panels/cards, and refined sticky glass header.
 - Google Search Console ownership is verified by DNS record.
 - Search Console indexing-readiness checks pass from this machine; manual sitemap submission and URL inspection are pending in the browser.
@@ -52,12 +55,13 @@ Add a client-facing portfolio hub to the Onyx AI Studio website so visitors can 
 - Private parent-context files must not be used in public copy.
 - Contact form is integrated with Supabase and Resend via a secure API route (`/api/contact`).
 - Vercel production env should include `RESEND_API_KEY`, `SUPABASE_URL` or `SUPABASE_REST_URL`, and server-only `SUPABASE_SECRET_KEY`; optional email overrides are `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`.
+- Admin lead-pipeline access requires server-only `ADMIN_DASHBOARD_USER` and `ADMIN_DASHBOARD_PASSWORD`.
 - Cinematic hero animation and peripheral branding are live and mobile-responsive.
 - Google Search Console ownership is verified by DNS record.
 - Live sending requires `RESEND_API_KEY` and `ONYX_PHYSICAL_MAILING_ADDRESS`. The sender refuses `--send` without both.
 
 ## Next Action
-Monitor `public.onyx_contact_leads` and the Resend notification inbox for real lead submissions.
+Commit and push the verified Website Audit fix sprint, then monitor Review submissions, admin lead-pipeline access, and Search Console.
 
 ## Verification
 - `npm.cmd run lint`: passed.
@@ -120,3 +124,10 @@ Monitor `public.onyx_contact_leads` and the Resend notification inbox for real l
 - Client-facing copy fix live verification: `/portfolio` and `/insights` returned HTTP 200; the new demo, case-study, and insights hooks were present; the old internal-note phrases were absent from the live pages; `llms.txt` used client-facing case-study wording.
 - Client-facing copy fix memory update: Agent Memory wiki and local project-memory were updated after deployment.
 - Supabase lead persistence validation: created `public.onyx_contact_leads`, added production `SUPABASE_URL`, `SUPABASE_REST_URL`, and server-only `SUPABASE_SECRET_KEY` in Vercel, deployed production, posted a live validation lead to `https://onyxaistudio.digital/api/contact`, confirmed one Supabase row, and deleted the validation row.
+- Correction sprint validation: `npm.cmd run test` passed 35/35, `npm.cmd run lint` passed, `npx.cmd tsc --noEmit` passed, `npm.cmd run build` passed with `/about` and 34 generated static pages, `npm.cmd audit --audit-level=high` exited 0 with moderate advisories only, and `git diff --check` passed with line-ending warnings only.
+- Correction sprint Supabase validation: live `public.onyx_contact_leads` has the 20 new pipeline/attribution fields and RLS remains enabled.
+- Correction sprint browser QA: Playwright screenshots captured under `artifacts/browser-checks-2026-05-26`; local DOM checks verified mobile Review CTA, staged form, accessible status source, skip link, dead services CTA removal, and no-JS/reduced-motion visibility behavior.
+- Correction sprint live verification: `https://onyxaistudio.digital` was deployed and aliased through Vercel; `/robots.txt`, `/sitemap.xml`, `/llms.txt`, `/`, `/services`, `/contact`, `/pricing`, `/portfolio`, `/case-studies/countertop-estimator`, `/case-studies/vapeos`, `/insights/what-is-ai-operations-review`, and `/about` returned 200, changed HTML pages were self-canonical, indexable, and had one H1.
+- Correction sprint Search Console: submitted `https://onyxaistudio.digital/sitemap.xml` on 2026-05-26; report showed pending processing, 0 warnings, 0 errors, and recent page impressions still present.
+- Website Audit fix sprint validation: `npm.cmd test` passed 45/45, `npm.cmd run lint` passed, `npx.cmd tsc --noEmit` passed, `npm.cmd run build` passed with 35 generated static pages plus dynamic `/admin/leads` and `/api/admin/leads`, and `npm.cmd audit --audit-level=high` exited 0 with moderate advisories only.
+- Website Audit fix sprint runtime smoke: built app on local port 3012 returned 200 for `/`, `/contact`, `/portfolio`, and `/case-studies/countertop-estimator`; `/admin/leads` and `/api/admin/leads` returned 404 without admin env vars, confirming fail-closed admin protection.

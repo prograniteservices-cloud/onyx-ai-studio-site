@@ -29,7 +29,7 @@
 - `SiteFooter`: footer navigation, system links, proof links, and AI Operations Review CTA.
 - `LogoMark`: SVG wordmark/mark component.
 - `JsonLd`: JSON-LD script renderer.
-- `ContactForm`: AI Operations Review form with business, website, industry, location, call-volume, problem, assistant-scope, and notes fields.
+- `ContactForm`: AI Operations Review form with required name, business, email, website, main-problem, and notes fields plus optional phone, industry, location, call-volume, and assistant-scope qualifiers.
 - `SectionHeading`: consistent section heading pattern.
 - `ui/*`: shadcn-compatible primitives.
 
@@ -55,8 +55,9 @@
 
 ## Form Behavior
 - `/contact` posts JSON to `/api/contact`.
-- Required AI Operations Review fields: name, business name, email, industry, locations, approximate call volume, main problem, assistant scope, and notes.
-- Optional fields: phone and website.
+- Required AI Operations Review fields: name, business name, email, website, main problem, and notes.
+- Optional qualifier fields: phone, industry, locations, approximate call volume, and assistant scope.
 - `/api/contact` normalizes string fields, validates required review fields, saves the lead to `public.onyx_contact_leads`, escapes HTML in the email body, and sends the lead notification through the Resend API.
 - Contact delivery requires `RESEND_API_KEY`; optional routing variables are `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`.
 - Contact persistence requires `SUPABASE_URL` or `SUPABASE_REST_URL` plus server-only `SUPABASE_SECRET_KEY`.
+- `/admin/leads` and `/api/admin/leads` expose a protected read-only operator view when `ADMIN_DASHBOARD_USER` and `ADMIN_DASHBOARD_PASSWORD` are set. If either admin env var is missing, admin routes return 404.

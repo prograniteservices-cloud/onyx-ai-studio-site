@@ -33,9 +33,41 @@ test("buildInitialEmail uses the VapeOS demo angle and requested sender details"
 
   assert.equal(email.from, "Onyx AI Studio <hello@onyxaistudio.digital>");
   assert.equal(email.replyTo, "prograniteservices@gmail.com");
-  assert.equal(email.subject, "Idea for Sample Vapor's inventory search");
+  assert.equal(email.subject, "Idea for Sample Vapor's product lookup");
   assert.match(email.text, /1,700\+ real products/);
+  assert.match(email.text, /simply talk to it to find their favorite products/);
+  assert.match(email.text, /handle much larger catalogs/);
   assert.match(email.text, /live demo link/);
+});
+
+test("buildInitialEmail uses custom prospect body when provided", () => {
+  const email = buildInitialEmail({
+    company: "Sample Pool",
+    email: "owner@example.com",
+    subject: "Custom subject",
+    body: "Hi Sample Pool team,\n\nCustom researched message.",
+  });
+
+  assert.equal(email.subject, "Custom subject");
+  assert.match(email.text, /Custom researched message/);
+  assert.match(email.text, /Onyx AI Studio/);
+  assert.match(email.text, /unsubscribe/);
+});
+
+test("buildInitialEmail supports pool and spa service-intake prospects", () => {
+  const email = buildInitialEmail({
+    company: "Sample Pool",
+    website: "https://example.com",
+    email: "owner@example.com",
+    siteStrength: "the site lists repair and weekly cleaning services",
+    leadCaptureWeakness: "the request path is a basic contact form",
+    poolSpaServiceAngle: "repair and weekly-service intake",
+  });
+
+  assert.equal(email.subject, "Idea for Sample Pool's service requests");
+  assert.match(email.text, /repair and weekly-service intake/);
+  assert.match(email.text, /pool or spa type/);
+  assert.doesNotMatch(email.text, /VapeOS/);
 });
 
 test("toResendPayload serializes reply-to for the Resend API", () => {
@@ -49,6 +81,9 @@ test("buildComplianceFooter includes physical address and opt-out language", () 
   const footer = buildComplianceFooter();
 
   assert.match(footer, /Onyx AI Studio/);
+  assert.match(footer, /803-953-7692/);
+  assert.match(footer, /prograniteservices@gmail\.com/);
+  assert.match(footer, /https:\/\/onyxaistudio\.digital/);
   assert.match(footer, /Manning, SC/);
   assert.match(footer, /reply with \"unsubscribe\"/i);
 });

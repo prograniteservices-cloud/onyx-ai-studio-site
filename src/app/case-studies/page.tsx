@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { absoluteUrl, caseStudies } from "@/lib/site-data";
+import { absoluteUrl, breadcrumbSchema, caseStudies } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Portfolio Proof",
@@ -31,14 +31,21 @@ const collectionSchema = {
   })),
 };
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Case Studies", path: "/case-studies" },
+]);
+
 export default function CaseStudiesPage() {
   return (
     <>
       <JsonLd data={collectionSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Case studies"
+            titleAs="h1"
             title="Proof that the studio can build the modules inside an AI business operations system."
             description="Existing projects stay intact and are reframed as proof of data handling, assistant interfaces, workflow automation, lead capture, guardrails, and custom implementation ability."
           />

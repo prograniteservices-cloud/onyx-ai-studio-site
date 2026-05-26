@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import { Geist_Mono, Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
 
 import { JsonLd } from "@/components/json-ld";
+import { ScrollRevealHydrator } from "@/components/scroll-reveal-hydrator";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { absoluteUrl, siteUrl } from "@/lib/site-data";
+import {
+  absoluteUrl,
+  founderLinkedInUrl,
+  founderName,
+  founderPersonId,
+  siteUrl,
+} from "@/lib/site-data";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -93,6 +100,10 @@ const organizationSchema = {
   logo: absoluteUrl("/onyx-logo.svg"),
   description,
   areaServed: "United States",
+  founder: {
+    "@id": founderPersonId,
+  },
+  sameAs: [founderLinkedInUrl],
   knowsAbout: [
     "AI integration",
     "AI phone reception",
@@ -122,6 +133,28 @@ const organizationSchema = {
   },
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": founderPersonId,
+  name: founderName,
+  jobTitle: "Founder and AI systems builder",
+  url: siteUrl,
+  sameAs: [founderLinkedInUrl],
+  worksFor: {
+    "@type": "Organization",
+    name: "Onyx AI Studio",
+    url: siteUrl,
+  },
+  knowsAbout: [
+    "AI business operations",
+    "AI lead capture",
+    "AI phone reception",
+    "Business data systems",
+    "Internal knowledge assistants",
+  ],
+};
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -147,9 +180,16 @@ export default function RootLayout({
     >
       <body className="flex min-h-screen flex-col antialiased">
         <JsonLd data={organizationSchema} />
+        <JsonLd data={personSchema} />
         <JsonLd data={websiteSchema} />
+        <ScrollRevealHydrator />
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { absoluteUrl, pricingFactors, pricingTiers } from "@/lib/site-data";
+import { absoluteUrl, breadcrumbSchema, pricingFactors, pricingTiers } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -36,15 +36,22 @@ const pricingSchema = {
   })),
 };
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Pricing", path: "/pricing" },
+]);
+
 export default function PricingPage() {
   return (
     <>
       <JsonLd data={pricingSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
           <div className="editorial-rule pt-8">
             <SectionHeading
               eyebrow="Investment"
+              titleAs="h1"
               title="Custom AI business integration, priced like operational infrastructure."
               description="This is not a checkout product or a cheap chatbot setup. Pricing reflects discovery, implementation, integration, guardrails, knowledge structuring, data handling, testing, and monthly optimization."
             />

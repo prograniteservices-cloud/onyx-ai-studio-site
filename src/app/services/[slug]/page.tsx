@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   absoluteUrl,
+  breadcrumbSchema,
   caseStudies,
   getService,
   services,
@@ -17,6 +18,8 @@ import {
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -57,6 +60,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const relatedCases = caseStudies.filter((caseStudy) =>
     service.relatedCases.includes(caseStudy.slug),
   );
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: service.title, path: `/services/${service.slug}` },
+  ]);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -100,6 +108,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <div className="editorial-rule pt-8">
@@ -158,6 +167,50 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+      {service.detailSections ? (
+        <section className="border-b border-border bg-background">
+          <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
+            <SectionHeading
+              eyebrow="Implementation detail"
+              title="Answer-ready guidance for buyers and AI search."
+            />
+            <div className="grid gap-5">
+              {service.detailSections.map((section) => (
+                <section
+                  key={section.heading}
+                  className="rounded-lg border border-border bg-card p-5"
+                >
+                  <h2 className="font-serif text-2xl font-bold">
+                    {section.heading}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {section.body}
+                  </p>
+                </section>
+              ))}
+              {service.sourceLinks ? (
+                <nav
+                  aria-label="Source references"
+                  className="flex flex-wrap gap-3 rounded-lg border border-border bg-muted/70 p-5"
+                >
+                  {service.sourceLinks.map((source) => (
+                    <a
+                      key={source.href}
+                      href={source.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-bold text-primary underline-offset-4 hover:underline"
+                    >
+                      {source.label}
+                    </a>
+                  ))}
+                </nav>
+              ) : null}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-b border-border bg-muted/70">
         <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

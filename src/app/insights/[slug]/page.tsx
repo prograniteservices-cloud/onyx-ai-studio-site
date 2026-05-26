@@ -5,11 +5,20 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { absoluteUrl, getInsight, insights } from "@/lib/site-data";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  founderName,
+  founderPersonId,
+  getInsight,
+  insights,
+} from "@/lib/site-data";
 
 type InsightPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return insights.map((insight) => ({ slug: insight.slug }));
@@ -47,6 +56,12 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
     notFound();
   }
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Insights", path: "/insights" },
+    { name: insight.title, path: `/insights/${insight.slug}` },
+  ]);
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -55,8 +70,9 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
     datePublished: insight.date,
     dateModified: insight.date,
     author: {
-      "@type": "Organization",
-      name: "Onyx AI Studio",
+      "@id": founderPersonId,
+      "@type": "Person",
+      name: founderName,
     },
     publisher: {
       "@type": "Organization",
@@ -72,6 +88,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
   return (
     <>
       <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbs} />
       <article className="bg-background">
         <header className="border-b border-border bg-card">
           <div className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6 lg:px-8">

@@ -1,0 +1,38 @@
+<svg width="920" height="520" viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Countertop estimate tool system diagram</title>
+  <desc id="desc">A branded countertop estimate configurator connected to lead capture and follow-up workflows.</desc>
+  <rect width="920" height="520" rx="26" fill="#F7F4EE"/>
+  <path d="M0 116H920" stroke="#D8CDBD"/>
+  <path d="M0 404H920" stroke="#D8CDBD"/>
+  <rect x="68" y="72" width="252" height="360" rx="22" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <rect x="92" y="102" width="204" height="118" rx="16" fill="#ECE5D8"/>
+  <path d="M115 167C145 133 176 193 207 158C234 128 252 168 278 136" stroke="#0F7B75" stroke-width="8" stroke-linecap="round"/>
+  <rect x="92" y="244" width="84" height="28" rx="14" fill="#183A5A"/>
+  <rect x="188" y="244" width="84" height="28" rx="14" fill="#ECE5D8" stroke="#D8CDBD"/>
+  <rect x="92" y="294" width="204" height="14" rx="7" fill="#D8CDBD"/>
+  <rect x="92" y="324" width="168" height="14" rx="7" fill="#D8CDBD"/>
+  <rect x="92" y="366" width="204" height="38" rx="19" fill="#183A5A"/>
+  <rect x="386" y="94" width="214" height="92" rx="18" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <rect x="410" y="122" width="88" height="12" rx="6" fill="#B96924"/>
+  <rect x="410" y="148" width="144" height="13" rx="6.5" fill="#183A5A"/>
+  <rect x="386" y="214" width="214" height="92" rx="18" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <rect x="410" y="242" width="70" height="12" rx="6" fill="#B96924"/>
+  <rect x="410" y="268" width="152" height="13" rx="6.5" fill="#183A5A"/>
+  <rect x="386" y="334" width="214" height="92" rx="18" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <rect x="410" y="362" width="102" height="12" rx="6" fill="#B96924"/>
+  <rect x="410" y="388" width="136" height="13" rx="6.5" fill="#183A5A"/>
+  <path d="M320 162H386" stroke="#0F7B75" stroke-width="3" stroke-linecap="round"/>
+  <path d="M320 260H386" stroke="#0F7B75" stroke-width="3" stroke-linecap="round"/>
+  <path d="M320 380H386" stroke="#0F7B75" stroke-width="3" stroke-linecap="round"/>
+  <rect x="674" y="104" width="178" height="126" rx="22" fill="#183A5A"/>
+  <rect x="702" y="134" width="104" height="13" rx="6.5" fill="#FFFDF8"/>
+  <rect x="702" y="164" width="122" height="13" rx="6.5" fill="#D6E4DF"/>
+  <rect x="702" y="194" width="76" height="13" rx="6.5" fill="#D6E4DF"/>
+  <rect x="674" y="290" width="178" height="126" rx="22" fill="#FFFDF8" stroke="#D8CDBD"/>
+  <circle cx="722" cy="352" r="22" fill="#0F7B75"/>
+  <path d="M711 352L720 361L736 342" stroke="#FFFDF8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="764" y="328" width="58" height="12" rx="6" fill="#B96924"/>
+  <rect x="764" y="356" width="42" height="12" rx="6" fill="#183A5A"/>
+  <path d="M600 260C636 260 644 166 674 166" stroke="#0F7B75" stroke-width="3" stroke-linecap="round"/>
+  <path d="M600 260C636 260 644 352 674 352" stroke="#0F7B75" stroke-width="3" stroke-linecap="round"/>
+</svg>

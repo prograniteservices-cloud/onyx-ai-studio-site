@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import {
+  leadSavedEmailFailedResponse,
+  leadSavedEmailFailedStatus,
+} from "@/lib/contact-api-responses";
+import {
   buildContactLeadRecord,
   saveContactLead,
+  updateContactLeadNotificationStatus,
   type ContactLead,
 } from "@/lib/contact-leads";
 
@@ -17,6 +22,8 @@ type ReviewRequestPayload = {
   "main-problem"?: unknown;
   "assistant-scope"?: unknown;
   notes?: unknown;
+  utm_source?: unknown;
+  utm_campaign?: unknown;
 };
 
 function asText(value: unknown) {
@@ -48,11 +55,11 @@ async function sendReviewRequestEmail(lead: ContactLead) {
     ["Email", lead.email],
     ["Phone", lead.phone || "Not provided"],
     ["Website", lead.website || "Not provided"],
-    ["Industry", lead.industry],
-    ["Number of locations", lead.locations],
-    ["Approximate call volume", lead.callVolume],
+    ["Industry", lead.industry || "Not provided"],
+    ["Number of locations", lead.locations || "Not provided"],
+    ["Approximate call volume", lead.callVolume || "Not provided"],
     ["Main problem", lead.mainProblem],
-    ["Assistant scope", lead.assistantScope],
+    ["Assistant scope", lead.assistantScope || "Not sure yet"],
     ["Notes", lead.notes],
   ];
 
@@ -109,11 +116,8 @@ export async function POST(request: Request) {
       lead.name,
       lead.businessName,
       lead.email,
-      lead.industry,
-      lead.locations,
-      lead.callVolume,
+      lead.website,
       lead.mainProblem,
-      lead.assistantScope,
       lead.notes,
     ].some((value) => value.length === 0);
 
@@ -124,19 +128,47 @@ export async function POST(request: Request) {
       );
     }
 
-    await saveContactLead(
+    const savedLead = await saveContactLead(
       buildContactLeadRecord(lead, {
         userAgent: request.headers.get("user-agent"),
         referrer: request.headers.get("referer") ?? request.headers.get("referrer"),
+        landingPage: "/contact",
+        utmSource: asText(payload.utm_source),
+        utmCampaign: asText(payload.utm_campaign),
       }),
     );
-    await sendReviewRequestEmail(lead);
 
-    return NextResponse.json({ success: true });
+    try {
+      await sendReviewRequestEmail(lead);
+
+      if (savedLead?.id) {
+        await updateContactLeadNotificationStatus(savedLead.id, "sent");
+      }
+    } catch (emailError) {
+      console.error("Contact Form Notification Error:", emailError);
+
+      if (savedLead?.id) {
+        try {
+          await updateContactLeadNotificationStatus(savedLead.id, "failed");
+        } catch (statusError) {
+          console.error("Contact Form Notification Status Error:", statusError);
+        }
+      }
+
+      return NextResponse.json(
+        leadSavedEmailFailedResponse,
+        { status: leadSavedEmailFailedStatus },
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: "Your AI Operations Review request was saved.",
+    });
   } catch (error) {
     console.error("Contact Form Error:", error);
     return NextResponse.json(
-      { error: "Failed to send email. Please try again later." },
+      { error: "Failed to save your review request. Please try again later." },
       { status: 500 },
     );
   }

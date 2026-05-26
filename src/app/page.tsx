@@ -19,6 +19,7 @@ import {
   capabilities,
   caseStudies,
   homeFaqs,
+  insights,
   operationalProblems,
   pricingTiers,
   processSteps,
@@ -54,6 +55,7 @@ const breadcrumbSchema = {
 };
 
 const primaryServices = services.slice(0, 4);
+const priorityInsights = insights.slice(0, 5);
 
 export default function Home() {
   return (
@@ -62,12 +64,12 @@ export default function Home() {
       <JsonLd data={breadcrumbSchema} />
 
       <section className="hero-shell relative overflow-hidden border-b border-border bg-card">
-        <div className="absolute inset-0 z-0 opacity-80">
+        <div className="absolute inset-0 z-0 opacity-45 sm:opacity-80">
           <LatentGraphHero />
         </div>
 
-        <div className="relative z-10 mx-auto grid min-h-[calc(100svh-4rem)] w-full max-w-7xl items-end gap-10 px-4 pb-12 pt-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-          <div className="max-w-4xl pb-4">
+        <div className="relative z-10 mx-auto grid min-h-[calc(92svh-4rem)] w-full max-w-7xl items-end gap-10 px-4 pb-10 pt-18 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <div className="min-w-0 max-w-4xl pb-4">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-accent">
               AI Business Operations Integration
             </p>
@@ -77,7 +79,7 @@ export default function Home() {
                 Onyx AI Studio
               </h1>
             </div>
-            <p className="mt-5 font-serif text-4xl font-bold leading-[1.08] text-primary sm:text-5xl lg:text-6xl">
+            <p className="mt-5 max-w-full font-serif text-[2.1rem] font-bold leading-[1.08] text-primary sm:text-5xl lg:text-6xl">
               AI business solutions.
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground sm:text-xl">
@@ -97,6 +99,25 @@ export default function Home() {
                 <Link href="/services/ai-integration">View the System</Link>
               </Button>
             </div>
+            <dl className="mt-7 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Beachhead", "Granite quote intake"],
+                ["Review output", "Workflow map"],
+                ["Lead path", "Saved + followed up"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="border-l-2 border-amber bg-card/70 px-3 py-2"
+                >
+                  <dt className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.14em] text-accent">
+                    {label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-bold text-foreground">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <div className="glass-panel mb-2 rounded-lg border border-border bg-card/84 p-5 shadow-sm">
@@ -141,6 +162,49 @@ export default function Home() {
                 </div>
               ))}
             </dl>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:px-8">
+          <ScrollReveal direction="left">
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-accent">
+              Direct answer
+            </p>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-foreground sm:text-4xl">
+              What does Onyx AI Studio build?
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={120} direction="right">
+            <div className="grid gap-4 text-base leading-8 text-muted-foreground">
+              <p>
+                Onyx AI Studio builds managed AI business systems for service
+                companies that need better call handling, website lead capture,
+                scheduling support, internal knowledge search, and cleaner
+                follow-up. The system starts with the business workflow, then
+                connects voice assistants, website assistants, forms, data
+                storage, guardrails, and staff-facing summaries around that
+                workflow.
+              </p>
+              <p>
+                The best starting point is the{" "}
+                <Link
+                  href="/insights/what-is-ai-operations-review"
+                  className="font-bold text-primary underline-offset-4 hover:underline"
+                >
+                  AI Operations Review
+                </Link>
+                , followed by the{" "}
+                <Link
+                  href="/services/ai-integration"
+                  className="font-bold text-primary underline-offset-4 hover:underline"
+                >
+                  AI Business Operations Integration
+                </Link>{" "}
+                service when the workflow is ready to build.
+              </p>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -278,6 +342,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+          <ScrollReveal direction="left" className="editorial-rule pt-8">
+            <SectionHeading
+              eyebrow="Process proof"
+              title="A visible map of how the AI business system is built."
+              description="The workflow starts with how the business already handles calls, website questions, leads, documents, and follow-up. The build connects those pieces into managed assistant roles, records, guardrails, and optimization."
+            />
+            <div className="mt-8 grid gap-3 text-sm font-semibold">
+              {[
+                "Review the current operation before choosing tools.",
+                "Separate customer-facing assistants from internal knowledge.",
+                "Keep guardrails, records, and monthly tuning inside the management plan.",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-md border border-border bg-background px-4 py-3"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={120} direction="right">
+            <figure className="overflow-hidden rounded-lg border border-border bg-background shadow-sm">
+              <Image
+                src="/onyx-ai-process-infographic.png"
+                alt="Onyx AI Studio process map for reviewing, building, launching, and managing AI business systems"
+                width={1376}
+                height={768}
+                className="h-auto w-full bg-muted"
+                sizes="(min-width: 1024px) 760px, 100vw"
+              />
+              <figcaption className="border-t border-border px-4 py-3 text-xs leading-5 text-muted-foreground">
+                Process graphic generated from Onyx source material and used as
+                a concise proof asset for buyers comparing practical AI
+                implementation.
+              </figcaption>
+            </figure>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <section className="border-b border-border bg-muted/70">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <ScrollReveal>
@@ -323,7 +430,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Portfolio proof"
               title="Real demos that show the pieces behind the operations system."
-              description="The portfolio stays intact and is reframed around AI operations modules, guardrails, lead capture, interface design, automation, and custom implementation ability."
+              description="The portfolio is framed around quote paths, AI operations modules, guardrails, lead capture, interface design, automation, and custom implementation ability."
             />
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild>
@@ -455,9 +562,10 @@ export default function Home() {
             </p>
             <div className="mt-6 grid gap-3">
               {[
-                "Call, website, and lead flow review",
-                "Assistant role and knowledge map",
-                "Implementation and management recommendation",
+                "Reviewed within one business day",
+                "Workflow map and first-system recommendation",
+                "Source-material checklist for the safest useful build",
+                "30-45 minute review call for strong-fit projects",
               ].map((item) => (
                 <div
                   key={item}
@@ -467,9 +575,50 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-xs leading-5 text-muted-foreground">
+              The Review is used to evaluate fit and plan the next step. Your
+              submission is not sold or added to bulk outreach.
+            </p>
             <Button asChild className="mt-6">
               <Link href="/contact">Request an AI Operations Review</Link>
             </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <ScrollReveal className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              eyebrow="AI operations insights"
+              title="Practical pages for buyers comparing AI systems, quote tools, and lead capture."
+              description="These guides explain when AI belongs in a business workflow, what details a website should collect, and how clean operational data supports better automation."
+            />
+            <Button asChild variant="outline">
+              <Link href="/insights">
+                Browse all insights
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            </Button>
+          </ScrollReveal>
+          <ScrollReveal className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3" delay={100}>
+            {priorityInsights.map((insight) => (
+              <Link
+                key={insight.slug}
+                href={`/insights/${insight.slug}`}
+                className="interactive-card glass-card group rounded-lg border border-border bg-background/84 p-5 transition-colors hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">
+                  {insight.readingTime}
+                </p>
+                <h2 className="mt-4 font-serif text-2xl font-bold">
+                  {insight.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {insight.description}
+                </p>
+              </Link>
+            ))}
           </ScrollReveal>
         </div>
       </section>

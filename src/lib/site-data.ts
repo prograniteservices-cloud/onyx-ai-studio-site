@@ -22,6 +22,12 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://onyxaistudio.digital";
 
+export const founderLinkedInUrl =
+  "https://www.linkedin.com/in/barry-beaubien-4313013a5/";
+
+export const founderName = "Barry Beaubien";
+export const founderPersonId = `${siteUrl}/#barry-beaubien`;
+
 export const navItems = [
   { href: "/services/ai-integration", label: "AI Business System" },
   { href: "/services/reception-web-assistant", label: "Reception + Web Assistant" },
@@ -29,6 +35,7 @@ export const navItems = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/insights", label: "Insights" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -48,6 +55,8 @@ export type Service = {
   icon: LucideIcon;
   outcomes: string[];
   deliverables: string[];
+  detailSections?: { heading: string; body: string }[];
+  sourceLinks?: { label: string; href: string }[];
   questions: { question: string; answer: string }[];
   relatedCases: string[];
 };
@@ -60,19 +69,45 @@ export const services: Service[] = [
     summary:
       "A premium AI reception, website assistance, lead capture, scheduling, data, and internal knowledge system built around real business operations.",
     description:
-      "AI Business Operations Integration installs AI into the way a company already handles calls, website visitors, leads, scheduling, documents, and staff questions. Retell powers the voice and conversation layer, while Supabase supports the business data and knowledge layer. Onyx AI Studio designs the strategy, implementation, guardrails, workflows, and ongoing management.",
+      "AI Business Operations Integration installs AI into the way a company already handles calls, website visitors, leads, scheduling, documents, and staff questions. The service maps the existing workflow first, then connects voice agents, website assistants, forms, summaries, follow-up status, company knowledge, and permissions into one managed operating layer. Retell powers the voice and conversation layer, while Supabase supports the business data and knowledge layer. Onyx AI Studio designs the strategy, implementation, guardrails, workflows, testing, and ongoing management.",
     icon: Bot,
     outcomes: [
       "24/7 call and website handling without making AI the whole business",
       "Structured leads, call summaries, website summaries, and follow-up status",
       "A company knowledge layer that public and internal assistants can use with different permissions",
+      "Clear escalation rules for pricing, emergencies, scheduling limits, warranties, and sensitive questions",
     ],
     deliverables: [
       "AI operations review and workflow map",
       "Retell phone receptionist and website assistant plan",
       "Supabase lead, customer, summary, and knowledge schema",
       "Business-specific guardrails and escalation rules",
+      "Test scripts for approved answers, weak answers, handoffs, and source boundaries",
       "Monthly optimization and management path",
+    ],
+    detailSections: [
+      {
+        heading: "What is AI business operations integration?",
+        body: "AI business operations integration connects customer conversations, lead records, company knowledge, staff handoffs, and follow-up into one managed workflow. The point is not to add a generic bot. The point is to decide which questions AI may answer, which details should become structured records, which actions need human review, and which systems should receive the summary.",
+      },
+      {
+        heading: "Implementation workflow",
+        body: "The build starts with an AI Operations Review, then moves through source cleanup, assistant role design, Supabase schema planning, Retell agent setup, handoff rules, test calls, failure cases, and monthly tuning. For countertop and service businesses, the first useful system is often a quote-intake or missed-call workflow before deeper internal automation.",
+      },
+      {
+        heading: "Fit criteria and guardrails",
+        body: "The best fit is a business with repeated calls, repeated website questions, quote intake, scheduling friction, or staff lookup problems. Guardrails define pricing boundaries, service-area limits, emergency escalation, warranty or refund language, sensitive data handling, and the point where the assistant stops answering and routes the request to a person.",
+      },
+      {
+        heading: "Retell and Supabase roles",
+        body: "Retell is the conversation layer for voice and chat agents, knowledge-base retrieval, call transfers, webhooks, and post-call analysis. Supabase is the server-side data layer for leads, pipeline status, summaries, source material, and reporting. Onyx designs the workflow, connects the platforms, writes the rules, and keeps server-only keys out of public clients.",
+      },
+    ],
+    sourceLinks: [
+      { label: "Retell Knowledge Base docs", href: "https://docs.retellai.com/build/knowledge-base" },
+      { label: "Retell Post-Call Analysis docs", href: "https://docs.retellai.com/features/post-call-analysis" },
+      { label: "Supabase API key docs", href: "https://supabase.com/docs/guides/getting-started/api-keys" },
+      { label: "Supabase API security docs", href: "https://supabase.com/docs/guides/api/securing-your-api" },
     ],
     questions: [
       {
@@ -84,6 +119,11 @@ export const services: Service[] = [
         question: "Who pays for Retell and other usage costs?",
         answer:
           "The client pays Retell and third-party platform usage directly. Onyx AI Studio charges for strategy, setup, integration, guardrails, workflow design, data structuring, and management.",
+      },
+      {
+        question: "What makes a business ready for this integration?",
+        answer:
+          "The best fit is a business with repeated calls, website questions, lead intake, scheduling, document lookup, or follow-up problems. The operation does not need perfect data, but it does need enough real workflow detail to define safe answers, handoffs, and success criteria.",
       },
     ],
     relatedCases: ["vapeos", "regional-service-site"],
@@ -108,6 +148,24 @@ export const services: Service[] = [
       "Lead qualification questions",
       "Call and website summary templates",
       "Human handoff and emergency rules",
+    ],
+    detailSections: [
+      {
+        heading: "What should a public assistant be allowed to answer?",
+        body: "A public receptionist or website assistant should answer from approved customer-facing knowledge: services, hours, service areas, intake questions, broad process steps, and next-action options. It should not invent exact pricing, promise availability, override emergency procedures, expose private notes, or make warranty and refund commitments outside the business rulebook.",
+      },
+      {
+        heading: "When should it escalate?",
+        body: "Escalation should happen when the customer asks about emergencies, safety, medical or legal details, account-specific private information, exact discounts, disputes, complaints, or anything the knowledge base cannot support. Escalation can mean a warm transfer, callback request, staff notification, or a saved lead with a clear next action.",
+      },
+      {
+        heading: "Phone and website handoff examples",
+        body: "A phone caller can be qualified, summarized, and routed to staff with urgency and callback notes. A website visitor can ask a service question, select quote details, and submit a structured request. Both paths should produce a lead record that tells staff what happened, what was asked, and what should happen next.",
+      },
+    ],
+    sourceLinks: [
+      { label: "Retell Call Transfer docs", href: "https://docs.retellai.com/build/conversation-flow/call-transfer-node" },
+      { label: "Retell Webhook docs", href: "https://docs.retellai.com/features/webhook-overview" },
     ],
     questions: [
       {
@@ -143,6 +201,24 @@ export const services: Service[] = [
       "Supabase knowledge and records plan",
       "Internal question examples and evaluation checks",
       "Permission and escalation boundaries",
+    ],
+    detailSections: [
+      {
+        heading: "Public assistant versus internal assistant",
+        body: "A public assistant helps customers with approved outward-facing information. An internal assistant helps owners and staff search SOPs, policies, lead records, call summaries, service rules, and private operating notes. Keeping those roles separate protects sensitive context and makes each assistant easier to test.",
+      },
+      {
+        heading: "Source boundaries",
+        body: "Internal answers should cite or point back to approved sources whenever practical. If the answer depends on stale, contradictory, or missing documents, the assistant should say the source is weak and route the question to a person. The goal is faster staff lookup, not unsupported certainty.",
+      },
+      {
+        heading: "Good first use cases",
+        body: "Useful internal assistant targets include quote-intake summaries, lead status lookup, product or service search, SOP questions, warranty rules, call summaries, and follow-up reminders. These use cases are valuable because they reduce repeated lookup work while keeping final judgment with the owner or staff.",
+      },
+    ],
+    sourceLinks: [
+      { label: "Supabase securing data docs", href: "https://supabase.com/docs/guides/database/secure-data/" },
+      { label: "Retell Knowledge Base docs", href: "https://docs.retellai.com/build/knowledge-base" },
     ],
     questions: [
       {
@@ -306,15 +382,58 @@ export type CaseStudy = {
   label: string;
   summary: string;
   image: string;
+  demoUrl?: string;
   services: string[];
   metrics: { label: string; value: string }[];
   challenge: string;
   solution: string;
   result: string;
+  proofSections?: { heading: string; body: string }[];
   stack: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "countertop-estimator",
+    title: "Countertop Estimate Tool",
+    label: "Lead capture configurator",
+    summary:
+      "A premium countertop estimate flow that turns casual website visitors into structured quote requests before the showroom visit.",
+    image: "/case-study-countertop-estimator.svg",
+    demoUrl: "https://estimate-tool-three.vercel.app",
+    services: [
+      "web-development",
+      "automation-workflows",
+      "seo-content-systems",
+      "ai-integration",
+    ],
+    metrics: [
+      { label: "Material options", value: "152" },
+      { label: "Embed modes", value: "Page/widget" },
+      { label: "Business role", value: "Quote path" },
+    ],
+    challenge:
+      "Countertop shops often ask buyers to call, send a vague form, or visit the showroom before the customer understands surface options, project size, edge details, and upgrades.",
+    solution:
+      "The estimator gives the shop a branded guided quote path with materials, kitchen size, edge profiles, upgrades, estimate reveal, savings framing, and lead capture.",
+    result:
+      "The demo shows how a service-business website can become an interactive sales tool, customized to the shop's theme, catalog, pricing boundaries, lead flow, and preferred format.",
+    proofSections: [
+      {
+        heading: "What this proves for granite and countertop shops",
+        body: "A countertop buyer rarely arrives with every quote detail ready. A guided estimator can collect material selection, square footage, edge detail, sink and backsplash context, timeline, showroom readiness, and contact information before the first staff follow-up. The proof is not a final price promise; it is a cleaner intake path.",
+      },
+      {
+        heading: "Sample lead record",
+        body: "The useful output is a sample lead record: contact details, material selection, square footage, edge detail, sink needs, backsplash interest, project timeline, showroom readiness, notes, source page, and follow-up status. That record can feed email, Supabase, a CRM view, a callback task, or an internal assistant summary.",
+      },
+      {
+        heading: "First build recommendation",
+        body: "For the 30-day beachhead, the first implementation should be a quote-intake system tied to the AI Operations Review. The tool collects the intake details, staff still reviews fit and scheduling, and human follow-up happens after the structured record is saved. Reception and internal assistant work can follow after the intake questions, handoff rules, and follow-up process are clear.",
+      },
+    ],
+    stack: ["Next.js", "Tailwind CSS", "Lead capture", "Vercel"],
+  },
   {
     slug: "vapeos",
     title: "VapeOS",
@@ -340,6 +459,20 @@ export const caseStudies: CaseStudy[] = [
       "VapeOS demonstrates a semantic search interface that connects natural product questions to more than 1,700 real product records without requiring exact keyword matches.",
     result:
       "The demo proves Onyx AI Studio can turn inconsistent business data into a searchable system - the same capability needed for company knowledge bases and internal assistants.",
+    proofSections: [
+      {
+        heading: "What this proves beyond vape shops",
+        body: "VapeOS is useful proof because the hard part is not the retail category. The hard part is messy records: inconsistent product names, broad categories, shorthand, and questions that do not match exact keywords. That same pattern appears in service menus, SOPs, warranty documents, call notes, and customer records.",
+      },
+      {
+        heading: "Internal-search value",
+        body: "A staff-facing search layer should help people find relevant records faster while showing enough context to trust the answer. For business operations, that means mapping natural questions to products, services, policies, or lead records without exposing private internal context to public visitors.",
+      },
+      {
+        heading: "Boundary lesson",
+        body: "Semantic search does not fix weak source material by itself. The data still needs labels, categories, source ownership, and review rules. VapeOS supports the Onyx position that AI implementation starts with source structure and guardrails, not with a generic chat window.",
+      },
+    ],
     stack: ["Next.js", "Supabase", "Vector search", "Gemini API"],
   },
   {
@@ -643,8 +776,213 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "ai-lead-capture-service-business-websites",
+    title: "How AI Lead Capture Changes Service Business Websites",
+    description:
+      "A practical guide to turning local service websites into structured lead capture systems with AI reception, quote paths, follow-up, and business data.",
+    date: "2026-05-19",
+    readingTime: "7 min read",
+    tags: ["Lead capture", "Service businesses", "AI operations"],
+    sections: [
+      {
+        heading: "What is AI lead capture for a service business?",
+        body: "AI lead capture is the process of using website assistants, quote paths, intake forms, and follow-up workflows to turn visitor intent into structured business records. For a service business, the goal is not to replace the owner or office staff. The goal is to collect the right details earlier: service needed, location, urgency, photos, scheduling preference, budget context, and the next human action. A good AI lead capture system makes the website more useful, reduces vague inquiries, and gives the business a cleaner starting point for follow-up.",
+      },
+      {
+        heading: "Why normal service websites lose good leads",
+        body: "Most local service websites ask visitors to call, fill out a basic contact form, or browse static service pages. That works only when the visitor already knows what they need and is ready to act. Many buyers are earlier in the decision process. They want to understand options, pricing ranges, timelines, service areas, and whether the company handles their exact situation. If the site cannot guide that conversation, the visitor either leaves or sends a weak inquiry that still requires manual clarification.",
+      },
+      {
+        heading: "What changes when the website becomes an intake system",
+        body: "A lead capture system asks better questions and stores better answers. A countertop visitor can select material, kitchen size, edge profile, and upgrades before requesting a quote. An irrigation customer can describe the zone problem, property type, controller issue, and urgency. A pressure washing customer can choose surfaces and upload photos. The pattern is the same: convert anonymous interest into structured context that supports a faster, more relevant response.",
+      },
+      {
+        heading: "Where AI should and should not be used",
+        body: "AI is useful for answering common questions, summarizing visitor conversations, routing leads, generating follow-up notes, and searching approved company knowledge. It should not invent pricing, promise availability, override service boundaries, or make sensitive decisions without rules. The strongest systems combine deterministic forms and workflows with AI assistance where language, summarization, and knowledge retrieval actually help.",
+      },
+      {
+        heading: "How Onyx AI Studio approaches the system",
+        body: "Onyx AI Studio treats the website as the front-end layer of the business operation. The public site captures demand, the assistant answers from approved knowledge, the workflow routes follow-up, and the data layer keeps leads and summaries organized. That structure is more valuable than a standalone chatbot because it connects customer intent to the actual work the business needs to perform next.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/services/ai-integration", label: "AI Business Operations Integration" },
+      { href: "/services/web-development", label: "Business Website + Lead Capture Layer" },
+      { href: "/services/automation-workflows", label: "Lead Follow-Up + Workflow Automation" },
+      { href: "/case-studies/countertop-estimator", label: "Countertop Estimate Tool Case Study" },
+    ],
+  },
+  {
+    slug: "website-quote-tool-before-customer-calls",
+    title: "What Website Quote Tools Should Collect First",
+    description:
+      "A buyer-focused explanation of how quote tools, estimators, and configurators can qualify intent before a service business starts manual follow-up.",
+    date: "2026-05-19",
+    readingTime: "6 min read",
+    tags: ["Quote tools", "Conversion", "Lead quality"],
+    sections: [
+      {
+        heading: "What should a quote tool accomplish?",
+        body: "A website quote tool should help a customer understand the shape of their project before the business spends time on manual follow-up. It should collect the details that affect scope, urgency, fit, and expectations. For many service companies, that means project type, location, size, materials, condition, timeline, photos, and preferred contact method. The best quote tools do not pretend to produce a final binding price. They create a useful first estimate, set boundaries, and invite the customer into a more qualified quote conversation.",
+      },
+      {
+        heading: "Why a quote tool is different from a contact form",
+        body: "A contact form usually captures name, email, phone, and a free-text message. A quote tool captures decision context. It guides the customer through choices that mirror how the business thinks about the job. For countertop shops, that can mean material category, square footage, edge detail, sinks, backsplash, and islands. For irrigation, it can mean repair type, zones affected, controller model, soil or drainage context, and emergency timing. Structured inputs produce better follow-up than a blank message box.",
+      },
+      {
+        heading: "The quote tool should educate while it qualifies",
+        body: "A good estimator also teaches the customer what matters. It can show why material choice changes pricing, why photos help, why a site visit is still needed, or why service area matters. This reduces friction because the customer feels guided rather than interrogated. It also improves sales quality because the business receives a lead who has already thought through the main variables.",
+      },
+      {
+        heading: "What the business receives after submission",
+        body: "The business should receive a clean summary: customer contact details, selected options, estimated range or category, notes, photos if available, urgency, and recommended next step. That summary can go to email, SMS, CRM, a dashboard, or an internal assistant. The point is to prevent every inquiry from starting as a scattered conversation across phone calls and inboxes.",
+      },
+      {
+        heading: "How customization affects performance",
+        body: "The quote tool should match the client's brand, services, pricing boundaries, and sales process. It may work as a full page, embedded widget, sidebar, quote card, or guided flow. Customization matters because the tool is not just a calculator. It is part of the buyer experience, and it should feel like a natural extension of the company's existing website.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/case-studies/countertop-estimator", label: "Countertop Estimate Tool" },
+      { href: "/services/web-development", label: "Business Website + Lead Capture Layer" },
+      { href: "/services/automation-workflows", label: "Lead Follow-Up + Workflow Automation" },
+      { href: "/contact", label: "Request an AI Operations Review" },
+    ],
+  },
+  {
+    slug: "small-business-ai-without-replacing-staff",
+    title: "How Small Businesses Can Use AI With Staff",
+    description:
+      "A practical framework for using AI to support calls, website questions, summaries, internal search, and follow-up without removing human judgment.",
+    date: "2026-05-19",
+    readingTime: "7 min read",
+    tags: ["AI adoption", "Staff support", "Guardrails"],
+    sections: [
+      {
+        heading: "AI should support the staff, not become the staff",
+        body: "Small businesses get the most value from AI when it handles repetitive intake, summaries, search, and routing while leaving judgment to people. A practical AI system can answer common questions, capture lead details, summarize calls, search company documents, and remind staff about follow-up. It should not make unsupported promises, hide important context, or replace the owner’s sense of what is right for a customer. The best systems make staff faster and more consistent without removing accountability.",
+      },
+      {
+        heading: "Start with the repetitive work",
+        body: "Good first targets include missed calls, repeated website questions, quote intake, scheduling requests, customer summaries, and document lookup. These workflows are valuable because they happen often and follow recognizable patterns. AI can reduce the time spent collecting basic information, but the business still controls the rules, tone, escalation paths, and final decisions.",
+      },
+      {
+        heading: "Separate public answers from internal knowledge",
+        body: "A public website assistant should only answer from approved customer-facing knowledge. An internal assistant can search SOPs, policies, lead records, call summaries, pricing guidance, and staff notes with stricter access rules. Keeping these roles separate protects sensitive information and makes the system easier to test. It also prevents a public-facing assistant from exposing details that belong inside the business.",
+      },
+      {
+        heading: "Guardrails are part of the business value",
+        body: "Guardrails define what the assistant can answer, when it should qualify the answer, and when it should escalate. For a service business, guardrails may cover pricing, warranty, emergency situations, refunds, medical or legal questions, scheduling limitations, and service-area boundaries. These rules are not decoration. They are what make AI useful enough for real business workflows.",
+      },
+      {
+        heading: "The owner keeps control of the operation",
+        body: "AI should produce structured information that the owner or staff can review. Lead summaries, call notes, quote details, and follow-up statuses should be visible. When the system is designed this way, AI becomes a managed layer inside the operation instead of a mysterious black box. That is the difference between a risky chatbot and a practical AI business system.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/services/reception-web-assistant", label: "Reception + Website Assistant" },
+      { href: "/services/internal-business-assistant", label: "Internal Business Assistant" },
+      { href: "/services/guardrails-knowledge-systems", label: "Guardrails + Knowledge Systems" },
+      { href: "/case-studies/starry", label: "Starry Case Study" },
+    ],
+  },
+  {
+    slug: "messy-business-data-before-ai",
+    title: "Why AI Needs Structured Business Data",
+    description:
+      "A clear explanation of why AI systems need organized products, services, documents, policies, and records before they can reliably support operations.",
+    date: "2026-05-19",
+    readingTime: "7 min read",
+    tags: ["Business data", "Internal assistants", "AI readiness"],
+    sections: [
+      {
+        heading: "AI works better when the business data is structured",
+        body: "Messy business data limits what AI can safely do. Product names, service descriptions, policies, pricing rules, customer records, call notes, documents, and staff procedures need enough structure for the system to retrieve the right context. Without that foundation, AI may answer from incomplete information or force staff to keep correcting it. The first step is not always a chatbot. Often, the first step is turning scattered business knowledge into a usable source layer.",
+      },
+      {
+        heading: "What messy data looks like in real businesses",
+        body: "Messy data can be product catalogs with inconsistent vendor names, service pages with missing details, SOPs stored in old files, policies buried in email, customer notes spread across phones, and lead statuses that only one person understands. Humans can often work around this because they remember context. AI systems need that context to be findable, labeled, and bounded.",
+      },
+      {
+        heading: "Semantic search helps, but it is not magic",
+        body: "Semantic search can match meaning instead of exact keywords, which is valuable when users ask for products, services, or policies in different words. But semantic search still depends on the quality of the underlying records. If the catalog is incomplete, the service rules are vague, or the source documents contradict each other, the AI layer will inherit those weaknesses.",
+      },
+      {
+        heading: "The data layer should support public and internal workflows",
+        body: "A business data layer should support different roles. Public assistants may answer service questions and capture leads. Internal assistants may search SOPs, customer records, call summaries, and documents. Follow-up workflows may use lead status, urgency, and next actions. These uses require different permissions and different levels of detail, so the structure matters before the AI experience goes live.",
+      },
+      {
+        heading: "How Onyx turns data into an operating interface",
+        body: "Onyx AI Studio treats data cleanup, schema design, source selection, and guardrails as part of implementation. The goal is not to make data tidy for its own sake. The goal is to make calls, website conversations, internal search, lead follow-up, and reporting easier to operate. VapeOS is a simple example: messy inventory becomes searchable business data that staff and customers can actually use.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/case-studies/vapeos", label: "VapeOS Case Study" },
+      { href: "/services/internal-business-assistant", label: "Internal Business Assistant" },
+      { href: "/services/guardrails-knowledge-systems", label: "Guardrails + Knowledge Systems" },
+      { href: "/insights/ai-inventory-semantic-search", label: "Semantic Inventory Search" },
+    ],
+  },
+  {
+    slug: "what-is-ai-operations-review",
+    title: "What Is An AI Operations Review?",
+    description:
+      "A plain-English explanation of what an AI operations review covers, when a business needs one, and how it leads to practical implementation decisions.",
+    date: "2026-05-26",
+    readingTime: "8 min read",
+    tags: ["AI operations", "Implementation", "Business review"],
+    sections: [
+      {
+        heading: "What is an AI operations review?",
+        body: "An AI operations review is a structured look at how a business handles calls, website visitors, leads, scheduling, documents, follow-up, and internal knowledge before deciding what AI should do. The review identifies where automation can help, where human judgment should remain, what data needs structure, and what guardrails are required. It is not a generic chatbot consultation. It is a practical map of the business workflow and the safest useful places to install AI.",
+      },
+      {
+        heading: "What problems does the review look for?",
+        body: "The review looks for missed calls, slow response times, vague website inquiries, repeated staff questions, messy documents, weak lead tracking, scheduling friction, and inconsistent follow-up. It also looks for risks: sensitive topics, pricing boundaries, emergency situations, refund or warranty rules, and cases where the assistant should escalate instead of answering.",
+      },
+      {
+        heading: "What information should a business bring?",
+        body: "Useful inputs include service pages, FAQs, call scripts, forms, quote processes, scheduling rules, pricing boundaries, SOPs, policies, customer questions, lead sources, and examples of good and bad inquiries. The business does not need everything perfectly organized before the review. Part of the work is identifying which sources matter and which ones are too weak to use yet.",
+      },
+      {
+        heading: "What comes out of the review?",
+        body: "The output is a recommendation for what should be built first. That may be AI phone reception, a website assistant, a quote tool, a lead follow-up workflow, an internal knowledge assistant, a Supabase data layer, or a smaller cleanup step before any customer-facing AI goes live. A good review also defines what not to automate yet.",
+      },
+      {
+        heading: "What does the buyer receive after submission?",
+        body: "After the form is reviewed within one business day, the buyer should receive a practical next-step reply with a workflow map, first-system recommendation, and source-material checklist. Strong-fit projects move toward a 30-45 minute review call or an async workflow review. The recommendation should identify the first useful system, the source material needed, the guardrail risks, and whether the project should start with quote intake, reception, website assistance, internal search, or data cleanup.",
+      },
+      {
+        heading: "How the granite and countertop beachhead changes the review",
+        body: "For the current 30-day beachhead, Onyx looks hardest at countertop quote intake: material selection, square footage, edge details, sinks, backsplash, islands, timeline, showroom readiness, and follow-up. The review asks whether the website should guide buyers into a structured quote request before staff spend manual time on a vague inquiry.",
+      },
+      {
+        heading: "What decisions does the review make clearer?",
+        body: "The review clarifies which customer questions can be answered automatically, which details must be collected before staff follow up, where lead records should live, which sources are safe for public answers, and where staff need internal search instead of another inbox. It also separates platform usage from implementation work so the business can see what Retell, Supabase, email, scheduling, and hosting are responsible for before committing to a build.",
+      },
+      {
+        heading: "When is a business not ready for AI implementation?",
+        body: "A business may not be ready when service boundaries are unclear, pricing rules are not agreed on, documents contradict each other, staff cannot define the handoff process, or the owner wants the assistant to make promises the business cannot consistently keep. In those cases, the review should recommend cleanup first. That still moves the project forward because it turns vague AI interest into a concrete readiness checklist.",
+      },
+      {
+        heading: "How is the submission used?",
+        body: "The submission is used to evaluate fit and plan the next step. It is not sold or added to bulk outreach. If the project is not a strong fit yet, the reply should name the cleanup or readiness step that would make the operation safer to automate later.",
+      },
+      {
+        heading: "Why the review comes before implementation",
+        body: "AI implementation fails when the tool is chosen before the workflow is understood. The review prevents that mistake. It clarifies the business objective, data sources, handoff rules, success criteria, and management needs before building. That makes the implementation smaller, safer, and easier for the owner and staff to trust.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/contact", label: "Request an AI Operations Review" },
+      { href: "/services/ai-integration", label: "AI Business Operations Integration" },
+      { href: "/services/reception-web-assistant", label: "Reception + Website Assistant" },
+      { href: "/pricing", label: "Implementation Pricing" },
+    ],
+  },
+  {
     slug: "ai-inventory-semantic-search",
-    title: "How Semantic Search Turns Inventory Into An Operating Interface",
+    title: "Semantic Search for Business Inventory",
     description:
       "A practical explanation of why messy business data needs meaning-based search before it can support internal assistants and AI operations.",
     date: "2026-05-04",
@@ -672,7 +1010,7 @@ export const insights: Insight[] = [
   },
   {
     slug: "ai-inventory-search-vape-shops-messy-catalogs",
-    title: "How AI Inventory Search Helps Vape Shops Handle Messy Product Catalogs",
+    title: "AI Inventory Search for Messy Vape Catalogs",
     description:
       "A practical guide to using AI inventory search for vape and smoke shops with inconsistent product names, broad catalogs, and weak online browsing.",
     date: "2026-05-15",
@@ -867,4 +1205,17 @@ export function getInsight(slug: string) {
 
 export function absoluteUrl(path: string) {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
 }

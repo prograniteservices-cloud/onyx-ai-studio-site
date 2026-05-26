@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/card";
 import {
   absoluteUrl,
+  breadcrumbSchema,
   caseStudies,
   portfolioDemoApps,
   portfolioDemoLauncherUrl,
@@ -35,7 +36,7 @@ const collectionSchema = {
   name: "Onyx AI Studio Portfolio Hub",
   url: absoluteUrl("/portfolio"),
   description:
-    "Portfolio hub for 20 live SaaS demos and four deeper Onyx AI Studio case studies.",
+    "Portfolio hub for 20 live SaaS demos and deeper Onyx AI Studio case studies.",
   hasPart: [
     ...portfolioDemoApps.map((app) => ({
       "@type": "SoftwareApplication",
@@ -53,16 +54,23 @@ const collectionSchema = {
   ],
 };
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Portfolio", path: "/portfolio" },
+]);
+
 export default function PortfolioPage() {
   return (
     <>
       <JsonLd data={collectionSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
           <SectionHeading
             eyebrow="Portfolio"
+            titleAs="h1"
             title="20 live SaaS demos plus deeper case studies."
-            description="Use the demos to see what the system can actually do: answer from company knowledge, check claims against sources, handle documents safely, plan tasks, analyze messy data, and produce next steps staff can use."
+            description="Use the demos and case studies to see what the system can actually do: capture leads, guide quote requests, answer from company knowledge, analyze messy data, and produce next steps staff can use."
           />
           <div className="glass-panel rounded-lg border border-border bg-background/84 p-6 shadow-sm">
             <div className="flex items-start justify-between gap-5">
@@ -75,8 +83,8 @@ export default function PortfolioPage() {
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Start with the full demo directory, then open any app to try the
               workflow yourself. The set covers customer support, knowledge
-              search, document review, task planning, data analysis,
-              recommendations, translation, and guardrail-heavy use cases.
+              search, document review, task planning, data analysis, guided
+              quote paths, recommendations, and guardrail-heavy use cases.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button asChild>
@@ -96,6 +104,38 @@ export default function PortfolioPage() {
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Buyer intent"
+            title="Find the kind of build you need."
+            description="The portfolio stays broad because buyers often arrive with a specific system in mind. Use these signposts to jump from the problem you recognize to demos that show the same kind of capability."
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {[
+              ["lead capture", "Quote paths, intake forms, saved records, and follow-up context."],
+              ["internal knowledge", "Company files, SOPs, policies, lead records, and staff lookup."],
+              ["document review", "Structured summaries, issue spotting, and safer source handling."],
+              ["customer support", "Grounded answers, escalation rules, and visible confidence boundaries."],
+              ["data analysis", "Operational dashboards, trend summaries, and messy record cleanup."],
+              ["guardrails", "Refusals, evidence labels, sensitive-topic limits, and human handoff rules."],
+            ].map(([title, body]) => (
+              <article
+                key={title}
+                className="rounded-lg border border-border bg-card p-5 shadow-sm"
+              >
+                <h2 className="font-serif text-2xl font-bold capitalize">
+                  {title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { absoluteUrl, insights } from "@/lib/site-data";
+import { absoluteUrl, breadcrumbSchema, insights } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -31,14 +31,21 @@ const collectionSchema = {
   })),
 };
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Insights", path: "/insights" },
+]);
+
 export default function InsightsPage() {
   return (
     <>
       <JsonLd data={collectionSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Insights"
+            titleAs="h1"
             title="Practical thinking for AI reception, lead capture, internal assistants, and guardrails."
             description="Use these articles to see what has to be in place before AI can safely answer customers, capture leads, search company knowledge, handle documents, and move follow-up work forward."
           />

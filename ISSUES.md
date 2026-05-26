@@ -34,10 +34,10 @@
 - Fix: Added `allowedDevOrigins: ["127.0.0.1"]` to `next.config.ts`.
 - Verification: Restarted the dev server, reran local route checks and desktop/mobile `/portfolio` screenshots through `127.0.0.1`, and `dev-portfolio.err.log` stayed empty.
 
-### ISSUE-017: Contact Form Open Issue Was Stale After SMTP Integration
+### ISSUE-017: Contact Form Open Issue Was Stale After Backend Integration
 - Symptoms: `ISSUES.md` still claimed the contact form used `mailto:` and had no backend endpoint.
-- Root cause: The issue record was not moved after `/api/contact` and Infomaniak SMTP were integrated.
-- Fix: Removed the stale open issue and documented the current AI Operations Review backend in `PFD.md`.
+- Root cause: The issue record was not moved after `/api/contact` was integrated.
+- Fix: Removed the stale open issue and documented the current AI Operations Review backend in `PFD.md`. The active contact route now sends through Resend.
 - Verification: Incomplete `POST /api/contact` returned HTTP 400 and the production build lists `/api/contact` as a dynamic route.
 
 ### ISSUE-016: Footer Logo Text Inherited Broad Span Styling

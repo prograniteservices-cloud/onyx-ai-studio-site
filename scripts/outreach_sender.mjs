@@ -31,6 +31,10 @@ async function loadEnvFiles(filePaths) {
 
 const DEFAULT_FROM = "Onyx AI Studio <hello@onyxaistudio.digital>";
 const DEFAULT_REPLY_TO = "prograniteservices@gmail.com";
+const DEFAULT_CONTACT_NAME = "Travis";
+const DEFAULT_CONTACT_PHONE = "803-953-7692";
+const DEFAULT_CONTACT_EMAIL = "prograniteservices@gmail.com";
+const DEFAULT_SITE_URL = "https://onyxaistudio.digital";
 
 function getPhysicalAddress() {
   return process.env.ONYX_PHYSICAL_MAILING_ADDRESS ?? "Onyx AI Studio, Manning, SC";
@@ -43,9 +47,23 @@ export function normalizeEmail(email) {
 export function buildComplianceFooter() {
   return [
     "--",
+    DEFAULT_CONTACT_NAME,
+    "Onyx AI Studio",
+    DEFAULT_CONTACT_PHONE,
+    DEFAULT_CONTACT_EMAIL,
+    DEFAULT_SITE_URL,
     getPhysicalAddress(),
     'If this is not useful, reply with "unsubscribe" and I will not follow up.',
   ].join("\n");
+}
+
+function withComplianceFooter(text) {
+  const trimmed = String(text ?? "").trimEnd();
+  if (trimmed.includes("If this is not useful")) {
+    return trimmed;
+  }
+
+  return [trimmed, "", buildComplianceFooter()].join("\n");
 }
 
 function lowerFirst(value) {
@@ -53,6 +71,44 @@ function lowerFirst(value) {
 }
 
 export function buildInitialEmail(prospect) {
+  if (prospect.text || prospect.body) {
+    return {
+      from: DEFAULT_FROM,
+      replyTo: DEFAULT_REPLY_TO,
+      to: normalizeEmail(prospect.email),
+      subject: prospect.subject || `Idea for ${prospect.company}`,
+      text: withComplianceFooter(prospect.text || prospect.body),
+    };
+  }
+
+  if (prospect.leadCaptureWeakness || prospect.poolSpaServiceAngle) {
+    const reviewedSignal = prospect.siteStrength.endsWith(".")
+      ? prospect.siteStrength
+      : `${prospect.siteStrength}.`;
+    const gap = prospect.leadCaptureWeakness.endsWith(".")
+      ? prospect.leadCaptureWeakness
+      : `${prospect.leadCaptureWeakness}.`;
+    const angle = prospect.poolSpaServiceAngle || "guided service intake";
+    const text = [
+      `Hi ${prospect.company} team,`,
+      "",
+      `I was looking at ${prospect.website}; ${lowerFirst(reviewedSignal)}`,
+      `That points to a practical gap: ${lowerFirst(gap)}`,
+      `I build simple AI-assisted intake flows for service businesses. For a pool/spa company, that could mean visitors choose ${angle}, add the issue, pool or spa type, urgency, equipment details, and photos, then your team gets a cleaner request before calling back.`,
+      "Would it be worth sending over a quick outline of how that could fit your current site?",
+      "",
+      buildComplianceFooter(),
+    ].join("\n");
+
+    return {
+      from: DEFAULT_FROM,
+      replyTo: DEFAULT_REPLY_TO,
+      to: normalizeEmail(prospect.email),
+      subject: prospect.subject || `Idea for ${prospect.company}'s service requests`,
+      text,
+    };
+  }
+
   const company = prospect.company;
   const reviewedSignal = prospect.personalizationNotes.endsWith(".")
     ? prospect.personalizationNotes
@@ -65,7 +121,7 @@ export function buildInitialEmail(prospect) {
     "",
     `I was looking at ${prospect.website}; ${lowerFirst(reviewedSignal)}`,
     `That points to a gap: ${lowerFirst(gap)}`,
-    "I built VapeOS as a live demo of semantic inventory search across 1,700+ real products, specifically for messy retail names where shoppers and staff do not always use the exact catalog wording.",
+    "I built VapeOS as a live demo where customers and employees can simply talk to it to find their favorite products. The demo already includes 1,700+ real products, and the same setup can handle much larger catalogs without shoppers needing the exact product name.",
     "Would you want me to send the live demo link?",
     "",
     buildComplianceFooter(),
@@ -75,7 +131,7 @@ export function buildInitialEmail(prospect) {
     from: DEFAULT_FROM,
     replyTo: DEFAULT_REPLY_TO,
     to: normalizeEmail(prospect.email),
-    subject: `Idea for ${company}'s inventory search`,
+    subject: `Idea for ${company}'s product lookup`,
     text,
   };
 }

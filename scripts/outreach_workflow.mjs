@@ -8,7 +8,6 @@ const REQUIRED_FIELDS = [
   "contactPage",
   "location",
   "siteStrength",
-  "inventoryOrLeadGap",
   "personalizationNotes",
   "targetScore",
   "status",
@@ -45,6 +44,10 @@ export function validateProspect(prospect) {
     errors.push("email or contactPage is required");
   }
 
+  if (!prospect?.inventoryOrLeadGap && !prospect?.leadCaptureWeakness) {
+    errors.push("inventoryOrLeadGap or leadCaptureWeakness is required");
+  }
+
   if (
     typeof prospect?.targetScore !== "number" ||
     prospect.targetScore < 1 ||
@@ -63,6 +66,10 @@ export function validateProspect(prospect) {
   return errors;
 }
 
+function prospectGap(prospect) {
+  return prospect.inventoryOrLeadGap || prospect.leadCaptureWeakness || "";
+}
+
 export function getApprovedProspects(prospects) {
   return prospects
     .filter((prospect) => prospect.status === "approved")
@@ -74,17 +81,17 @@ export function buildReviewMarkdown(prospects, date) {
   const rows = approvedProspects
     .map(
       (prospect, index) =>
-        `| ${index + 1} | ${prospect.company} | ${prospect.location} | ${prospect.targetScore} | ${prospect.inventoryOrLeadGap} | ${prospect.email} |`,
+        `| ${index + 1} | ${prospect.company} | ${prospect.location} | ${prospect.targetScore} | ${prospectGap(prospect)} | ${prospect.email} |`,
     )
     .join("\n");
 
   return `# Vape Outreach Review Batch 01 - ${date}
 
 ## Campaign Positioning
-- Offer: VapeOS live demo for AI inventory search.
+- Offer: VapeOS live demo for faster customer and staff product lookup.
 - Target: independent South Carolina vape and smoke shops with weak online inventory, no searchable catalog, stale product pages, or contact-only purchase flows.
 - Reject: chains, franchise/corporate systems, unreachable shops, and stores with strong ecommerce/search.
-- Subject pattern: Idea for [Shop Name]'s inventory search
+- Subject pattern: Idea for [Shop Name]'s product lookup
 - CTA: ask whether they want the live demo link.
 
 ## Follow-Up Cadence
@@ -133,7 +140,7 @@ export function buildTrackerCsv(prospects) {
       "",
       "",
       "not_contacted",
-      prospect.personalizationNotes,
+    prospect.personalizationNotes,
     ]
       .map(csvCell)
       .join(","),
@@ -163,7 +170,11 @@ function extractProspects(input) {
     return input.prospects;
   }
 
-  throw new Error("Research JSON must be an array or an object with a prospects array.");
+  if (Array.isArray(input.targets)) {
+    return input.targets;
+  }
+
+  throw new Error("Research JSON must be an array or an object with a prospects or targets array.");
 }
 
 async function writeTextFile(filePath, contents) {

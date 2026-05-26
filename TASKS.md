@@ -137,3 +137,28 @@
 - [x] Run lint, typecheck, tests, build, high-severity audit, local route checks, public identifier scan, and visual QA.
 - [x] Commit, push, deploy, and verify production copy.
 - [x] Update Agent Memory.
+
+## Phase 14 - Onyx Correction Sprint
+- [x] Create AI Operations Review, beachhead, lead SOP, and CRM reporting docs.
+- [x] Extend Supabase lead schema locally and in the live shared project with pipeline fields.
+- [x] Update contact lead mapping, notification-status handling, and partial-success API response.
+- [x] Replace mobile horizontal navigation with menu plus visible Review CTA and active nav states.
+- [x] Stage the contact form, add live/focus status messaging, and keep optional qualifiers secondary.
+- [x] Add skip link and main content target.
+- [x] Remove Framer Motion services visual and dead `BEGIN SYNTHESIS` button.
+- [x] Reduce homepage reveal client-island cost while preserving visible no-JS/reduced-motion content.
+- [x] Expand priority SEO/GEO service, insight, proof, llms, sitemap, and About/founder content.
+- [x] Run local validation, browser screenshots, secret scan, production deploy, live checks, and GSC sitemap submit.
+
+## Phase 15 - Website Audit Fix Plan
+- [x] Productize the AI Operations Review on public contact, homepage, and insight surfaces.
+- [x] Strengthen the granite/countertop proof path with sample lead record and quote-intake details.
+- [x] Preserve the broad 20-demo portfolio and add buyer-intent signposts.
+- [x] Add server-only Supabase lead listing helper.
+- [x] Add protected read-only `/admin/leads` operator view and `/api/admin/leads` endpoint.
+- [x] Harden mobile menu Escape/focus return behavior.
+- [x] Add visible required markers to the AI Operations Review form.
+- [x] Keep scroll-reveal content visible without JavaScript and reduced-motion fragility.
+- [x] Align AI Operations Review package docs, lead SOP, PFD, and project state.
+- [x] Run full validation and runtime smoke checks.
+- [x] Run secret scan, wiki/project-memory update, commit, and push.

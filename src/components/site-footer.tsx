@@ -3,7 +3,15 @@ import Link from "next/link";
 import { LogoMark } from "@/components/logo-mark";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { caseStudies, navItems, services } from "@/lib/site-data";
+import {
+  caseStudies,
+  founderLinkedInUrl,
+  insights,
+  navItems,
+  services,
+} from "@/lib/site-data";
+
+const priorityInsights = insights.slice(0, 5);
 
 export function SiteFooter() {
   return (
@@ -21,8 +29,16 @@ export function SiteFooter() {
           <Button asChild variant="secondary">
             <Link href="/contact">Request an AI Operations Review</Link>
           </Button>
+          <a
+            className="block text-sm font-semibold text-primary-foreground/78 underline-offset-4 hover:text-primary-foreground hover:underline"
+            href={founderLinkedInUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Connect with Barry Beaubien on LinkedIn
+          </a>
         </div>
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
           <div>
             <h2 className="text-sm font-bold uppercase tracking-[0.18em]">
               Site
@@ -71,12 +87,39 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-[0.18em]">
+              Insights
+            </h2>
+            <ul className="mt-4 space-y-3 text-sm text-primary-foreground/76">
+              {priorityInsights.map((insight) => (
+                <li key={insight.slug}>
+                  <Link
+                    className="hover:text-primary-foreground"
+                    href={`/insights/${insight.slug}`}
+                  >
+                    {insight.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <Separator className="bg-primary-foreground/16" />
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-primary-foreground/65 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <p>2026 Onyx AI Studio. All rights reserved.</p>
-        <p>Built as a design-first Next.js site with AI operations positioning.</p>
+        <p>
+          Founder profile:{" "}
+          <a
+            className="underline-offset-4 hover:text-primary-foreground hover:underline"
+            href={founderLinkedInUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </p>
       </div>
     </footer>
   );

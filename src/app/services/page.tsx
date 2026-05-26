@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeroSystemVisual } from "@/components/hero-system-visual";
-import { absoluteUrl, services } from "@/lib/site-data";
+import { absoluteUrl, breadcrumbSchema, services } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "AI Business System",
@@ -32,14 +32,21 @@ const collectionSchema = {
   })),
 };
 
+const breadcrumbs = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+]);
+
 export default function ServicesPage() {
   return (
     <>
       <JsonLd data={collectionSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Services"
+            titleAs="h1"
             title="AI business operations integration, organized into the pieces companies actually use."
             description="The flagship system connects reception, website assistance, lead capture, scheduling support, Supabase-backed business data, internal employee assistance, and guardrails."
           />

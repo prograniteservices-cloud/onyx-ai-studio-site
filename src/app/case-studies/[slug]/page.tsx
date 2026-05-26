@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { JsonLd } from "@/components/json-ld";
 import { SectionHeading } from "@/components/section-heading";
@@ -10,7 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   absoluteUrl,
+  breadcrumbSchema,
   caseStudies,
+  founderName,
+  founderPersonId,
   getCaseStudy,
   services,
 } from "@/lib/site-data";
@@ -18,6 +21,8 @@ import {
 type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return caseStudies.map((caseStudy) => ({ slug: caseStudy.slug }));
@@ -68,6 +73,11 @@ export default async function CaseStudyDetailPage({
   const relatedServices = services.filter((service) =>
     caseStudy.services.includes(service.slug),
   );
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Case Studies", path: "/case-studies" },
+    { name: caseStudy.title, path: `/case-studies/${caseStudy.slug}` },
+  ]);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -78,8 +88,9 @@ export default async function CaseStudyDetailPage({
     datePublished: "2026-05-04",
     dateModified: "2026-05-04",
     author: {
-      "@type": "Organization",
-      name: "Onyx AI Studio",
+      "@id": founderPersonId,
+      "@type": "Person",
+      name: founderName,
     },
     publisher: {
       "@type": "Organization",
@@ -95,6 +106,7 @@ export default async function CaseStudyDetailPage({
   return (
     <>
       <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div className="editorial-rule pt-8">
@@ -105,6 +117,22 @@ export default async function CaseStudyDetailPage({
             <p className="mt-5 text-lg leading-8 text-muted-foreground">
               {caseStudy.summary}
             </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              {caseStudy.demoUrl ? (
+                <Button asChild>
+                  <a href={caseStudy.demoUrl} target="_blank" rel="noreferrer">
+                    Open live demo
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
+                </Button>
+              ) : null}
+              <Button asChild variant={caseStudy.demoUrl ? "outline" : "default"}>
+                <Link href="/contact">
+                  Request an AI Operations Review
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
+            </div>
           </div>
           <Image
             src={caseStudy.image}
@@ -116,6 +144,33 @@ export default async function CaseStudyDetailPage({
           />
         </div>
       </section>
+
+      {caseStudy.proofSections ? (
+        <section className="border-b border-border bg-background">
+          <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+            <SectionHeading
+              eyebrow="Proof depth"
+              title="What this case study proves operationally."
+              description="The strongest proof is the workflow shape: what the visitor or staff member gives the system, what the business receives, and what follow-up becomes possible."
+            />
+            <div className="grid gap-5">
+              {caseStudy.proofSections.map((section) => (
+                <article
+                  key={section.heading}
+                  className="rounded-lg border border-border bg-card p-5"
+                >
+                  <h2 className="font-serif text-2xl font-bold">
+                    {section.heading}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {section.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">

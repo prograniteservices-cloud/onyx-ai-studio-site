@@ -115,6 +115,24 @@ Rules:
 - No scroll-jacking, parallax capture, bouncing icons, or heavy animation dependency.
 - Keep glassmorphism subtle enough that text contrast remains strong.
 
+## 2026-05-25 Technical SEO Pass
+Purpose: make collection pages easier for Google and AI search systems to parse without changing the editorial operations console.
+
+- Collection pages keep the same visual heading style, but the primary page heading renders as the only `h1`.
+- Repeated section, card, and module headings remain `h2` or lower.
+- Breadcrumb JSON-LD should appear on service, portfolio, case-study, insight, pricing, and contact routes.
+- Decorative hero motion should stay CSS-first and low-cost; animation is acceptable only when it does not block the primary copy.
+
+## 2026-05-26 Correction Sprint UI Pass
+Purpose: keep the Light Editorial Systems Studio identity while removing conversion friction and decorative client-side weight.
+
+- Mobile header uses a compact menu plus a visible Review CTA instead of horizontal-scroll navigation.
+- Active navigation states should use `aria-current="page"` where the route matches.
+- Contact form becomes staged: required first step is name, business, email, website, main problem, and notes; operational qualifiers are optional and secondary.
+- Form status messages must use live regions and focus management so success, validation, and partial-success states are announced.
+- `/services` keeps an editorial systems visual, but it is server-rendered/CSS-first and has no dead decorative button.
+- Homepage reveal effects should be CSS/data-attribute enhanced from a single client island, with content visible before JavaScript and for reduced-motion users.
+
 ## VapeOS Outreach Content Pass
 Purpose: support a South Carolina-first vape-shop outreach campaign by making VapeOS read as a retail inventory search demo rather than a one-off private lead.
 
@@ -142,9 +160,10 @@ Imagegen prompts saved for later raster exploration:
 
 ## Form CRO
 Form Health & Friction Index target: 88/100.
-- Required: name, email, project type.
-- Optional: budget range, message.
-- Visible labels, single column, 44px minimum targets.
+- Required first step: name, business name, email, website, main problem, and notes.
+- Optional qualifiers: phone, industry, locations, call volume, and assistant scope.
+- Visible labels, 44px minimum targets, status live region, and focusable response message.
+- Partial success copy must tell the visitor the lead was saved and not to resubmit.
 - Trust copy near submit: "No spam. You will get a practical next-step reply."
 
 ## Anti-Patterns

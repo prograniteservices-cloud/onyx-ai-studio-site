@@ -1,7 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-
 const clusters = [
   {
     delay: 0.65,
@@ -131,21 +127,18 @@ function makePath(from: readonly [number, number], to: readonly [number, number]
 }
 
 export function LatentGraphHero() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <div className="latent-graph-hero absolute inset-0 overflow-hidden bg-card" aria-hidden="true">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_34%,rgba(15,123,117,0.13),transparent_28%),radial-gradient(circle_at_84%_78%,rgba(185,105,36,0.11),transparent_26%),linear-gradient(108deg,rgba(255,253,248,0.98)_0%,rgba(247,244,238,0.9)_47%,rgba(236,229,216,0.76)_100%)]" />
       <div className="paper-grain absolute inset-0 opacity-28" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,248,0.97)_0%,rgba(255,253,248,0.84)_32%,rgba(255,253,248,0.28)_64%,rgba(255,253,248,0.44)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-card/72 via-background/36 to-background/88" />
-      {!shouldReduceMotion ? (
-        <svg
-          className="absolute inset-0 z-10 h-full w-full mix-blend-multiply"
-          preserveAspectRatio="xMidYMid slice"
-          viewBox="0 0 1440 900"
-          role="presentation"
-        >
+      <svg
+        className="absolute inset-0 z-10 h-full w-full mix-blend-multiply"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1440 900"
+        role="presentation"
+      >
           <defs>
             <filter id="latent-soft-glow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="2.6" result="blur" />
@@ -161,19 +154,8 @@ export function LatentGraphHero() {
             </linearGradient>
           </defs>
 
-          {clusters.map((cluster, clusterIndex) => (
-            <motion.g
-              key={`cluster-${clusterIndex}`}
-              animate={{ opacity: [0, 0, 1, 0.88, 0] }}
-              initial={{ opacity: 0 }}
-              transition={{
-                delay: cluster.delay,
-                duration: 1.95,
-                ease: [0.22, 1, 0.36, 1],
-                repeat: Infinity,
-                repeatDelay: 6.05,
-              }}
-            >
+        {clusters.map((cluster, clusterIndex) => (
+          <g key={`cluster-${clusterIndex}`} opacity={0.72}>
               {cluster.links.map(([from, to], linkIndex) => {
                 const fromNode = cluster.nodes[from];
                 const toNode = cluster.nodes[to];
@@ -183,71 +165,41 @@ export function LatentGraphHero() {
                 }
 
                 return (
-                  <motion.path
+                  <path
                     key={`cluster-${clusterIndex}-link-${linkIndex}`}
                     d={makePath(fromNode, toNode)}
                     fill="none"
                     stroke="url(#latent-line)"
                     strokeLinecap="round"
                     strokeWidth="1.55"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 0.72, 0.5, 0] }}
-                    transition={{
-                      delay: cluster.delay + linkIndex * 0.035,
-                      duration: 1.8,
-                      ease: [0.22, 1, 0.36, 1],
-                      repeat: Infinity,
-                      repeatDelay: 6.2,
-                    }}
                   />
                 );
               })}
 
               {cluster.nodes.map(([cx, cy], nodeIndex) => (
-                <motion.circle
+                <circle
                   key={`cluster-${clusterIndex}-node-${nodeIndex}`}
                   cx={cx}
                   cy={cy}
                   r={nodeIndex === 1 ? 5.8 : 4.1}
                   fill={nodeIndex === 1 ? cluster.accent : "#17130f"}
                   filter={nodeIndex === 1 ? "url(#latent-soft-glow)" : undefined}
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  animate={{
-                    opacity: [0, 0.9, 0.82, 0],
-                    scale: [0.72, 1, 0.94, 0.72],
-                  }}
-                  transition={{
-                    delay: cluster.delay + nodeIndex * 0.055,
-                    duration: 1.55,
-                    ease: [0.22, 1, 0.36, 1],
-                    repeat: Infinity,
-                    repeatDelay: 6.45,
-                  }}
                 />
               ))}
-            </motion.g>
+            </g>
           ))}
 
           {strayNodes.map(([cx, cy, delay], index) => (
-            <motion.circle
+            <circle
               key={`stray-${index}`}
               cx={cx}
               cy={cy}
               r="2.8"
               fill="#0f7b75"
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: [0, 0.48, 0], scale: [0.7, 1, 0.7] }}
-              transition={{
-              delay,
-              duration: 1,
-              ease: "easeOut",
-              repeat: Infinity,
-              repeatDelay: 7,
-            }}
-          />
+              opacity={0.44 + delay * 0.02}
+            />
           ))}
-        </svg>
-      ) : null}
+      </svg>
     </div>
   );
 }
