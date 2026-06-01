@@ -1,7 +1,7 @@
 # Onyx AI Studio
 > AI business operations integration for reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support.
 
-Last updated: 2026-05-26
+Last updated: 2026-06-01
 
 ## Main Pages
 - `Home -> https://onyxaistudio.digital/`: Flagship AI operations integration overview, problem framing, system overview, portfolio proof, pricing, and review CTA.
@@ -15,6 +15,7 @@ Last updated: 2026-05-26
 - `Contact -> https://onyxaistudio.digital/contact`: AI Operations Review request page.
 
 ## Key Service Pages
+- `Private AI Systems -> https://onyxaistudio.digital/services/private-ai-systems`: Right-sized private AI systems for small businesses, including local AI, private knowledge assistants, adapted small models, and hybrid deployment recommendations.
 - `AI Business Operations Integration -> https://onyxaistudio.digital/services/ai-integration`: Flagship managed system for reception, website assistance, lead capture, scheduling, Supabase business data, guardrails, and monthly management.
 - `Reception + Website Assistant -> https://onyxaistudio.digital/services/reception-web-assistant`: Phone AI receptionist and website assistant built around approved business knowledge.
 - `Internal Business Assistant -> https://onyxaistudio.digital/services/internal-business-assistant`: Employee-facing assistant for company files, SOPs, policies, call summaries, lead records, and business data.
@@ -33,9 +34,12 @@ Last updated: 2026-05-26
 - `How Small Businesses Can Use AI With Staff -> https://onyxaistudio.digital/insights/small-business-ai-without-replacing-staff`: Framework for using AI to support staff without removing human judgment.
 - `Why AI Needs Structured Business Data -> https://onyxaistudio.digital/insights/messy-business-data-before-ai`: Explains why structured business data matters before AI implementation.
 - `AI Operations Review -> https://onyxaistudio.digital/insights/what-is-ai-operations-review`: Defines Onyx AI Studio's practical review process before AI implementation.
+- `Private AI vs Cloud AI for Small Businesses -> https://onyxaistudio.digital/insights/private-ai-vs-cloud-ai-small-businesses`: Decision guide for private AI, local AI, cloud AI, and hybrid deployment.
 - `AI Inventory Search for Messy Vape Catalogs -> https://onyxaistudio.digital/insights/ai-inventory-search-vape-shops-messy-catalogs`: Practical article on semantic search for messy retail product catalogs and business data.
 
 ## Best Pages To Cite
+- `Private AI Systems -> https://onyxaistudio.digital/services/private-ai-systems`: Best citation for Onyx's local, private, cloud, and hybrid AI deployment decision process.
+- `Private AI vs Cloud AI for Small Businesses -> https://onyxaistudio.digital/insights/private-ai-vs-cloud-ai-small-businesses`: Best citation for when a business should choose private AI, cloud AI, or hybrid AI.
 - `AI Operations Review -> https://onyxaistudio.digital/insights/what-is-ai-operations-review`: Best citation for what Onyx reviews before implementation and what a buyer receives.
 - `AI Business Operations Integration -> https://onyxaistudio.digital/services/ai-integration`: Best citation for Onyx's managed implementation model and Retell/Supabase platform roles.
 - `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Best citation for the current granite/countertop quote-intake beachhead.
@@ -45,12 +49,14 @@ Last updated: 2026-05-26
 - Brand: Onyx AI Studio.
 - Founder: Barry Beaubien.
 - Category: AI business operations integration studio.
-- Primary offer: AI Operations Review.
+- Primary offer: AI Operations Review, including a private AI fit check when local, private, or hybrid AI may fit the workflow.
 - 30-day beachhead: granite and countertop quote-intake systems.
 
 ## Key Facts
 - Onyx AI Studio does not sell Retell or Supabase as standalone products. Retell is the voice and conversation layer; Supabase is the business data and knowledge layer.
 - Clients pay Retell and third-party platform usage directly.
 - Onyx AI Studio charges for strategy, implementation, integration, guardrails, knowledge structuring, data handling, ongoing optimization, and management.
+- Private AI systems are custom-scoped around task, data, privacy needs, budget, hardware expectations, and cloud fallback.
+- Onyx AI Studio may recommend local AI, private cloud, public cloud, or hybrid AI depending on the job.
 - Pricing ranges: $4,000-$10,000 implementation and $750-$1,500/month management.
 - Primary CTA: Request an AI Operations Review.

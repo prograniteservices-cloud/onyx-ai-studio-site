@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     "Supabase business data layer",
     "internal business assistant",
     "AI guardrails",
+    "private AI systems",
+    "local AI deployment",
+    "hybrid AI deployment",
   ],
   alternates: {
     canonical: "/",
@@ -113,12 +116,16 @@ const organizationSchema = {
     "Supabase business data",
     "Internal business assistants",
     "AI guardrails",
+    "Private AI systems",
+    "Local AI deployment",
+    "Hybrid AI deployment",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Onyx AI Studio Services",
     itemListElement: [
       "AI Business Operations Integration",
+      "Private AI Systems",
       "AI Phone Receptionist",
       "Website Voice Assistant",
       "Internal Business Assistant",
@@ -152,6 +159,8 @@ const personSchema = {
     "AI phone reception",
     "Business data systems",
     "Internal knowledge assistants",
+    "Private AI systems",
+    "Local AI deployment",
   ],
 };
 

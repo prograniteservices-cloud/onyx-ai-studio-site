@@ -133,6 +133,17 @@ Purpose: keep the Light Editorial Systems Studio identity while removing convers
 - `/services` keeps an editorial systems visual, but it is server-rendered/CSS-first and has no dead decorative button.
 - Homepage reveal effects should be CSS/data-attribute enhanced from a single client island, with content visible before JavaScript and for reduced-motion users.
 
+## 2026-06-01 Private AI Systems Pass
+Purpose: add Right-Sized Private AI Systems as a major service chapter without pivoting away from AI Business Operations Integration.
+
+- Navigation uses the concise label "Private AI Systems" and routes to `/services/private-ai-systems`.
+- Homepage service promotion should include the new service by placing it in the first four service records.
+- Public copy frames the work as choosing the smallest reliable AI system for the task, with local, private cloud, public cloud, or hybrid deployment selected by fit.
+- The AI Operations Review remains the primary CTA, and copy should state that it includes a private AI fit check.
+- Pricing language for private/local AI stays custom-scoped. Do not publish package ranges for hardware, local inference, or private infrastructure builds.
+- A supporting insight at `/insights/private-ai-vs-cloud-ai-small-businesses` should answer the local/private/cloud/hybrid decision question for AI search and buyer education.
+- Avoid overclaims: small models do not do everything, private AI does not replace all cloud AI, privacy and accuracy are not perfect, and cloud fallback may still be the practical choice.
+
 ## VapeOS Outreach Content Pass
 Purpose: support a South Carolina-first vape-shop outreach campaign by making VapeOS read as a retail inventory search demo rather than a one-off private lead.
 

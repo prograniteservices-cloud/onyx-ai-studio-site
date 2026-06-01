@@ -162,3 +162,15 @@
 - [x] Align AI Operations Review package docs, lead SOP, PFD, and project state.
 - [x] Run full validation and runtime smoke checks.
 - [x] Run secret scan, wiki/project-memory update, commit, and push.
+
+## Phase 16 - Private AI Systems SEO/AEO Service Chapter
+- [x] Download and read the Right-Sized Private AI Systems source brief from Drive.
+- [x] Plan the service as a major Onyx service chapter without pivoting away from AI Business Operations Integration.
+- [x] Add regression tests for the private AI service, private-vs-cloud insight, FAQ rendering, sitemap date, `llms.txt`, contact options, pricing note, schema/discovery signals, and overclaim bans.
+- [x] Add `/services/private-ai-systems` through the shared service data model.
+- [x] Add `/insights/private-ai-vs-cloud-ai-small-businesses` through the shared insight data model.
+- [x] Add answer-block and optional insight FAQ support to dynamic detail routes.
+- [x] Update navigation, organization schema, sitemap date, `llms.txt`, pricing copy, and contact form choices.
+- [x] Update DESIGN, PDD, PFD, README, project state, and task state.
+- [x] Run full tests, lint, typecheck, build, high-severity audit, diff check, route checks, public scan, and visual QA.
+- [x] Update Agent Memory and local project-memory after validation.

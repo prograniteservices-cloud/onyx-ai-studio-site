@@ -4,6 +4,7 @@ import {
   Braces,
   CalendarClock,
   ChartSpline,
+  Cpu,
   DatabaseZap,
   FileSearch,
   Gauge,
@@ -29,6 +30,7 @@ export const founderName = "Barry Beaubien";
 export const founderPersonId = `${siteUrl}/#barry-beaubien`;
 
 export const navItems = [
+  { href: "/services/private-ai-systems", label: "Private AI Systems" },
   { href: "/services/ai-integration", label: "AI Business System" },
   { href: "/services/reception-web-assistant", label: "Reception + Web Assistant" },
   { href: "/services/internal-business-assistant", label: "Internal Assistant" },
@@ -52,6 +54,8 @@ export type Service = {
   eyebrow: string;
   summary: string;
   description: string;
+  primaryKeyword?: string;
+  answerBlock?: string;
   icon: LucideIcon;
   outcomes: string[];
   deliverables: string[];
@@ -62,6 +66,92 @@ export type Service = {
 };
 
 export const services: Service[] = [
+  {
+    slug: "private-ai-systems",
+    title: "Right-Sized Private AI Systems",
+    eyebrow: "Local, private, or hybrid AI",
+    summary:
+      "Private AI systems for small businesses, sized to the task instead of forced through the biggest cloud model.",
+    description:
+      "Right-Sized Private AI Systems helps small businesses decide whether a task belongs on a small local model, a private knowledge assistant, a larger private workstation, a cloud model, or a hybrid setup. Onyx AI Studio starts with the work, the data, the privacy need, the budget, and the expected workload, then builds the smallest reliable AI system that can handle the job.",
+    primaryKeyword: "private AI systems",
+    answerBlock:
+      "Onyx AI Studio builds private AI systems for small businesses by matching local, cloud, or hybrid models to the task, data, privacy needs, budget, and workload.",
+    icon: Cpu,
+    outcomes: [
+      "A right-sized AI plan instead of defaulting every workflow to a large cloud model",
+      "Private knowledge assistants that answer from company documents, SOPs, policies, and examples",
+      "Local, cloud, or hybrid deployment choices based on the actual workload",
+      "A clearer path for when small models, RAG, adapted models, or larger private hardware make sense",
+    ],
+    deliverables: [
+      "Private AI fit check inside the AI Operations Review",
+      "Task, data, privacy, budget, and workload assessment",
+      "Local, cloud, or hybrid deployment recommendation",
+      "RAG and private knowledge assistant plan",
+      "Adapted small model or workflow-specific model recommendation",
+      "Custom-scoped private AI build with hardware billed separately when needed",
+    ],
+    detailSections: [
+      {
+        heading: "What are private AI systems?",
+        body: "Private AI systems are AI assistants, knowledge tools, model deployments, and workflows designed around a business's own data and operating rules. They may run locally on office hardware, inside a private server environment, in a managed cloud service, or across a hybrid setup. The point is not to avoid every outside tool. The point is to choose the deployment that fits the work and risk.",
+      },
+      {
+        heading: "The smallest reliable AI system",
+        body: "Most businesses do not need the biggest model available. They need the smallest reliable AI system that can perform the workflow, produce testable outputs, and stay inside the right guardrails. A simple lead sorter, quote helper, or document lookup assistant may use a narrow model or retrieval workflow. Broader reasoning, many users, or heavy multimodal workloads may need larger local hardware or cloud fallback.",
+      },
+      {
+        heading: "Local, cloud, or hybrid deployment",
+        body: "Local AI can fit private office lookup, predictable internal use, or sensitive documents. Cloud AI can fit remote access, stronger reasoning, availability, and faster scaling. Hybrid AI combines both: private/local models handle narrow or sensitive tasks while stronger cloud models handle work that needs more capability or reliability.",
+      },
+      {
+        heading: "RAG versus adapted small models",
+        body: "RAG connects an assistant to company documents so it can answer from approved source material. Adapted small models are better when the business has repeat examples and needs consistent classification, extraction, routing, drafting, summaries, or formatting. Many useful systems combine both: a private knowledge base for facts, a smaller model for behavior, and workflow tools for action.",
+      },
+      {
+        heading: "Hardware fit",
+        body: "Hardware is recommended only after the workload is understood. Some businesses need a simple assistant on existing systems. Others may fit a Mac mini, Mac Studio, RTX workstation, NVIDIA server, managed cloud, or hybrid deployment. The recommendation depends on model size, users, latency, document volume, uptime needs, remote access, and privacy expectations.",
+      },
+      {
+        heading: "Who this is not for",
+        body: "Private AI is not ideal when the business has no clear workflow, no examples or documents, or expects a tiny model to make broad legal, medical, financial, or human-level decisions. In those cases, the first recommendation may be source cleanup, a standard SaaS tool, a simple automation, or a cloud model with strict guardrails.",
+      },
+    ],
+    questions: [
+      {
+        question: "Do private AI systems have to run fully offline?",
+        answer:
+          "No. Private AI can mean local hardware, a private cloud environment, stricter data boundaries, or a hybrid system. The right choice depends on the task, sensitivity, remote access needs, budget, and reliability requirements.",
+      },
+      {
+        question: "When does local AI make sense for a small business?",
+        answer:
+          "Local AI makes sense when the work is narrow enough to run reliably on available hardware, when documents or examples should stay closer to the business, or when predictable internal use matters more than always having the strongest cloud model.",
+      },
+      {
+        question: "Are small AI models enough for business work?",
+        answer:
+          "Small models are useful when the task is specific, examples are clean, and outputs can be tested. They are weaker for broad reasoning, ambiguous decisions, and heavy workloads, so some systems still need larger local models or cloud fallback.",
+      },
+      {
+        question: "What is RAG in a private AI system?",
+        answer:
+          "RAG means retrieval-augmented generation. In plain terms, the assistant searches approved company documents, SOPs, policies, pricing notes, or catalogs before answering, so it has business-specific context instead of relying only on generic model memory.",
+      },
+      {
+        question: "Do you fine-tune models from scratch?",
+        answer:
+          "Most small business projects do not need a model trained from the ground up. Onyx usually recommends retrieval, prompt and workflow design, examples, evaluation checks, or adapting existing smaller models when the task is narrow enough.",
+      },
+      {
+        question: "What does the AI Operations Review do for private AI?",
+        answer:
+          "The AI Operations Review includes a private AI fit check. It looks at the workflow, documents, privacy needs, budget, hardware expectations, and cloud fallback options before recommending a local, cloud, or hybrid build.",
+      },
+    ],
+    relatedCases: ["vapeos", "countertop-estimator"],
+  },
   {
     slug: "ai-integration",
     title: "AI Business Operations Integration",
@@ -767,14 +857,85 @@ export type Insight = {
   slug: string;
   title: string;
   description: string;
+  answerBlock?: string;
   date: string;
   readingTime: string;
   tags: string[];
   sections: { heading: string; body: string }[];
+  questions?: { question: string; answer: string }[];
   relatedLinks?: { href: string; label: string }[];
 };
 
 export const insights: Insight[] = [
+  {
+    slug: "private-ai-vs-cloud-ai-small-businesses",
+    title: "Private AI vs Cloud AI for Small Businesses",
+    description:
+      "Should my business use private AI, cloud AI, or hybrid AI? A practical decision guide for local models, private knowledge assistants, cloud systems, and hybrid deployments.",
+    answerBlock:
+      "A small business should use private AI when data sensitivity, predictable internal use, or narrow workflows matter; cloud AI when capability, remote access, uptime, or scale matter; and hybrid AI when some tasks should stay private while harder work needs stronger cloud models.",
+    date: "2026-06-01",
+    readingTime: "8 min read",
+    tags: ["Private AI", "Local AI", "Hybrid AI"],
+    sections: [
+      {
+        heading: "Should my business use private AI, cloud AI, or hybrid AI?",
+        body: "The practical answer depends on the task. Private AI is strongest when the business has sensitive documents, narrow internal workflows, predictable use, or a need to keep more data close to owned systems. Cloud AI is stronger when the business needs broad reasoning, remote access, high uptime, faster setup, or model capability that local hardware cannot support. Hybrid AI often fits best because it lets private or local models handle narrow work while cloud models handle harder tasks with clear rules.",
+      },
+      {
+        heading: "When private AI is the better fit",
+        body: "Private AI is worth considering when staff need to search SOPs, policies, pricing notes, job checklists, customer examples, product catalogs, or internal documents. It can also fit lead classification, form extraction, quote-note formatting, customer reply drafts, and repetitive office decisions when examples are clean and the output can be tested.",
+      },
+      {
+        heading: "When cloud AI is still the better fit",
+        body: "Cloud AI may be the better fit when the workload needs stronger reasoning, fast remote access, high reliability, multimodal capability, or frequent model upgrades. A business should not force a local model into work it cannot do well just to say the system is private. The safer decision is to match capability, risk, and cost to the workflow.",
+      },
+      {
+        heading: "Why hybrid AI is often the practical answer",
+        body: "Hybrid AI lets the business keep narrow or sensitive workflows closer to private systems while routing broader, harder, or lower-risk work to stronger cloud models. For example, a local private knowledge assistant can search internal SOPs, while a cloud model drafts a more complex customer reply after receiving only approved summary fields.",
+      },
+      {
+        heading: "How RAG changes the decision",
+        body: "RAG, or retrieval-augmented generation, is usually the first private AI pattern to evaluate. Instead of trying to make a model memorize the business, the assistant searches approved documents before answering. This fits SOPs, policies, pricing guidance, warranty terms, internal FAQs, product catalogs, and service rules that change over time.",
+      },
+      {
+        heading: "How small models fit the workflow",
+        body: "Small models can be valuable when the job is narrow and repeatable: classify a lead, extract fields from a message, summarize notes into a template, route a request, or draft a reply in a known style. They need clean examples, testing, and fallback rules. They are not a substitute for broad expert judgment.",
+      },
+      {
+        heading: "The buying decision should start with the workflow",
+        body: "The best first step is not buying hardware or choosing a model. The first step is mapping the workflow, source material, privacy needs, expected users, output tests, and failure cases. That is why Onyx AI Studio folds a private AI fit check into the AI Operations Review before recommending local, cloud, or hybrid deployment.",
+      },
+    ],
+    questions: [
+      {
+        question: "Is private AI always more secure than cloud AI?",
+        answer:
+          "No. Private AI can reduce some data-sharing risks, but security also depends on access controls, storage, logging, backups, network exposure, staff practices, and vendor configuration.",
+      },
+      {
+        question: "Does a small business need local AI hardware?",
+        answer:
+          "Not always. Some businesses are better served by a private knowledge workflow, a managed cloud system, or a hybrid setup before buying a Mac Studio, RTX workstation, or server.",
+      },
+      {
+        question: "What is the safest first step?",
+        answer:
+          "Start with a workflow and data review. Identify the repeated task, source material, privacy need, expected users, output tests, and fallback rule before selecting a model or hardware.",
+      },
+      {
+        question: "Can private AI work with existing business automation?",
+        answer:
+          "Yes. A private AI system can connect to lead intake, document search, internal assistant workflows, email summaries, dashboards, or staff review steps when the actions and permissions are clearly defined.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/services/private-ai-systems", label: "Private AI Systems" },
+      { href: "/services/ai-integration", label: "AI Business Operations Integration" },
+      { href: "/insights/what-is-ai-operations-review", label: "AI Operations Review" },
+      { href: "/contact", label: "Request an AI Operations Review" },
+    ],
+  },
   {
     slug: "ai-lead-capture-service-business-websites",
     title: "How AI Lead Capture Changes Service Business Websites",

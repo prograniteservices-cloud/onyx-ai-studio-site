@@ -64,6 +64,11 @@ export default function PricingPage() {
               assistant behavior, Supabase structuring, guardrails, integration,
               support, and ongoing management.
             </p>
+            <p className="mt-4 text-sm leading-6 text-muted-foreground">
+              Private AI systems are custom-scoped because local hardware, model
+              choice, data sensitivity, and cloud fallback can change the build
+              plan. Hardware is recommended only after the workflow is reviewed.
+            </p>
             <Button asChild className="mt-6">
               <Link href="/contact">
                 Request an AI Operations Review

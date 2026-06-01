@@ -122,6 +122,7 @@ export function ContactForm() {
           <option value="internal-docs">Internal documents</option>
           <option value="follow-up">Follow-up</option>
           <option value="data-handling">Customer data handling</option>
+          <option value="private-ai-systems">Private AI / local AI system</option>
         </Select>
       </Field>
 
@@ -172,6 +173,7 @@ export function ContactForm() {
                 <option value="website-assistant">Website assistant</option>
                 <option value="internal-assistant">Internal assistant</option>
                 <option value="phone-website">Phone + website assistant</option>
+                <option value="private-local-ai">Private / local AI assistant</option>
                 <option value="all-three">Phone + website + internal assistant</option>
                 <option value="not-sure">Not sure yet</option>
               </Select>

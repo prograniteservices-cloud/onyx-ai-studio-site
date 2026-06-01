@@ -38,6 +38,7 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.summary,
+    keywords: service.primaryKeyword ? [service.primaryKeyword, service.title] : undefined,
     alternates: {
       canonical: `/services/${service.slug}`,
     },
@@ -111,16 +112,26 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
-          <div className="editorial-rule pt-8">
+          <div className="editorial-rule min-w-0 pt-8">
             <Badge variant="accent">{service.eyebrow}</Badge>
-            <h1 className="mt-6 font-serif text-5xl font-bold leading-tight text-foreground sm:text-6xl">
+            <h1 className="mt-6 break-words font-serif text-4xl font-bold leading-tight text-foreground sm:text-6xl">
               {service.title}
             </h1>
           </div>
-          <div className="space-y-6">
+          <div className="min-w-0 space-y-6">
             <p className="text-xl leading-8 text-muted-foreground">
               {service.description}
             </p>
+            {service.answerBlock ? (
+              <div className="min-w-0 rounded-lg border border-border bg-background p-5">
+                <h2 className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">
+                  Short answer
+                </h2>
+                <p className="mt-3 text-base leading-7 text-foreground">
+                  {service.answerBlock}
+                </p>
+              </div>
+            ) : null}
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild>
                 <Link href="/contact">Request an AI Operations Review</Link>

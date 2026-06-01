@@ -1,9 +1,9 @@
 # Project State
 
-Updated: 2026-05-26
+Updated: 2026-06-01
 
 ## Current Goal
-Complete the Website Audit fix plan: productize the AI Operations Review, strengthen the granite/countertop proof path, preserve and signpost the broad portfolio, expose a protected read-only lead pipeline, harden frontend interactions, and align docs.
+Add the Right-Sized Private AI Systems service chapter to the Onyx AI Studio site with SEO/AEO support, answer-ready copy, schema/discovery updates, and documentation alignment.
 
 ## Current Status
 - Next.js scaffold exists and is the active app.
@@ -16,6 +16,8 @@ Complete the Website Audit fix plan: productize the AI Operations Review, streng
 - Latest pushed branch: `master`.
 - Vercel project: `onyx-ai-studio-site`.
 - Production URL: `https://onyxaistudio.digital`.
+- Private AI Systems expansion is in progress on 2026-06-01. Planned public routes are `/services/private-ai-systems` and `/insights/private-ai-vs-cloud-ai-small-businesses`.
+- The private AI direction is a major service chapter, not a pivot away from AI Business Operations Integration. The AI Operations Review remains the primary CTA and now includes a private AI fit check.
 - Vercel production env includes `NEXT_PUBLIC_SITE_URL=https://onyxaistudio.digital`.
 - Repositioning source files are in the app root: `Site_Repositioning_Prompt.txt` and `AI_Business_Integration_System.txt`.
 - Homepage now leads with AI reception, lead capture, scheduling, website assistance, data handling, and internal business assistance.
@@ -131,3 +133,7 @@ Commit and push the verified Website Audit fix sprint, then monitor Review submi
 - Correction sprint Search Console: submitted `https://onyxaistudio.digital/sitemap.xml` on 2026-05-26; report showed pending processing, 0 warnings, 0 errors, and recent page impressions still present.
 - Website Audit fix sprint validation: `npm.cmd test` passed 45/45, `npm.cmd run lint` passed, `npx.cmd tsc --noEmit` passed, `npm.cmd run build` passed with 35 generated static pages plus dynamic `/admin/leads` and `/api/admin/leads`, and `npm.cmd audit --audit-level=high` exited 0 with moderate advisories only.
 - Website Audit fix sprint runtime smoke: built app on local port 3012 returned 200 for `/`, `/contact`, `/portfolio`, and `/case-studies/countertop-estimator`; `/admin/leads` and `/api/admin/leads` returned 404 without admin env vars, confirming fail-closed admin protection.
+- Private AI Systems red/green validation: `npm.cmd run test -- tests/private_ai_systems_content.test.mjs` passed on 2026-06-01 after adding the service, insight, FAQ rendering, sitemap date, `llms.txt`, contact options, pricing note, and schema/discovery assertions.
+- Private AI Systems full validation: `npm.cmd run test` passed 61/61, `npm.cmd run lint` passed, `npx.cmd tsc --noEmit` passed, `npm.cmd run build` passed with `/services/private-ai-systems` and `/insights/private-ai-vs-cloud-ai-small-businesses` generated, `npm.cmd audit --audit-level=high` exited 0 with moderate-only advisories, and `git diff --check` passed with line-ending warnings only.
+- Private AI Systems local route checks on port 3016 returned 200 for `/`, `/services`, `/services/private-ai-systems`, `/insights/private-ai-vs-cloud-ai-small-businesses`, `/pricing`, `/contact`, `/sitemap.xml`, and `/llms.txt`. The new service and insight each had one H1, self-canonical URLs, no `noindex`, and JSON-LD.
+- Private AI Systems visual QA screenshots were captured under `artifacts/private-ai-systems-qa`: service and insight desktop/mobile, homepage desktop navigation at 1440 and 1024, plus contact mobile. Playwright mobile screenshots verified no clipped service/insight copy.

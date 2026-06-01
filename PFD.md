@@ -17,7 +17,7 @@
 | `/case-studies` | `src/app/case-studies/page.tsx` | Deeper case-study proof index |
 | `/case-studies/[slug]` | `src/app/case-studies/[slug]/page.tsx` | Static portfolio proof detail pages |
 | `/insights` | `src/app/insights/page.tsx` | AI operations insight index |
-| `/insights/[slug]` | `src/app/insights/[slug]/page.tsx` | Static insight article |
+| `/insights/[slug]` | `src/app/insights/[slug]/page.tsx` | Static insight article with optional answer block and FAQ schema |
 | `/contact` | `src/app/contact/page.tsx` | AI Operations Review request form |
 | `/api/contact` | `src/app/api/contact/route.ts` | Supabase-backed lead capture and Resend notification endpoint |
 | `/robots.txt` | `src/app/robots.ts` | Crawler and AI bot access |
@@ -35,6 +35,8 @@
 
 ## Data
 - `src/lib/site-data.ts` owns navigation, service, case study, insight, FAQ, pricing, problem, flow, and capability data.
+- Service records can include `primaryKeyword` and `answerBlock`; insight records can include `answerBlock` and `questions`.
+- `/services/private-ai-systems` and `/insights/private-ai-vs-cloud-ai-small-businesses` are generated from `src/lib/site-data.ts`.
 - `src/lib/site-data.ts` also stores lightweight public metadata for the 20 SaaS demos and their external links to `https://onyx-portfolio-demos.vercel.app/apps`.
 - `src/lib/contact-leads.ts` maps normalized contact form fields to Supabase column names and writes server-side lead records through the Supabase REST API.
 - Dynamic service, case study, and insight routes read from that file and use `generateStaticParams`.
@@ -46,6 +48,7 @@
 - Pages render JSON-LD in body with absolute URLs.
 - Sitemap is generated from static routes plus service, case study, and insight data.
 - `llms.txt` describes the flagship positioning, `/portfolio`, the external demo launcher, and priority proof pages.
+- `llms.txt` includes the Private AI Systems service and the private-vs-cloud decision insight for AI crawler discovery.
 
 ## Asset Handling
 - Production visuals live in `public/`.
@@ -57,6 +60,7 @@
 - `/contact` posts JSON to `/api/contact`.
 - Required AI Operations Review fields: name, business name, email, website, main problem, and notes.
 - Optional qualifier fields: phone, industry, locations, approximate call volume, and assistant scope.
+- Main-problem and assistant-scope choices include private/local AI options while preserving the existing `/api/contact` payload shape.
 - `/api/contact` normalizes string fields, validates required review fields, saves the lead to `public.onyx_contact_leads`, escapes HTML in the email body, and sends the lead notification through the Resend API.
 - Contact delivery requires `RESEND_API_KEY`; optional routing variables are `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`.
 - Contact persistence requires `SUPABASE_URL` or `SUPABASE_REST_URL` plus server-only `SUPABASE_SECRET_KEY`.

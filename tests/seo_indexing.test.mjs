@@ -50,7 +50,7 @@ test("insights and case studies use the founder person schema as author", () => 
 test("sitemap advertises the current technical SEO refresh date", () => {
   const sitemap = read("src/app/sitemap.ts");
 
-  assert.match(sitemap, /2026-05-26T00:00:00\.000Z/);
+  assert.match(sitemap, /2026-06-01T00:00:00\.000Z/);
   assert.match(sitemap, /"\/about"/);
 });
 
