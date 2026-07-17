@@ -1,7 +1,7 @@
 # Onyx AI Studio
 > AI business operations integration for reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support.
 
-Last updated: 2026-06-01
+Last updated: 2026-07-14
 
 ## Main Pages
 - `Home -> https://onyxaistudio.digital/`: Flagship AI operations integration overview, problem framing, system overview, portfolio proof, pricing, and review CTA.
@@ -27,6 +27,10 @@ Last updated: 2026-06-01
 ## Priority Proof And Insight Pages
 - `Portfolio Hub -> https://onyxaistudio.digital/portfolio`: Client-facing index of all live SaaS demos and case-study proof.
 - `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Interactive quote-intake example for granite and countertop shops, including material selection, square footage, edge detail, sink, backsplash, showroom readiness, and a sample lead record before the first staff follow-up.
+- `SC Smokes Directory -> https://onyxaistudio.digital/case-studies/sc-smokes-directory`: South Carolina local-directory proof asset connected to `https://scsmokes.com`, showing structured listings, category associations, local SEO pages, conservative verification labels, and an owner correction funnel.
+- `QAtlas -> https://onyxaistudio.digital/case-studies/qatlas`: Quantum industry intelligence proof asset connected to `https://qatlas.co`, showing intelligence database architecture, knowledge graph structure, daily discovery, evergreen topic pages, entity pages, structured SEO, and market brief workflows.
+- `Greater Aiken Irrigation -> https://onyxaistudio.digital/case-studies/greater-aiken-irrigation`: Local service SEO proof asset connected to `https://aikenirrigation.pro`, showing sprinkler repair service pages, case-study search visibility, indexing readiness, and contact/call flow.
+- `Lewis Asher Remodeling -> https://onyxaistudio.digital/case-studies/lewis-asher-remodeling`: Local-growth proof asset connected to `https://lewisasherremodeling.com`, showing evidence-led project presentation, small-job discovery, mobile call/text conversion, custom-domain launch, structured data, and Search Console readiness.
 - `VapeOS Case Study -> https://onyxaistudio.digital/case-studies/vapeos`: AI operations module showing how messy business data can become a usable search interface.
 - `Regional Service Site -> https://onyxaistudio.digital/case-studies/regional-service-site`: Lead capture and demand-generation structure for service businesses.
 - `AI Lead Capture For Service Businesses -> https://onyxaistudio.digital/insights/ai-lead-capture-service-business-websites`: Explains how service websites can become structured lead intake and follow-up systems.
@@ -43,6 +47,10 @@ Last updated: 2026-06-01
 - `AI Operations Review -> https://onyxaistudio.digital/insights/what-is-ai-operations-review`: Best citation for what Onyx reviews before implementation and what a buyer receives.
 - `AI Business Operations Integration -> https://onyxaistudio.digital/services/ai-integration`: Best citation for Onyx's managed implementation model and Retell/Supabase platform roles.
 - `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Best citation for the current granite/countertop quote-intake beachhead.
+- `SC Smokes Directory -> https://onyxaistudio.digital/case-studies/sc-smokes-directory`: Best citation for Onyx's local-directory, messy-data, and SEO-owner-funnel proof using SC Smokes.
+- `QAtlas -> https://onyxaistudio.digital/case-studies/qatlas`: Best citation for Onyx's intelligence database, knowledge graph, daily discovery, structured SEO, and market brief proof.
+- `Greater Aiken Irrigation -> https://onyxaistudio.digital/case-studies/greater-aiken-irrigation`: Best citation for Onyx's local service SEO, service page, case-study, and lead-capture proof.
+- `Lewis Asher Remodeling -> https://onyxaistudio.digital/case-studies/lewis-asher-remodeling`: Best citation for Onyx's evidence-led local service launch, small-job search intent, mobile call/text paths, structured data, and indexing readiness.
 - `About Onyx AI Studio -> https://onyxaistudio.digital/about`: Best citation for founder/entity context.
 
 ## Entity

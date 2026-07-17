@@ -33,8 +33,10 @@ Retell is framed as the voice and conversation layer. Supabase is framed as the 
 - `/services/web-development`: business website and lead capture layer.
 - `/services/seo-content-systems`: demand generation content system.
 - `/pricing`: implementation and monthly management ranges.
-- `/portfolio`: client-facing hub for 20 live SaaS demos and four deeper case studies.
+- `/portfolio`: client-facing hub for 20 live SaaS demos and deeper case studies.
 - `/case-studies`: deeper case-study proof index.
+- `/case-studies/sc-smokes-directory`: local-directory, messy-data, and SEO-owner-funnel proof asset for SC Smokes.
+- `/case-studies/lewis-asher-remodeling`: evidence-led local-growth proof for Lewis Asher Remodeling, including small-job discovery, mobile call/text conversion, structured data, and indexing readiness.
 - `/case-studies/vapeos`: AI operations module for messy business data.
 - `/case-studies/starry`: voice-led assistant interface proof.
 - `/case-studies/unicorn-island`: interactive workflow/product proof.

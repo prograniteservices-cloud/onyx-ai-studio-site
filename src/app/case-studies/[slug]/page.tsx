@@ -121,7 +121,7 @@ export default async function CaseStudyDetailPage({
               {caseStudy.demoUrl ? (
                 <Button asChild>
                   <a href={caseStudy.demoUrl} target="_blank" rel="noreferrer">
-                    Open live demo
+                    {caseStudy.liveLinkLabel ?? "Open live project"}
                     <ArrowUpRight aria-hidden="true" />
                   </a>
                 </Button>

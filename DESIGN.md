@@ -144,6 +144,25 @@ Purpose: add Right-Sized Private AI Systems as a major service chapter without p
 - A supporting insight at `/insights/private-ai-vs-cloud-ai-small-businesses` should answer the local/private/cloud/hybrid decision question for AI search and buyer education.
 - Avoid overclaims: small models do not do everything, private AI does not replace all cloud AI, privacy and accuracy are not perfect, and cloud fallback may still be the practical choice.
 
+## 2026-06-12 SC Smokes Authority Proof Pass
+Purpose: add SC Smokes Directory as a public proof asset after the directory gained a real About/Methodology page and conservative verification language.
+
+- `/case-studies/sc-smokes-directory` should read as local-directory, messy-data, and SEO-owner-funnel proof inside the existing editorial operations console.
+- Use the same restrained case-study template and metrics language instead of a separate landing-page treatment.
+- The visual anchor remains business-system proof: shop listings, city/category routes, category associations, verification labels, and owner correction paths.
+- Public copy must avoid implying online sale, shipping, delivery, reservation, exact stock, or product legality for age-restricted products.
+- Link outward to `https://scsmokes.com/about` as the live methodology/proof page.
+
+## 2026-07-14 Lewis Asher Local-Growth Proof Pass
+Purpose: add Lewis Asher Remodeling as reciprocal portfolio proof for an evidence-led local service launch without changing the established Light Editorial Systems Studio design.
+
+- `/case-studies/lewis-asher-remodeling` uses the existing restrained case-study template and regional-service graphic.
+- Place the record immediately after Greater Aiken Irrigation so the four-item footer proof list includes Lewis through the existing data order.
+- The memorable anchor is factual transformation proof: nine public routes, four real before-and-after project transformations, and a 4.9 Google rating.
+- Proof sections cover evidence-led presentation, small-job and local-search intent, mobile call/text conversion, and indexing readiness.
+- The primary project action opens `https://lewisasherremodeling.com`; public copy must not claim rankings, leads, revenue, or unsupported business facts.
+- Reuse existing typography, card structure, amber metric rule, spacing, and motion behavior so the new proof reads as part of the current system rather than a separate landing-page treatment.
+
 ## VapeOS Outreach Content Pass
 Purpose: support a South Carolina-first vape-shop outreach campaign by making VapeOS read as a retail inventory search demo rather than a one-off private lead.
 

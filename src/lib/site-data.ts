@@ -216,7 +216,12 @@ export const services: Service[] = [
           "The best fit is a business with repeated calls, website questions, lead intake, scheduling, document lookup, or follow-up problems. The operation does not need perfect data, but it does need enough real workflow detail to define safe answers, handoffs, and success criteria.",
       },
     ],
-    relatedCases: ["vapeos", "regional-service-site"],
+    relatedCases: [
+      "sc-smokes-directory",
+      "lewis-asher-remodeling",
+      "vapeos",
+      "regional-service-site",
+    ],
   },
   {
     slug: "reception-web-assistant",
@@ -427,7 +432,7 @@ export const services: Service[] = [
           "Next.js supports fast static pages, structured metadata, clean routing, optimized assets, and a path to richer product features when a site grows beyond marketing content.",
       },
     ],
-    relatedCases: ["starry", "unicorn-island"],
+    relatedCases: ["lewis-asher-remodeling", "starry", "unicorn-island"],
   },
   {
     slug: "seo-content-systems",
@@ -462,7 +467,11 @@ export const services: Service[] = [
           "Clear service pages, FAQs, policies, and case-study proof become cleaner source material for website assistants, internal assistants, and sales follow-up.",
       },
     ],
-    relatedCases: ["regional-service-site", "vapeos"],
+    relatedCases: [
+      "lewis-asher-remodeling",
+      "regional-service-site",
+      "vapeos",
+    ],
   },
 ];
 
@@ -473,6 +482,7 @@ export type CaseStudy = {
   summary: string;
   image: string;
   demoUrl?: string;
+  liveLinkLabel?: string;
   services: string[];
   metrics: { label: string; value: string }[];
   challenge: string;
@@ -483,6 +493,182 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "sc-smokes-directory",
+    title: "SC Smokes Directory",
+    label: "Local-directory / messy-data / SEO-owner-funnel",
+    summary:
+      "A South Carolina local-directory proof asset showing how structured listings, local SEO pages, category associations, and owner correction paths can become an indexable business-development system.",
+    image: "/case-study-vapeos.svg",
+    demoUrl: "https://scsmokes.com",
+    liveLinkLabel: "View live SCSmokes directory",
+    services: [
+      "seo-content-systems",
+      "ai-integration",
+      "automation-workflows",
+      "web-development",
+      "guardrails-knowledge-systems",
+    ],
+    metrics: [
+      { label: "Shop listings", value: "467" },
+      { label: "Category links", value: "8,569" },
+      { label: "Funnel role", value: "Owner updates" },
+    ],
+    challenge:
+      "Local smoke and vape shop information is spread across public profiles, weak websites, inconsistent category language, and listings that often need owner review before customers can trust them.",
+    solution:
+      "SC Smokes structures the market into city pages, shop profiles, category pages, review labels, and claim/update paths while keeping compliance boundaries clear: category signals are not live inventory, and the directory does not sell or reserve age-restricted products.",
+    result:
+      "The directory gives Onyx a live proof asset for messy-data cleanup, local SEO architecture, and an SEO-owner-funnel that turns public discovery pages into listing-correction and service conversations.",
+    proofSections: [
+      {
+        heading: "Local-directory architecture",
+        body: "The build turns South Carolina market data into reusable route patterns: city pages, smoke-intent pages, category pages, category-city pages, market briefs, and individual shop profiles. The system can expose useful local discovery without pretending to be a store or checkout flow.",
+      },
+      {
+        heading: "Messy-data normalization",
+        body: "The useful work is taking inconsistent public shop signals, source notes, websites, phone data, and broad category labels and turning them into a searchable structure. The live snapshot includes 467 shop listings and 8,569 category associations across South Carolina markets.",
+      },
+      {
+        heading: "SEO-owner-funnel proof",
+        body: "The public pages help adults find local shops, while the owner path gives retailers a reason to correct listings, confirm categories, and ask about better visibility. That is the same operating pattern Onyx uses for lead capture, source cleanup, and business-system implementation.",
+      },
+    ],
+    stack: ["Next.js", "Local SEO", "Structured data", "Owner funnel"],
+  },
+  {
+    slug: "qatlas",
+    title: "QAtlas",
+    label: "Intelligence database / knowledge graph / daily discovery",
+    summary:
+      "A structured quantum industry intelligence platform built to organize companies, funding records, research, technologies, and market developments into a connected knowledge graph.",
+    image: "/case-study-regional-service.svg",
+    demoUrl: "https://qatlas.co",
+    liveLinkLabel: "View live QAtlas platform",
+    services: [
+      "ai-integration",
+      "guardrails-knowledge-systems",
+      "automation-workflows",
+      "seo-content-systems",
+      "web-development",
+    ],
+    metrics: [
+      { label: "Entity model", value: "Graph" },
+      { label: "Workflow", value: "Daily" },
+      { label: "Publishing", value: "Briefs" },
+    ],
+    challenge:
+      "Quantum industry information is fragmented across company pages, research publications, grant notices, press releases, funding announcements, and policy sources, which makes it hard to compare ecosystem signals without losing source context.",
+    solution:
+      "QAtlas uses an intelligence database architecture with typed entity records, source attribution, relationship signals, daily discovery, evergreen topic pages, structured SEO, and market brief publishing workflows.",
+    result:
+      "The platform gives Onyx a live proof asset for knowledge graph structure, source-backed publishing, entity pages, daily discovery operations, and market intelligence workflows that stay useful to readers and AI answer systems.",
+    proofSections: [
+      {
+        heading: "Intelligence database architecture",
+        body: "QAtlas separates organizations, funding records, research items, Intel posts, sources, topic pages, evergreen pages, and relationship signals into structured records instead of treating the market as a flat blog archive.",
+      },
+      {
+        heading: "Knowledge graph structure",
+        body: "Company, funding, research, and Intel records link through source IDs and relationship helpers, so readers can move from a company profile to related capital events, research signals, ecosystem categories, and dated market analysis.",
+      },
+      {
+        heading: "Daily discovery and publishing workflow",
+        body: "The CLI discovery workflow scans trusted sources, filters duplicates and junk pages, creates analyst prompt packets when needed, imports reviewed decisions, updates evergreen pages, and can publish source-backed Intel records when confidence and attribution gates are satisfied.",
+      },
+      {
+        heading: "Structured SEO and market briefs",
+        body: "Public entity pages, topic guides, evergreen pages, schema, `llms.txt`, AI context JSON, and weekly market briefs turn the database into crawlable and answer-ready intelligence rather than a private spreadsheet.",
+      },
+    ],
+    stack: ["Next.js", "Supabase", "Knowledge graph", "Discovery workflow"],
+  },
+  {
+    slug: "greater-aiken-irrigation",
+    title: "Greater Aiken Irrigation",
+    label: "Local service SEO / case-study search visibility",
+    summary:
+      "A local service business website focused on sprinkler repair, irrigation services, local SEO, and case-study-driven search visibility.",
+    image: "/case-study-regional-service.svg",
+    demoUrl: "https://aikenirrigation.pro",
+    liveLinkLabel: "View live Aiken Irrigation site",
+    services: [
+      "seo-content-systems",
+      "web-development",
+      "ai-integration"
+    ],
+    metrics: [
+      { label: "Case studies", value: "54+" },
+      { label: "Schema", value: "FAQ & Entity" },
+      { label: "Search focus", value: "Local SEO" },
+    ],
+    challenge:
+      "Local service businesses need to prove expertise across services, neighborhoods, and repair scenarios without creating thin duplicated pages that feel made only for search engines.",
+    solution:
+      "The site uses service sections, localized case-study pages, structured content, contact and call paths, crawl-ready metadata, and Google indexing readiness to support sprinkler repair and irrigation service discovery.",
+    result:
+      "The site demonstrates how local service SEO, field-report-style case studies, service pages, and clear contact flows can turn search intent into qualified repair and maintenance leads.",
+    proofSections: [
+      {
+        heading: "Local service SEO",
+        body: "The site organizes sprinkler repair, irrigation troubleshooting, emergency support, service areas, and field reports around the way homeowners and property managers search for help.",
+      },
+      {
+        heading: "Case-study-driven visibility",
+        body: "Localized case-study pages add practical repair context for pressure loss, stuck valves, controller issues, tree-root intrusion, clogs, wiring corrosion, and other real irrigation problems.",
+      },
+      {
+        heading: "Contact and call flow",
+        body: "The public pages keep quote requests, phone calls, email, service-area context, and contact sections easy to reach so search traffic has a direct path to request service.",
+      },
+      {
+        heading: "Indexing readiness",
+        body: "The implementation includes sitemap, robots, canonical, structured-data, and AI-discovery surfaces so Google and AI answer systems can understand the local service proof structure.",
+      },
+    ],
+    stack: ["Next.js", "Local SEO", "Service pages", "Case studies"],
+  },
+  {
+    slug: "lewis-asher-remodeling",
+    title: "Lewis Asher Remodeling",
+    label: "Local growth / mobile conversion / search readiness",
+    summary:
+      "An evidence-led local service website launch connecting real remodeling work, small-job discovery, mobile call and text paths, structured data, and Search Console readiness on a custom domain.",
+    image: "/case-study-regional-service.svg",
+    demoUrl: "https://lewisasherremodeling.com",
+    liveLinkLabel: "View live Lewis Asher site",
+    services: ["seo-content-systems", "web-development", "ai-integration"],
+    metrics: [
+      { label: "Public routes", value: "9" },
+      { label: "Project transformations", value: "4" },
+      { label: "Google rating", value: "4.9" },
+    ],
+    challenge:
+      "A local remodeling business needed a credible custom-domain presence that could show real work, make smaller projects easy to discover, and give mobile visitors a direct way to call or text without relying on unsupported claims.",
+    solution:
+      "The launch organized nine public routes around services, small jobs and repairs, project transformations, reviews, service-area context, FAQs, and contact actions. Canonicals, structured data, robots, sitemap, AI guidance, and Search Console setup support crawl and answer-engine readiness.",
+    result:
+      "The live site now presents four real before-and-after project transformations, the public 4.9 Google rating, focused small-job intent, and persistent mobile call and text paths on lewisasherremodeling.com. Search visibility and lead outcomes remain dependent on future crawling and customer behavior.",
+    proofSections: [
+      {
+        heading: "Evidence-led presentation",
+        body: "The portfolio uses four real before-and-after project transformations across a kitchen, two bathrooms, and stairs. The reviews surface points visitors to the public Google profile and presents the supported 4.9 rating without inventing project locations, budgets, dates, materials, or credentials.",
+      },
+      {
+        heading: "Small-job and local-search intent",
+        body: "A dedicated small-jobs and repairs route works with the homepage, services, FAQ, service-area, and contact pages to cover repair, punch-list, finish-work, and focused remodeling intent for Aiken-area homeowners without publishing unsupported trade-specific promises.",
+      },
+      {
+        heading: "Mobile call and text conversion",
+        body: "The responsive header, page-level calls to action, and sticky mobile actions keep call and text options reachable while yielding to primary conversion controls. The contact helper prepares an SMS for the visitor to review and never claims a message was sent automatically.",
+      },
+      {
+        heading: "Indexing readiness",
+        body: "The custom-domain launch includes self-canonical metadata, local-business and website schema, robots guidance, a nine-URL sitemap, `llms.txt`, and a verified Search Console property. Those surfaces establish crawl and answer-engine readiness without claiming rankings or indexed-page outcomes.",
+      },
+    ],
+    stack: ["Next.js", "Local SEO", "Structured data", "Search Console"],
+  },
   {
     slug: "countertop-estimator",
     title: "Countertop Estimate Tool",
@@ -633,31 +819,6 @@ export const caseStudies: CaseStudy[] = [
     result:
       "A practical demand-generation foundation that can scale into service pages, proof content, lead capture, and assistant-ready source material.",
     stack: ["SEO architecture", "Next.js", "Content strategy", "Schema"],
-  },
-  {
-    slug: "greater-aiken-irrigation",
-    title: "Greater Aiken Irrigation",
-    label: "AEO & SEO Overhaul",
-    summary:
-      "A complete Answer Engine Optimization (AEO) and SEO overhaul for a local service business, turning static pages into AI-search-ready lead capture assets.",
-    image: "/case-study-regional-service.svg",
-    services: [
-      "seo-content-systems",
-      "web-development",
-      "ai-integration"
-    ],
-    metrics: [
-      { label: "Case Studies", value: "54+" },
-      { label: "Schema", value: "FAQ & Entity" },
-      { label: "Search focus", value: "AEO/SGE" },
-    ],
-    challenge:
-      "Local service businesses risk losing traffic to AI search engines (Google SGE, ChatGPT) because their traditional SEO content lacks the semantic depth required by LLMs.",
-    solution:
-      "A comprehensive AEO overhaul that uniquely rewrote 54+ case studies with expert technical details, implemented FAQ and Service Entity Schema, and established a demand generation system.",
-    result:
-      "A future-proofed local service presence that targets both traditional local SEO and emerging AI search, converting high-intent traffic into qualified leads.",
-    stack: ["Next.js", "AEO", "Entity Schema", "Content strategy"],
   },
 ];
 

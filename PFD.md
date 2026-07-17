@@ -40,7 +40,9 @@
 - `src/lib/site-data.ts` also stores lightweight public metadata for the 20 SaaS demos and their external links to `https://onyx-portfolio-demos.vercel.app/apps`.
 - `src/lib/contact-leads.ts` maps normalized contact form fields to Supabase column names and writes server-side lead records through the Supabase REST API.
 - Dynamic service, case study, and insight routes read from that file and use `generateStaticParams`.
-- `/portfolio` links to all 20 live demo routes on the separate portfolio deployment and to the four deeper case studies. `/case-studies` remains the narrative proof index.
+- `/portfolio` links to all 20 live demo routes on the separate portfolio deployment and to deeper case studies. `/case-studies` remains the narrative proof index.
+- `/case-studies/sc-smokes-directory` is generated from `caseStudies` as the live SC Smokes local-directory, messy-data, and SEO-owner-funnel proof asset.
+- `/case-studies/lewis-asher-remodeling` is generated from `caseStudies` as the Lewis Asher Remodeling local-growth proof asset and links to the live custom-domain site.
 
 ## SEO Behavior
 - Root layout defines metadata base, title template, description, Open Graph, Twitter, robots, Organization, and WebSite schema.
