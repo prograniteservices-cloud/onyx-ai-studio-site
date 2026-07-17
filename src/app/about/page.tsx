@@ -77,9 +77,10 @@ export default function AboutPage() {
               the business.
             </p>
             <p>
-              The current 30-day beachhead is granite and countertop quote
-              intake. That lane matches Barry&apos;s stone fabrication operating
-              background and the live Countertop Estimate Tool proof path.
+              GraniteApp now demonstrates both sides of that operating lane:
+              role-scoped countertop production from station work through
+              full-job QA, and a public estimate flow backed by a 152-material
+              catalog, server-owned pricing, and structured lead intake.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild>
@@ -107,7 +108,7 @@ export default function AboutPage() {
             ],
             [
               "Countertop focus",
-              "The first sales lane is quote-intake systems for granite and countertop shops because the workflow is specific and provable.",
+              "GraniteApp provides real proof across production operations and structured estimate intake for granite and countertop shops.",
             ],
             [
               "Managed implementation",

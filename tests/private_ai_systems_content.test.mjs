@@ -70,7 +70,7 @@ test("discovery surfaces expose private AI systems", () => {
   const contactForm = read("src/components/contact-form.tsx");
   const pricing = read("src/app/pricing/page.tsx");
 
-  assert.match(sitemap, /2026-07-14T22:45:00\.000Z/);
+  assert.match(sitemap, /2026-07-16T23:30:00\.000Z/);
   assert.match(llms, /Private AI Systems -> https:\/\/onyxaistudio\.digital\/services\/private-ai-systems/);
   assert.match(llms, /Private AI vs Cloud AI for Small Businesses -> https:\/\/onyxaistudio\.digital\/insights\/private-ai-vs-cloud-ai-small-businesses/);
   assert.match(layout, /Private AI Systems/);

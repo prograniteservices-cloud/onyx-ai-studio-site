@@ -50,7 +50,7 @@ test("insights and case studies use the founder person schema as author", () => 
 test("sitemap advertises the current technical SEO refresh date", () => {
   const sitemap = read("src/app/sitemap.ts");
 
-  assert.match(sitemap, /2026-07-14T22:45:00\.000Z/);
+  assert.match(sitemap, /2026-07-16T23:30:00\.000Z/);
   assert.match(sitemap, /"\/about"/);
 });
 
@@ -73,7 +73,7 @@ test("AI discovery highlights the Review and countertop quote-intake proof path"
   const llms = read("public/llms.txt");
 
   assert.match(llms, /AI Operations Review/);
-  assert.match(llms, /Countertop Estimate Tool/);
-  assert.match(llms, /quote-intake example/);
-  assert.match(llms, /sample lead record/);
+  assert.match(llms, /GraniteApp Estimate Tool/);
+  assert.match(llms, /152-material catalog/);
+  assert.match(llms, /versioned estimate snapshots/);
 });

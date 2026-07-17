@@ -38,7 +38,10 @@ test("case study page can render the SC Smokes route through existing dynamic te
   assert.match(page, /generateStaticParams/);
   assert.match(page, /caseStudies\.map/);
   assert.match(page, /liveLinkLabel/);
-  assert.match(data, /relatedCases:\s*\[\s*"sc-smokes-directory"/);
+  assert.match(
+    data,
+    /relatedCases:\s*\[\s*"graniteapp",\s*"sc-smokes-directory"/,
+  );
 });
 
 test("Onyx has portfolio proof pages for QAtlas and Greater Aiken Irrigation", () => {

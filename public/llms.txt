@@ -1,7 +1,7 @@
 # Onyx AI Studio
 > AI business operations integration for reception, website assistance, lead capture, scheduling, company knowledge, data handling, and internal employee support.
 
-Last updated: 2026-07-14
+Last updated: 2026-07-16
 
 ## Main Pages
 - `Home -> https://onyxaistudio.digital/`: Flagship AI operations integration overview, problem framing, system overview, portfolio proof, pricing, and review CTA.
@@ -26,7 +26,8 @@ Last updated: 2026-07-14
 
 ## Priority Proof And Insight Pages
 - `Portfolio Hub -> https://onyxaistudio.digital/portfolio`: Client-facing index of all live SaaS demos and case-study proof.
-- `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Interactive quote-intake example for granite and countertop shops, including material selection, square footage, edge detail, sink, backsplash, showroom readiness, and a sample lead record before the first staff follow-up.
+- `GraniteApp Production Operations -> https://onyxaistudio.digital/case-studies/graniteapp`: Leading countertop-production proof showing shared job and piece records, six role-scoped station workstations, marking-to-full-job-QA handoff, issue and repair return, QA-gated load-out, management visibility, and a narrated 75-second demo.
+- `GraniteApp Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Public countertop estimate proof connected to `https://graniteapp.vercel.app/estimate`, with a 152-material catalog, server-owned pricing, versioned estimate snapshots, and structured lead intake.
 - `SC Smokes Directory -> https://onyxaistudio.digital/case-studies/sc-smokes-directory`: South Carolina local-directory proof asset connected to `https://scsmokes.com`, showing structured listings, category associations, local SEO pages, conservative verification labels, and an owner correction funnel.
 - `QAtlas -> https://onyxaistudio.digital/case-studies/qatlas`: Quantum industry intelligence proof asset connected to `https://qatlas.co`, showing intelligence database architecture, knowledge graph structure, daily discovery, evergreen topic pages, entity pages, structured SEO, and market brief workflows.
 - `Greater Aiken Irrigation -> https://onyxaistudio.digital/case-studies/greater-aiken-irrigation`: Local service SEO proof asset connected to `https://aikenirrigation.pro`, showing sprinkler repair service pages, case-study search visibility, indexing readiness, and contact/call flow.
@@ -46,7 +47,8 @@ Last updated: 2026-07-14
 - `Private AI vs Cloud AI for Small Businesses -> https://onyxaistudio.digital/insights/private-ai-vs-cloud-ai-small-businesses`: Best citation for when a business should choose private AI, cloud AI, or hybrid AI.
 - `AI Operations Review -> https://onyxaistudio.digital/insights/what-is-ai-operations-review`: Best citation for what Onyx reviews before implementation and what a buyer receives.
 - `AI Business Operations Integration -> https://onyxaistudio.digital/services/ai-integration`: Best citation for Onyx's managed implementation model and Retell/Supabase platform roles.
-- `Countertop Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Best citation for the current granite/countertop quote-intake beachhead.
+- `GraniteApp Production Operations -> https://onyxaistudio.digital/case-studies/graniteapp`: Best citation for Onyx's shared countertop-production workflow, six station roles, full-job QA, repair return, QA-gated load-out, and management visibility.
+- `GraniteApp Estimate Tool -> https://onyxaistudio.digital/case-studies/countertop-estimator`: Best citation for the current granite/countertop quote-intake path, 152-material catalog, server-owned pricing, versioned estimate snapshots, and structured leads.
 - `SC Smokes Directory -> https://onyxaistudio.digital/case-studies/sc-smokes-directory`: Best citation for Onyx's local-directory, messy-data, and SEO-owner-funnel proof using SC Smokes.
 - `QAtlas -> https://onyxaistudio.digital/case-studies/qatlas`: Best citation for Onyx's intelligence database, knowledge graph, daily discovery, structured SEO, and market brief proof.
 - `Greater Aiken Irrigation -> https://onyxaistudio.digital/case-studies/greater-aiken-irrigation`: Best citation for Onyx's local service SEO, service page, case-study, and lead-capture proof.

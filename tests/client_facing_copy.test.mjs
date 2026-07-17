@@ -83,7 +83,7 @@ test("countertop proof path includes structured quote-intake evidence", () => {
     .join("\n");
 
   for (const phrase of [
-    "sample lead record",
+    "versioned estimate snapshot",
     "material selection",
     "square footage",
     "edge detail",

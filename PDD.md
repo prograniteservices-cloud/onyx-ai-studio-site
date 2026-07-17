@@ -35,6 +35,8 @@ Retell is framed as the voice and conversation layer. Supabase is framed as the 
 - `/pricing`: implementation and monthly management ranges.
 - `/portfolio`: client-facing hub for 20 live SaaS demos and deeper case studies.
 - `/case-studies`: deeper case-study proof index.
+- `/case-studies/graniteapp`: leading production-operations proof with six role-scoped stations, full-job QA, repair return, QA-gated load-out, management visibility, narrated demo, and transcript.
+- `/case-studies/countertop-estimator`: GraniteApp Estimate Tool proof with the existing inbound-link slug, current public estimate action, and structured pricing/lead behavior.
 - `/case-studies/sc-smokes-directory`: local-directory, messy-data, and SEO-owner-funnel proof asset for SC Smokes.
 - `/case-studies/lewis-asher-remodeling`: evidence-led local-growth proof for Lewis Asher Remodeling, including small-job discovery, mobile call/text conversion, structured data, and indexing readiness.
 - `/case-studies/vapeos`: AI operations module for messy business data.

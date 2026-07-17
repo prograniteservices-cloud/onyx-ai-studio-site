@@ -53,7 +53,7 @@ export async function generateMetadata({
           url: caseStudy.image,
           width: 920,
           height: 520,
-          alt: `${caseStudy.title} visual system diagram`,
+          alt: caseStudy.imageAlt ?? `${caseStudy.title} visual system diagram`,
         },
       ],
     },
@@ -102,10 +102,27 @@ export default async function CaseStudyDetailPage({
     },
     mainEntityOfPage: absoluteUrl(`/case-studies/${caseStudy.slug}`),
   };
+  const videoSchema = caseStudy.video
+    ? {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: caseStudy.video.title,
+        description: caseStudy.video.description,
+        thumbnailUrl: [absoluteUrl(caseStudy.video.poster)],
+        uploadDate: caseStudy.video.uploadDate,
+        duration: caseStudy.video.duration,
+        contentUrl: absoluteUrl(caseStudy.video.source),
+        url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
+        transcript: caseStudy.video.transcript
+          .map((entry) => `${entry.time} ${entry.text}`)
+          .join(" "),
+      }
+    : null;
 
   return (
     <>
       <JsonLd data={articleSchema} />
+      {videoSchema ? <JsonLd data={videoSchema} /> : null}
       <JsonLd data={breadcrumbs} />
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
@@ -136,7 +153,7 @@ export default async function CaseStudyDetailPage({
           </div>
           <Image
             src={caseStudy.image}
-            alt={`${caseStudy.title} visual system diagram`}
+            alt={caseStudy.imageAlt ?? `${caseStudy.title} visual system diagram`}
             width={920}
             height={520}
             priority
@@ -144,6 +161,58 @@ export default async function CaseStudyDetailPage({
           />
         </div>
       </section>
+
+      {caseStudy.video ? (
+        <section className="border-b border-border bg-background">
+          <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.3fr_0.7fr] lg:px-8">
+            <figure className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+              <video
+                className="aspect-video w-full bg-primary"
+                controls
+                playsInline
+                preload="metadata"
+                poster={caseStudy.video.poster}
+                aria-label={caseStudy.video.title}
+              >
+                <source src={caseStudy.video.source} type="video/mp4" />
+                Your browser does not support the video element. Read the
+                adjacent transcript for the complete narration.
+              </video>
+              <figcaption className="border-t border-border px-5 py-4 text-sm leading-6 text-muted-foreground">
+                {caseStudy.video.description} Captions are burned into the
+                video. Audio does not autoplay.
+              </figcaption>
+            </figure>
+            <aside
+              className="editorial-rule pt-8"
+              aria-labelledby="video-transcript-title"
+            >
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                Accessible alternative
+              </p>
+              <h2
+                id="video-transcript-title"
+                className="mt-3 font-serif text-3xl font-bold"
+              >
+                Text transcript
+              </h2>
+              <ol className="mt-6 grid gap-4">
+                {caseStudy.video.transcript.map((entry) => (
+                  <li
+                    key={entry.time}
+                    className="grid grid-cols-[3.25rem_1fr] gap-3 text-sm leading-6"
+                  >
+                    <span className="font-mono font-bold text-primary">
+                      {entry.time}
+                    </span>
+                    <span className="text-muted-foreground">{entry.text}</span>
+                  </li>
+                ))}
+              </ol>
+            </aside>
+          </div>
+        </section>
+      ) : null}
 
       {caseStudy.proofSections ? (
         <section className="border-b border-border bg-background">

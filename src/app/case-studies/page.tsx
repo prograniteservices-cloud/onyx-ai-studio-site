@@ -60,7 +60,7 @@ export default function CaseStudiesPage() {
             >
               <Image
                 src={caseStudy.image}
-                alt={`${caseStudy.title} visual system diagram`}
+                alt={caseStudy.imageAlt ?? `${caseStudy.title} visual system diagram`}
                 width={920}
                 height={520}
                 className="h-auto w-full border-b border-border bg-muted"

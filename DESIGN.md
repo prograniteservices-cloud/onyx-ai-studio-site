@@ -163,6 +163,16 @@ Purpose: add Lewis Asher Remodeling as reciprocal portfolio proof for an evidenc
 - The primary project action opens `https://lewisasherremodeling.com`; public copy must not claim rankings, leads, revenue, or unsupported business facts.
 - Reuse existing typography, card structure, amber metric rule, spacing, and motion behavior so the new proof reads as part of the current system rather than a separate landing-page treatment.
 
+## 2026-07-16 GraniteApp Editorial Product Proof
+Purpose: lead the portfolio with real countertop-production software and refresh the existing estimator proof without leaving the established Light Editorial Systems Studio design.
+
+- Direction: editorial product proof, DFII 15/15 (impact 5, fit 5, feasibility 4, performance 5, consistency risk 4).
+- The differentiation anchor is real product evidence: a privacy-safe narrated workflow demo, real application screens, restrained brass rules, and literal operational copy instead of fabricated dashboard art.
+- `/case-studies/graniteapp` leads the ordered case-study registry and proves shared job/piece records, six role-scoped stations, marking-to-full-job-QA handoff, issue/repair return, QA-gated load-out, and management visibility.
+- The native video uses controls, inline playback, metadata preload, a real poster frame, burned-in captions, and a visible adjacent transcript. Audio never autoplays.
+- `/case-studies/countertop-estimator` keeps its inbound-link slug but becomes GraniteApp Estimate Tool with a real current `/estimate` capture and verified 152-material, server-pricing, versioned-snapshot, structured-lead behavior.
+- Reuse the existing serif/mono hierarchy, warm neutral palette, teal accent, amber metric rule, border language, and responsive grid. Video and transcript form one asymmetric proof spread rather than a generic centered media block.
+
 ## VapeOS Outreach Content Pass
 Purpose: support a South Carolina-first vape-shop outreach campaign by making VapeOS read as a retail inventory search demo rather than a one-off private lead.
 

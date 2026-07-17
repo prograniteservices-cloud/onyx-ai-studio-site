@@ -43,6 +43,8 @@
 - `/portfolio` links to all 20 live demo routes on the separate portfolio deployment and to deeper case studies. `/case-studies` remains the narrative proof index.
 - `/case-studies/sc-smokes-directory` is generated from `caseStudies` as the live SC Smokes local-directory, messy-data, and SEO-owner-funnel proof asset.
 - `/case-studies/lewis-asher-remodeling` is generated from `caseStudies` as the Lewis Asher Remodeling local-growth proof asset and links to the live custom-domain site.
+- `/case-studies/graniteapp` leads the registry and conditionally renders native narrated video, burned-in captions, an adjacent transcript, VideoObject schema, and video sitemap metadata.
+- `/case-studies/countertop-estimator` retains its slug while pointing to the current GraniteApp `/estimate` route and real estimator WebP.
 
 ## SEO Behavior
 - Root layout defines metadata base, title template, description, Open Graph, Twitter, robots, Organization, and WebSite schema.

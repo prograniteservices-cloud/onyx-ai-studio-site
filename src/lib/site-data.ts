@@ -217,6 +217,7 @@ export const services: Service[] = [
       },
     ],
     relatedCases: [
+      "graniteapp",
       "sc-smokes-directory",
       "lewis-asher-remodeling",
       "vapeos",
@@ -397,7 +398,7 @@ export const services: Service[] = [
           "Automation opportunities are prioritized by repetition, business value, error cost, data quality, and how quickly the workflow can be verified in production.",
       },
     ],
-    relatedCases: ["regional-service-site", "vapeos"],
+    relatedCases: ["graniteapp", "regional-service-site", "vapeos"],
   },
   {
     slug: "web-development",
@@ -432,7 +433,12 @@ export const services: Service[] = [
           "Next.js supports fast static pages, structured metadata, clean routing, optimized assets, and a path to richer product features when a site grows beyond marketing content.",
       },
     ],
-    relatedCases: ["lewis-asher-remodeling", "starry", "unicorn-island"],
+    relatedCases: [
+      "graniteapp",
+      "lewis-asher-remodeling",
+      "starry",
+      "unicorn-island",
+    ],
   },
   {
     slug: "seo-content-systems",
@@ -481,6 +487,7 @@ export type CaseStudy = {
   label: string;
   summary: string;
   image: string;
+  imageAlt?: string;
   demoUrl?: string;
   liveLinkLabel?: string;
   services: string[];
@@ -489,10 +496,87 @@ export type CaseStudy = {
   solution: string;
   result: string;
   proofSections?: { heading: string; body: string }[];
+  video?: {
+    source: string;
+    poster: string;
+    title: string;
+    description: string;
+    duration: string;
+    uploadDate: string;
+    transcript: { time: string; text: string }[];
+  };
   stack: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "graniteapp",
+    title: "GraniteApp Production Operations",
+    label: "Production operations / role-scoped workflow / QA gating",
+    summary:
+      "A shared countertop-fabrication operations system that moves jobs and pieces through six role-scoped workstations, full-job quality review, repair loops, and QA-gated load-out.",
+    image: "/media/graniteapp/graniteapp-production-poster-20260716.webp",
+    imageAlt:
+      "GraniteApp production overview showing a shared job moving through backsplash, inline polisher, quality, and load-out stages",
+    demoUrl: "https://graniteapp.vercel.app",
+    liveLinkLabel: "View live GraniteApp",
+    services: [
+      "ai-integration",
+      "internal-business-assistant",
+      "guardrails-knowledge-systems",
+      "automation-workflows",
+      "web-development",
+    ],
+    metrics: [
+      { label: "Narrated demo", value: "75 sec" },
+      { label: "Station roles", value: "6" },
+      { label: "Quality gate", value: "Full-job QA" },
+    ],
+    challenge:
+      "Countertop production can scatter job status across people, stations, paper notes, and verbal handoffs, making it harder to see what is ready, what needs repair, and what may safely reach load-out.",
+    solution:
+      "GraniteApp keeps shared job and piece records behind six role-scoped workstations. Marking releases a completed job into full-job QA; issues and repairs return through QA; load-out stays gated until quality release; management sees workload and readiness across the shop.",
+    result:
+      "The working product demonstrates one operational thread from job intake through station work, marking handoff, full-job quality review, repair return, and controlled load-out without exposing production records on the public Onyx site.",
+    proofSections: [
+      {
+        heading: "Shared jobs and role-scoped stations",
+        body: "Every job and piece begins in one shared record. Six station roles receive scoped workstation views so backsplash, inline-polisher, marking, QA, issues, and load-out work stays connected without giving every operator the same screen or permissions.",
+      },
+      {
+        heading: "Marking hands the full job to QA",
+        body: "Completing individual marks does not quietly release isolated pieces. The marking operator explicitly sends the completed job to full-job QA, preserving a visible handoff between production completion and quality review.",
+      },
+      {
+        heading: "Issues and repairs return to quality review",
+        body: "QA can route a problem into an issue and repair path with the affected piece and job context attached. Repaired work returns to QA instead of bypassing the quality gate.",
+      },
+      {
+        heading: "QA-gated load-out and management visibility",
+        body: "Nothing reaches load-out before QA release. Management can see workload, active issues, job readiness, and bottlenecks across the same shared operational state.",
+      },
+    ],
+    video: {
+      source: "/media/graniteapp/graniteapp-product-demo-20260716.mp4",
+      poster: "/media/graniteapp/graniteapp-production-poster-20260716.webp",
+      title: "GraniteApp countertop production operations demo",
+      description:
+        "A narrated 75-second walkthrough of shared job records, role-scoped station work, marking handoff, full-job QA, repair routing, QA-gated load-out, and management visibility.",
+      duration: "PT1M15S",
+      uploadDate: "2026-07-16",
+      transcript: [
+        { time: "00:00", text: "Countertop production, in one place." },
+        { time: "00:09", text: "Every job and piece begins in one shared record." },
+        { time: "00:19", text: "Operators see the work assigned to their station." },
+        { time: "00:29", text: "Completed marking moves the whole job into QA." },
+        { time: "00:39", text: "QA checks every piece and routes problems clearly." },
+        { time: "00:49", text: "Nothing reaches load-out before QA release." },
+        { time: "00:59", text: "Owners see workload, readiness, and bottlenecks." },
+        { time: "01:09", text: "GraniteApp keeps the shop moving together." },
+      ],
+    },
+    stack: ["Next.js", "Supabase", "Role-scoped stations", "Full-job QA"],
+  },
   {
     slug: "sc-smokes-directory",
     title: "SC Smokes Directory",
@@ -671,12 +755,15 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "countertop-estimator",
-    title: "Countertop Estimate Tool",
-    label: "Lead capture configurator",
+    title: "GraniteApp Estimate Tool",
+    label: "Structured estimate intake / server-owned pricing",
     summary:
-      "A premium countertop estimate flow that turns casual website visitors into structured quote requests before the showroom visit.",
-    image: "/case-study-countertop-estimator.svg",
-    demoUrl: "https://estimate-tool-three.vercel.app",
+      "A guided public countertop estimate flow backed by a 152-material catalog, server-owned pricing, versioned estimate snapshots, and structured lead intake for fabricator follow-up.",
+    image: "/media/graniteapp/graniteapp-estimate-tool-20260716.webp",
+    imageAlt:
+      "GraniteApp Estimate Tool shape-selection screen with straight, L-shaped, U-shaped, galley, island, vanity, and custom project options",
+    demoUrl: "https://graniteapp.vercel.app/estimate",
+    liveLinkLabel: "Open GraniteApp Estimate Tool",
     services: [
       "web-development",
       "automation-workflows",
@@ -684,31 +771,35 @@ export const caseStudies: CaseStudy[] = [
       "ai-integration",
     ],
     metrics: [
-      { label: "Material options", value: "152" },
-      { label: "Embed modes", value: "Page/widget" },
-      { label: "Business role", value: "Quote path" },
+      { label: "Material catalog", value: "152" },
+      { label: "Pricing owner", value: "Server" },
+      { label: "Saved output", value: "Versioned" },
     ],
     challenge:
       "Countertop shops often ask buyers to call, send a vague form, or visit the showroom before the customer understands surface options, project size, edge details, and upgrades.",
     solution:
-      "The estimator gives the shop a branded guided quote path with materials, kitchen size, edge profiles, upgrades, estimate reveal, savings framing, and lead capture.",
+      "The estimator guides shape, measurements, material, and project options against the server-owned 152-material catalog, then saves a versioned estimate snapshot and structured lead details for staff review.",
     result:
-      "The demo shows how a service-business website can become an interactive sales tool, customized to the shop's theme, catalog, pricing boundaries, lead flow, and preferred format.",
+      "The live public route demonstrates how a fabricator can give useful preliminary guidance while retaining pricing authority, preserving the quoted configuration, and receiving a structured follow-up record instead of an unqualified message.",
     proofSections: [
       {
         heading: "What this proves for granite and countertop shops",
         body: "A countertop buyer rarely arrives with every quote detail ready. A guided estimator can collect material selection, square footage, edge detail, sink and backsplash context, timeline, showroom readiness, and contact information before the first staff follow-up. The proof is not a final price promise; it is a cleaner intake path.",
       },
       {
-        heading: "Sample lead record",
-        body: "The useful output is a sample lead record: contact details, material selection, square footage, edge detail, sink needs, backsplash interest, project timeline, showroom readiness, notes, source page, and follow-up status. That record can feed email, Supabase, a CRM view, a callback task, or an internal assistant summary.",
+        heading: "Server-owned catalog and pricing",
+        body: "The live estimator exposes 152 active materials while pricing stays owned by the server. That boundary lets the public flow guide a buyer without turning editable browser values into the business's source of truth.",
       },
       {
-        heading: "First build recommendation",
-        body: "For the 30-day beachhead, the first implementation should be a quote-intake system tied to the AI Operations Review. The tool collects the intake details, staff still reviews fit and scheduling, and human follow-up happens after the structured record is saved. Reception and internal assistant work can follow after the intake questions, handoff rules, and follow-up process are clear.",
+        heading: "Versioned estimate snapshot",
+        body: "A saved lead carries the material identity, category, quoted unit rate, measurements, options, geometry totals, and final range in a versioned estimate snapshot. Staff can review the same quoted configuration even if catalog pricing changes later.",
+      },
+      {
+        heading: "Structured lead intake",
+        body: "The result becomes a structured lead for fabricator follow-up rather than a final-price promise. Contact and project details stay connected to the estimate snapshot so staff can confirm template, scope, scheduling, and final price with the customer.",
       },
     ],
-    stack: ["Next.js", "Tailwind CSS", "Lead capture", "Vercel"],
+    stack: ["Next.js", "Supabase", "Server pricing", "Versioned estimates"],
   },
   {
     slug: "vapeos",
@@ -1131,7 +1222,7 @@ export const insights: Insight[] = [
       { href: "/services/ai-integration", label: "AI Business Operations Integration" },
       { href: "/services/web-development", label: "Business Website + Lead Capture Layer" },
       { href: "/services/automation-workflows", label: "Lead Follow-Up + Workflow Automation" },
-      { href: "/case-studies/countertop-estimator", label: "Countertop Estimate Tool Case Study" },
+      { href: "/case-studies/countertop-estimator", label: "GraniteApp Estimate Tool Case Study" },
     ],
   },
   {
@@ -1165,7 +1256,7 @@ export const insights: Insight[] = [
       },
     ],
     relatedLinks: [
-      { href: "/case-studies/countertop-estimator", label: "Countertop Estimate Tool" },
+      { href: "/case-studies/countertop-estimator", label: "GraniteApp Estimate Tool" },
       { href: "/services/web-development", label: "Business Website + Lead Capture Layer" },
       { href: "/services/automation-workflows", label: "Lead Follow-Up + Workflow Automation" },
       { href: "/contact", label: "Request an AI Operations Review" },
